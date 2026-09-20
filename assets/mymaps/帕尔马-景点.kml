@@ -1,19 +1,127 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>西班牙城市与推荐景点</name><description>中文城市与景点名称、简介和参考坐标；不含个人行程或住宿信息。</description><Placemark><name>帕尔马 · 01 帕尔马大教堂</name><description>帕尔马大教堂 La Seu 位于老城临海一侧，巨大的哥特式体量与玫瑰窗是其最鲜明的特征。内部既有历史结构，也有高迪参与调整的空间与巴塞罗创作的现代艺术，让这里成为传统宗教建筑持续演变的例子。
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>帕尔马 · 景点</name>
+    <description>4 处公共景点，来自旅游网页的中文介绍和参考坐标。</description>
+    <Placemark id="c19-s01">
+      <name>帕尔马 · 01 帕尔马大教堂</name>
+      <description>帕尔马大教堂 La Seu 位于老城临海一侧，巨大的哥特式体量与玫瑰窗是其最鲜明的特征。内部既有历史结构，也有高迪参与调整的空间与巴塞罗创作的现代艺术，让这里成为传统宗教建筑持续演变的例子。
 建议预留：1–1.5 小时
 看点：彩色玫瑰窗、内部高耸柱列，以及现代艺术与历史空间的并置；海滨公园可看完整外观。
 参观提示：可与阿尔穆戴纳王宫和海滨公园一起安排；屋顶等专项项目不一定包含在普通参观中，出发前按兴趣核对。
 景点官网：https://www.visitpalma.com/es/descubrir/que-ver-y-que-hacer/palma-en-1-dia
 位置来源：https://en.wikipedia.org/wiki/Palma_Cathedral
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>帕尔马</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>2.64813611,39.56737778,0</coordinates></Point></Placemark><Placemark><name>帕尔马 · 02 贝尔韦尔城堡</name><description>贝尔韦尔城堡建在帕尔马近郊的林木山丘上，圆形平面与环绕庭院的柱廊让它在众多城堡中很容易辨认。它既适合看建筑结构，也适合从高处回望城市、港湾与海岸，体验老城以外更开阔的一面。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c19-s01</value>
+        </Data>
+        <Data name="城市">
+          <value>帕尔马</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.visitpalma.com/es/descubrir/que-ver-y-que-hacer/palma-en-1-dia</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Palma_Cathedral</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.64813611,39.56737778,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c19-s02">
+      <name>帕尔马 · 02 贝尔韦尔城堡</name>
+      <description>贝尔韦尔城堡建在帕尔马近郊的林木山丘上，圆形平面与环绕庭院的柱廊让它在众多城堡中很容易辨认。它既适合看建筑结构，也适合从高处回望城市、港湾与海岸，体验老城以外更开阔的一面。
 建议预留：1–1.5 小时，另加往返交通
 看点：圆形庭院、环状防御布局，以及面向帕尔马湾的高处视野。
 参观提示：它不在大教堂旁的老城核心，需单独安排上山交通；若步行经过林地，给坡道和返程预留时间。
 景点官网：https://www.spain.info/es/lugares-interes/castillo-bellver/
 位置来源：https://en.wikipedia.org/wiki/Bellver_Castle
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>帕尔马</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>2.619338,39.56375,0</coordinates></Point></Placemark><Placemark><name>帕尔马 · 03 阿尔穆戴纳王宫</name><description>阿尔穆戴纳王宫位于大教堂旁，源自旧有的伊斯兰堡垒，并在后来成为王室使用的宫殿。庭院、厅室、挂毯与临海位置共同体现其防御和礼仪功能，也提供了理解马略卡岛不同历史阶段的另一条线索。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c19-s02</value>
+        </Data>
+        <Data name="城市">
+          <value>帕尔马</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/es/lugares-interes/castillo-bellver/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Bellver_Castle</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.619338,39.56375,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c19-s03">
+      <name>帕尔马 · 03 阿尔穆戴纳王宫</name>
+      <description>阿尔穆戴纳王宫位于大教堂旁，源自旧有的伊斯兰堡垒，并在后来成为王室使用的宫殿。庭院、厅室、挂毯与临海位置共同体现其防御和礼仪功能，也提供了理解马略卡岛不同历史阶段的另一条线索。
 建议预留：1–1.5 小时
 看点：宫殿庭院、仪式厅与装饰陈设，以及与大教堂、海滨花园相连的外部景观。
 参观提示：适合与大教堂连续参观，中间可到花园休息；王室活动可能改变开放安排，行前核对当日参观信息。
 景点官网：https://www.visitpalma.com/es/descubrir/que-ver-y-que-hacer/palma-en-1-dia
 位置来源：https://en.wikipedia.org/wiki/Royal_Palace_of_La_Almudaina
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>帕尔马</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>2.64722,39.5675,0</coordinates></Point></Placemark></Document></kml>
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c19-s03</value>
+        </Data>
+        <Data name="城市">
+          <value>帕尔马</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.visitpalma.com/es/descubrir/que-ver-y-que-hacer/palma-en-1-dia</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Royal_Palace_of_La_Almudaina</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.64722,39.5675,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c19-s04">
+      <name>帕尔马 · 04 Es Baluard 当代艺术博物馆</name>
+      <description>博物馆把当代艺术放进帕尔马历史防御空间中，既能看展，也能观察城墙、海港与城市的关系。其艺术讨论与地中海环境有密切联系。
+建议预留：1.5–2 小时
+看点：当期现代与当代艺术展、堡垒建筑与室外视角。
+参观提示：馆藏会轮换；展厅票、公共空间和特殊活动开放要求分别确认。
+景点官网：https://esbaluard.org/en/collection/
+位置来源：https://en.wikipedia.org/wiki/Es_Baluard
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c19-s04</value>
+        </Data>
+        <Data name="城市">
+          <value>帕尔马</value>
+        </Data>
+        <Data name="分类">
+          <value>美术馆</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://esbaluard.org/en/collection/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Es_Baluard</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.64166667,39.57083333,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

@@ -1,32 +1,187 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>西班牙城市与推荐景点</name><description>中文城市与景点名称、简介和参考坐标；不含个人行程或住宿信息。</description><Placemark><name>梅里达 · 01 梅里达罗马剧场</name><description>罗马剧场是梅里达最值得优先安排的遗址。半圆形看台利用地形层层展开，舞台背景的柱廊让古代公共演出空间变得直观；从高处看整体，再走近舞台看建筑细节，能体会它与旁边竞技场的不同用途。
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>梅里达 · 景点</name>
+    <description>6 处公共景点，来自旅游网页的中文介绍和参考坐标。</description>
+    <Placemark id="c21-s01">
+      <name>梅里达 · 01 梅里达罗马剧场</name>
+      <description>罗马剧场是梅里达最值得优先安排的遗址。半圆形看台利用地形层层展开，舞台背景的柱廊让古代公共演出空间变得直观；从高处看整体，再走近舞台看建筑细节，能体会它与旁边竞技场的不同用途。
 建议预留：约 1–1.5 小时；与竞技场合计建议 2–2.5 小时
 看点：半圆看台、舞台柱廊、入口与舞台的空间关系；可与相邻竞技场连走。
 参观提示：抵达梅里达当天下午优先安排这里。建议配讲解；遗址地面不平，穿好走的鞋，出发前核对开放与联票内容。
 景点官网：https://www.spain.info/en/places-of-interest/roman-theatre-merida/
 位置来源：https://en.wikipedia.org/wiki/Roman_Theatre_%28M%C3%A9rida%29
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>梅里达</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-6.3385,38.91538889,0</coordinates></Point></Placemark><Placemark><name>梅里达 · 02 梅里达圆形竞技场</name><description>竞技场紧邻罗马剧场，过去用于角斗等公共竞技。椭圆形场地、环绕的看台和地下空间遗迹，提供了理解罗马城市娱乐生活的另一种角度。把它与剧场放在同一次参观，可以对比演出与竞技建筑如何组织观众和活动。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c21-s01</value>
+        </Data>
+        <Data name="城市">
+          <value>梅里达</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/places-of-interest/roman-theatre-merida/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Roman_Theatre_%28M%C3%A9rida%29</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.3385,38.91538889,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c21-s02">
+      <name>梅里达 · 02 梅里达圆形竞技场</name>
+      <description>竞技场紧邻罗马剧场，过去用于角斗等公共竞技。椭圆形场地、环绕的看台和地下空间遗迹，提供了理解罗马城市娱乐生活的另一种角度。把它与剧场放在同一次参观，可以对比演出与竞技建筑如何组织观众和活动。
 建议预留：45–60 分钟；已计入剧场＋竞技场合计时长
 看点：椭圆竞技区、中央十字形坑道遗迹与观众席；重点理解建筑用途和空间布局。
 参观提示：与剧场连续参观，避免按两个完全独立的大景点重复预留时间。参观路线及可进入区域以现场为准。
 景点官网：https://www.spain.info/en/places-of-interest/roman-amphitheatre-merida/
 位置来源：https://en.wikipedia.org/wiki/Amphitheatre_of_M%C3%A9rida
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>梅里达</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-6.33772222,38.91619444,0</coordinates></Point></Placemark><Placemark><name>梅里达 · 03 戴安娜神庙</name><description>这座罗马时期的神庙立在今天的城市街巷之间，高台、柱列与周边民居形成鲜明对照。它很适合作为从遗址区走向老城的中途一站，不必赶着拍完就走，可以绕到不同角度观察建筑与后世城市相互叠加的痕迹。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c21-s02</value>
+        </Data>
+        <Data name="城市">
+          <value>梅里达</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/places-of-interest/roman-amphitheatre-merida/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Amphitheatre_of_M%C3%A9rida</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.33772222,38.91619444,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c21-s03">
+      <name>梅里达 · 03 戴安娜神庙</name>
+      <description>这座罗马时期的神庙立在今天的城市街巷之间，高台、柱列与周边民居形成鲜明对照。它很适合作为从遗址区走向老城的中途一站，不必赶着拍完就走，可以绕到不同角度观察建筑与后世城市相互叠加的痕迹。
 建议预留：约 30–45 分钟
 看点：柱列与高台的比例、正立面，以及神庙融入街区的整体景观。
 参观提示：可安排在剧场参观后的傍晚散步中；外观与需购票进入的区域分开看，核对当天开放，不默认全区域免费。
 景点官网：https://www.spain.info/en/places-of-interest/roman-temple-diana/
 位置来源：https://en.wikipedia.org/wiki/Roman_Forum_%28M%C3%A9rida%29
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>梅里达</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-6.34313889,38.91694444,0</coordinates></Point></Placemark><Placemark><name>梅里达 · 04 瓜迪亚纳河罗马桥</name><description>古罗马桥横跨瓜迪亚纳河，将城市遗迹与河岸景观连接起来。看过剧场和神庙后，到这里慢走可以换一个节奏：既能从桥上看河面，也能从河岸欣赏连续的桥拱和梅里达老城。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c21-s03</value>
+        </Data>
+        <Data name="城市">
+          <value>梅里达</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/places-of-interest/roman-temple-diana/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Roman_Forum_%28M%C3%A9rida%29</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.34313889,38.91694444,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c21-s04">
+      <name>梅里达 · 04 瓜迪亚纳河罗马桥</name>
+      <description>古罗马桥横跨瓜迪亚纳河，将城市遗迹与河岸景观连接起来。看过剧场和神庙后，到这里慢走可以换一个节奏：既能从桥上看河面，也能从河岸欣赏连续的桥拱和梅里达老城。
 建议预留：约 30–60 分钟
 看点：连续石拱、桥上步行视角与河岸全景；适合与老城散步组合。
 参观提示：可放在离开梅里达的早晨；不必为走完整座桥影响后续转场，按体力和天气选择折返点。
 景点官网：https://www.spain.info/en/places-of-interest/roman-bridge-rio-guadiana/
 位置来源：https://en.wikipedia.org/wiki/Puente_Romano%2C_M%C3%A9rida
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>梅里达</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-6.35083,38.91306,0</coordinates></Point></Placemark><Placemark><name>梅里达 · 05 国家罗马艺术博物馆</name><description>梅里达不应只看户外遗址。这座馆把雕塑、马赛克、铭文和生活物件聚在一起，能补上剧场与神庙已经散失的细节，帮助理解罗马时期卢西塔尼亚首府的生活。喜欢考古或古代艺术，可以把它列为与剧场同等重要的一站。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c21-s04</value>
+        </Data>
+        <Data name="城市">
+          <value>梅里达</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/places-of-interest/roman-bridge-rio-guadiana/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Puente_Romano%2C_M%C3%A9rida</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.35083,38.91306,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c21-s05">
+      <name>梅里达 · 05 国家罗马艺术博物馆</name>
+      <description>梅里达不应只看户外遗址。这座馆把雕塑、马赛克、铭文和生活物件聚在一起，能补上剧场与神庙已经散失的细节，帮助理解罗马时期卢西塔尼亚首府的生活。喜欢考古或古代艺术，可以把它列为与剧场同等重要的一站。
 建议预留：1.5–2 小时
 看点：人物雕塑、马赛克和铭文，联系前后参观的剧场、竞技场来理解原来的城市。
 参观提示：馆方曾进行扩建，出发前核对开放展厅和当日安排；遗址门票与博物馆票务分别确认。
-顺路：抵达日下午看馆，次日上午剧场与竞技场；若前一天驾车后太晚，梅里达可加一晚。
 景点官网：https://www.cultura.gob.es/en/cultura/areas/museos/mc/museos-estatales/prepara-tu-visita/mnar.html
 位置来源：https://en.wikipedia.org/wiki/National_Museum_of_Roman_Art
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>梅里达</value></Data><Data name="分类"><value>地方特色</value></Data></ExtendedData><Point><coordinates>-6.33986111,38.91730611,0</coordinates></Point></Placemark></Document></kml>
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c21-s05</value>
+        </Data>
+        <Data name="城市">
+          <value>梅里达</value>
+        </Data>
+        <Data name="分类">
+          <value>地方特色</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.cultura.gob.es/en/cultura/areas/museos/mc/museos-estatales/prepara-tu-visita/mnar.html</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/National_Museum_of_Roman_Art</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.33986111,38.91730611,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c21-s06">
+      <name>梅里达 · 06 奇迹渡槽</name>
+      <description>高大的罗马输水结构把工程遗产直接放在城市绿地中。砖石相间的拱券和残存桥墩帮助理解古代梅里达如何获得生活用水，参观节奏比剧场区更轻。
+建议预留：30–60 分钟
+看点：拱券层次、砖石结构与绿地中的远近视角。
+参观提示：属于露天遗址，天气和光线影响观赏；不攀爬遗迹。
+景点官网：https://turismomerida.org/que-ver/acueducto-de-los-milagros/
+位置来源：https://es.wikipedia.org/wiki/Acueducto_de_los_Milagros
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c21-s06</value>
+        </Data>
+        <Data name="城市">
+          <value>梅里达</value>
+        </Data>
+        <Data name="分类">
+          <value>历史与考古</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://turismomerida.org/que-ver/acueducto-de-los-milagros/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://es.wikipedia.org/wiki/Acueducto_de_los_Milagros</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.34805556,38.92444444,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

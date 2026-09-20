@@ -1,46 +1,247 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>西班牙城市与推荐景点</name><description>中文城市与景点名称、简介和参考坐标；不含个人行程或住宿信息。</description><Placemark><name>格拉纳达 · 01 阿尔罕布拉宫</name><description>阿尔罕布拉是一座宫殿、堡垒与园林组成的建筑群，核心魅力在纳斯里德宫殿精细的灰泥雕饰、几何纹样、阿拉伯书法和水面倒影。这里也保留了后期建筑，能够看到不同统治阶段对同一片山丘的重新塑造。
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>格拉纳达 · 景点</name>
+    <description>8 处公共景点，来自旅游网页的中文介绍和参考坐标。</description>
+    <Placemark id="c05-s01">
+      <name>格拉纳达 · 01 阿尔罕布拉宫</name>
+      <description>阿尔罕布拉是一座宫殿、堡垒与园林组成的建筑群，核心魅力在纳斯里德宫殿精细的灰泥雕饰、几何纹样、阿拉伯书法和水面倒影。这里也保留了后期建筑，能够看到不同统治阶段对同一片山丘的重新塑造。
 建议预留：全建筑群建议 3–4 小时，含花园
 看点：纳斯里德宫殿中的桃金娘庭院、狮子庭院，以及堡垒高处的城市视野；各区域以所持门票为准。
 参观提示：确认门票是否包含纳斯里德宫，并围绕其指定入场时间倒推路线；园区较大，入口到宫殿之间也要留步行时间。
 景点官网：https://tickets.alhambra-patronato.es/
 位置来源：https://en.wikipedia.org/wiki/Alhambra
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>格拉纳达</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-3.59,37.1775,0</coordinates></Point></Placemark><Placemark><name>格拉纳达 · 02 赫内拉利费宫</name><description>赫内拉利费是与阿尔罕布拉相邻的夏宫与花园空间，更强调水渠、植物、庭院和远景的配合。与宫殿内部的繁复装饰相比，这里适合观察园林如何通过流水、阴影和分层空间营造舒适的休憩环境。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c05-s01</value>
+        </Data>
+        <Data name="城市">
+          <value>格拉纳达</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://tickets.alhambra-patronato.es/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Alhambra</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.59,37.1775,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c05-s02">
+      <name>格拉纳达 · 02 赫内拉利费宫</name>
+      <description>赫内拉利费是与阿尔罕布拉相邻的夏宫与花园空间，更强调水渠、植物、庭院和远景的配合。与宫殿内部的繁复装饰相比，这里适合观察园林如何通过流水、阴影和分层空间营造舒适的休憩环境。
 建议预留：约 1–1.5 小时，计入建筑群总时长
 看点：水渠庭院、喷泉、水道与沿途花园；从不同角度回看阿尔罕布拉和山城。
 参观提示：与阿尔罕布拉同日安排即可，避免把两处建议时长简单重复相加；春季花园值得慢走，具体花况随季节变化。
 景点官网：https://www.spain.info/en/destination/granada/
 位置来源：https://en.wikipedia.org/wiki/Generalife
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>格拉纳达</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-3.58527778,37.17694444,0</coordinates></Point></Placemark><Placemark><name>格拉纳达 · 03 阿尔拜辛区</name><description>阿尔拜辛坐落在阿尔罕布拉对面的山坡上，白色民居、曲折街巷和带花园的住宅构成格拉纳达独特的历史风貌。这里的价值不只是某一栋建筑，而是走动时不断变化的屋顶、庭院和宫殿远景。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c05-s02</value>
+        </Data>
+        <Data name="城市">
+          <value>格拉纳达</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/granada/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Generalife</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.58527778,37.17694444,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c05-s03">
+      <name>格拉纳达 · 03 阿尔拜辛区</name>
+      <description>阿尔拜辛坐落在阿尔罕布拉对面的山坡上，白色民居、曲折街巷和带花园的住宅构成格拉纳达独特的历史风貌。这里的价值不只是某一栋建筑，而是走动时不断变化的屋顶、庭院和宫殿远景。
 建议预留：1.5–2.5 小时
 看点：石铺巷道、山坡广场、传统庭院住宅，以及面向阿尔罕布拉的不同观景角度。
 参观提示：可先乘车到较高处，再缓步下山；石路不平且坡度明显，建议轻装。和圣尼古拉斯观景台合并成一条路线。
 景点官网：https://www.spain.info/en/destination/granada/
 位置来源：https://es.wikipedia.org/wiki/Albaic%C3%ADn
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>格拉纳达</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-3.5983,37.1817,0</coordinates></Point></Placemark><Placemark><name>格拉纳达 · 04 圣尼古拉斯观景台</name><description>圣尼古拉斯观景台位于阿尔拜辛高处，正对阿尔罕布拉山丘，是理解格拉纳达地形与城市关系的直观位置。天气晴朗时，宫殿、树林和远处山脉叠在同一画面中；它也是一个可以停下来观察广场生活的地方。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c05-s03</value>
+        </Data>
+        <Data name="城市">
+          <value>格拉纳达</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/granada/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://es.wikipedia.org/wiki/Albaic%C3%ADn</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.5983,37.1817,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c05-s04">
+      <name>格拉纳达 · 04 圣尼古拉斯观景台</name>
+      <description>圣尼古拉斯观景台位于阿尔拜辛高处，正对阿尔罕布拉山丘，是理解格拉纳达地形与城市关系的直观位置。天气晴朗时，宫殿、树林和远处山脉叠在同一画面中；它也是一个可以停下来观察广场生活的地方。
 建议预留：30–60 分钟
 看点：阿尔罕布拉全景、山坡层次与傍晚建筑色调的变化。
 参观提示：日落前后可能较拥挤，想拍照可早点到；阴天也能看城市轮廓，不必为了等完美光线打乱整天行程。
 景点官网：https://www.spain.info/gcc/en/destinations/granada/
 位置来源：https://maps.apple.com/place?place-id=I75F65868D91DFA00
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>格拉纳达</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-3.59268,37.18112,0</coordinates></Point></Placemark><Placemark><name>格拉纳达 · 05 罗德里格斯－阿科斯塔基金会</name><description>画家 José María Rodríguez-Acosta 建造的工作空间与花园坐落在山坡上，白色建筑、层层庭园和城市视野很有格拉纳达特色。基金会还保存艺术、图书与文献收藏，适合对艺术家的审美世界感兴趣、又想找阿尔罕布拉以外安静去处的人。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c05-s04</value>
+        </Data>
+        <Data name="城市">
+          <value>格拉纳达</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/gcc/en/destinations/granada/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://maps.apple.com/place?place-id=I75F65868D91DFA00</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.59268,37.18112,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c05-s05">
+      <name>格拉纳达 · 05 罗德里格斯－阿科斯塔基金会</name>
+      <description>画家 José María Rodríguez-Acosta 建造的工作空间与花园坐落在山坡上，白色建筑、层层庭园和城市视野很有格拉纳达特色。基金会还保存艺术、图书与文献收藏，适合对艺术家的审美世界感兴趣、又想找阿尔罕布拉以外安静去处的人。
 建议预留：1–1.5 小时，按导览场次
 看点：建筑与花园空间，及所选参观产品包含的 Gómez-Moreno 等收藏；各区域并非默认全部开放。
 参观提示：提前核对导览语言、台阶与开放范围，尤其确认是否包含 Gómez-Moreno 藏品区域。不要紧贴纳斯里德宫的限时入场预约。
-顺路：阿尔罕布拉山周边另留半天；若阿宫已走一整天，第二天再来更轻松。
 景点官网：https://www.fundacionrodriguezacosta.com/
 位置来源：https://es.wikipedia.org/wiki/Carmen_de_la_Fundaci%C3%B3n_Rodr%C3%ADguez_Acosta
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>格拉纳达</value></Data><Data name="分类"><value>宅邸与收藏</value></Data></ExtendedData><Point><coordinates>-3.59201002,37.17482126,0</coordinates></Point></Placemark><Placemark><name>格拉纳达 · 06 圣维森特庄园 · 洛尔迦故居</name><description>这是诗人、剧作家费德里科·加西亚·洛尔迦一家曾使用的夏居。住宅尺度亲切，家具和房间帮助还原家庭生活与创作环境；它的价值来自人物故事与文学背景，并不是另一座摆满名画的大型收藏宫殿。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c05-s05</value>
+        </Data>
+        <Data name="城市">
+          <value>格拉纳达</value>
+        </Data>
+        <Data name="分类">
+          <value>宅邸与收藏</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.fundacionrodriguezacosta.com/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://es.wikipedia.org/wiki/Carmen_de_la_Fundaci%C3%B3n_Rodr%C3%ADguez_Acosta</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.59201002,37.17482126,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c05-s06">
+      <name>格拉纳达 · 06 圣维森特庄园 · 洛尔迦故居</name>
+      <description>这是诗人、剧作家费德里科·加西亚·洛尔迦一家曾使用的夏居。住宅尺度亲切，家具和房间帮助还原家庭生活与创作环境；它的价值来自人物故事与文学背景，并不是另一座摆满名画的大型收藏宫殿。
 建议预留：约 1 小时，连公园散步 1.5 小时
 看点：家庭起居空间、钢琴与书写生活的背景；先了解一点洛尔迦作品，会比单纯看家具更有收获。
 参观提示：确认当期入内方式、语言和开放时段；对文学兴趣不强，可以把它作为公园散步的备选。
-顺路：放在较轻松的市区半天，与阿尔拜辛爬坡日分开。
 景点官网：https://www.huertadesanvicente.com/e_virtual.php
 位置来源：https://en.wikipedia.org/wiki/Huerta_de_San_Vicente
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>格拉纳达</value></Data><Data name="分类"><value>宅邸与收藏</value></Data></ExtendedData><Point><coordinates>-3.60931,37.17065,0</coordinates></Point></Placemark><Placemark><name>格拉纳达 · 07 格拉纳达美术博物馆</name><description>位于阿尔罕布拉区域的查理五世宫内，适合在建筑与宫苑之外补一点格拉纳达艺术史。收藏以地方绘画、雕塑传统为线索，尤其能看到十六至十八世纪的宗教艺术；规模和主题都更适合选重点看。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c05-s06</value>
+        </Data>
+        <Data name="城市">
+          <value>格拉纳达</value>
+        </Data>
+        <Data name="分类">
+          <value>宅邸与收藏</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.huertadesanvicente.com/e_virtual.php</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Huerta_de_San_Vicente</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.60931,37.17065,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c05-s07">
+      <name>格拉纳达 · 07 格拉纳达美术博物馆</name>
+      <description>位于阿尔罕布拉区域的查理五世宫内，适合在建筑与宫苑之外补一点格拉纳达艺术史。收藏以地方绘画、雕塑传统为线索，尤其能看到十六至十八世纪的宗教艺术；规模和主题都更适合选重点看。
 建议预留：45–90 分钟
 看点：格拉纳达画派、宗教绘画与雕塑，再结合宫殿本身的圆形庭院体会空间。
 参观提示：先保住纳斯里德宫预约时段；美术馆开放、票务与阿尔罕布拉各区域需分别核对，不能默认阿宫票全包含。
-顺路：阿尔罕布拉当天体力有余再加，不必为它单独延长一晚。
 景点官网：https://www.museosdeandalucia.es/web/museodebellasartesdegranada/las-colecciones
 位置来源：https://en.wikipedia.org/wiki/Museo_de_Bellas_Artes_de_Granada
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>格拉纳达</value></Data><Data name="分类"><value>美术馆</value></Data></ExtendedData><Point><coordinates>-3.59,37.1767,0</coordinates></Point></Placemark></Document></kml>
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c05-s07</value>
+        </Data>
+        <Data name="城市">
+          <value>格拉纳达</value>
+        </Data>
+        <Data name="分类">
+          <value>美术馆</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.museosdeandalucia.es/web/museodebellasartesdegranada/las-colecciones</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Museo_de_Bellas_Artes_de_Granada</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.59,37.1767,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c05-s08">
+      <name>格拉纳达 · 08 格拉纳达卡尔图哈修道院</name>
+      <description>修道院内部展现格拉纳达巴洛克艺术：大理石、木雕和精密装饰形成浓密的视觉层次。与阿尔罕布拉的伊斯兰宫廷艺术并看，能直观感受两种不同的艺术语言。
+建议预留：1–1.5 小时
+看点：圣器室、圣体礼拜空间及教堂内部的雕刻装饰。
+参观提示：以宗教建筑参观规则为准，入场、拍摄与开放空间可能调整。
+景点官网：https://www.spain.info/es/lugares-interes/monasterio-cartuja/
+位置来源：https://es.wikipedia.org/wiki/Cartuja_de_Granada
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c05-s08</value>
+        </Data>
+        <Data name="城市">
+          <value>格拉纳达</value>
+        </Data>
+        <Data name="分类">
+          <value>艺术与建筑</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/es/lugares-interes/monasterio-cartuja/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://es.wikipedia.org/wiki/Cartuja_de_Granada</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.59952798,37.19192301,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>里斯本 · 景点</name>
+    <description>7 处公共景点，来自旅游网页的中文介绍和参考坐标。</description>
+    <Placemark id="c22-s01">
+      <name>里斯本 · 01 热罗尼莫斯修道院</name>
+      <description>贝伦区最值得细看的历史建筑之一。曼努埃尔式石雕把晚期哥特与文艺复兴元素交织在一起，立面和回廊比远远拍一张全景更有意思；它也与葡萄牙航海时代和王室赞助密切相关。
+建议预留：1.5–2.5 小时，排队另计
+看点：回廊的石柱、拱券和雕刻细节；教堂与修道院空间的不同尺度。
+参观提示：先查当日开放区域与入场安排；修道院和教堂的入口、时段可能不同。贝伦区另留散步与用餐时间。
+景点官网：https://www.patrimoniocultural.gov.pt/pat_mun/mosteiros-dos-jeronimos-e-torre-de-belem-em-lisboa/
+位置来源：https://en.wikipedia.org/wiki/Jer%C3%B3nimos_Monastery
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c22-s01</value>
+        </Data>
+        <Data name="城市">
+          <value>里斯本</value>
+        </Data>
+        <Data name="分类">
+          <value>历史建筑</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.patrimoniocultural.gov.pt/pat_mun/mosteiros-dos-jeronimos-e-torre-de-belem-em-lisboa/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Jer%C3%B3nimos_Monastery</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-9.20611111,38.69777778,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c22-s02">
+      <name>里斯本 · 02 圣乔治城堡</name>
+      <description>城堡占据老城山丘，是理解里斯本地形的好起点。城墙、考古遗迹与观景空间连在一起，可以从高处辨认红屋顶街区、下城和特茹河，再沿坡道走入老城。
+建议预留：1.5–2 小时
+看点：城墙步道、城市与河面视野；对历史有兴趣可加看馆内考古与收藏展示。
+参观提示：石阶与坡道较多，雨后注意路面；包车在外围上下客更实际。当天结合阿尔法玛，避免反复爬同一座山。
+景点官网：https://castelodesaojorge.pt/en/
+位置来源：https://en.wikipedia.org/wiki/S%C3%A3o_Jorge_Castle
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c22-s02</value>
+        </Data>
+        <Data name="城市">
+          <value>里斯本</value>
+        </Data>
+        <Data name="分类">
+          <value>城堡与观景</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://castelodesaojorge.pt/en/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/S%C3%A3o_Jorge_Castle</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-9.13361111,38.71388889,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c22-s03">
+      <name>里斯本 · 03 阿尔法玛老城</name>
+      <description>这里适合用步行认识里斯本：狭窄街巷、坡道、瓷砖立面和河景组成了日常风景。法朵音乐也是这一带的重要文化线索，可把白天的老城散步与晚上听歌分开安排。
+建议预留：半天；法朵晚场另留约 1–2 小时
+看点：顺坡慢行看街巷与瓷砖；找一处观景台停留，晚上按兴趣预约法朵演出。
+参观提示：这是生活街区，拍照和听歌时尊重住户与表演。订法朵时确认是否含餐、演出时长和最低消费，包车不能代替巷内步行。
+景点官网：https://www.visitlisboa.com/en/places/alfama
+位置来源：https://en.wikipedia.org/wiki/Alfama
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c22-s03</value>
+        </Data>
+        <Data name="城市">
+          <value>里斯本</value>
+        </Data>
+        <Data name="分类">
+          <value>地方特色</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.visitlisboa.com/en/places/alfama</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Alfama</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-9.13,38.71222222,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c22-s04">
+      <name>里斯本 · 04 古尔本基安博物馆</name>
+      <description>以古尔本基安的个人收藏为核心，跨越古代文明、东方艺术与欧洲绘画、家具和珠宝。它位于现代馆舍而非收藏家故居，适合从藏家的审美出发，比较不同材料与时代的精致作品。
+建议预留：2–3 小时；连花园可半天
+看点：拉利克珠宝与玻璃、欧洲大师绘画和法国装饰艺术；只挑最感兴趣的两三条收藏线细看。
+参观提示：馆方已发布 2026 年重新开放信息；2027 年到访前仍需核对开放日、展览与具体展品。创始人收藏与现代艺术中心 CAM 是不同参观内容。
+景点官网：https://gulbenkian.pt/museu/en/publications/directors-choice-calouste-gulbenkian-museum/
+位置来源：https://en.wikipedia.org/wiki/Calouste_Gulbenkian_Museum
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c22-s04</value>
+        </Data>
+        <Data name="城市">
+          <value>里斯本</value>
+        </Data>
+        <Data name="分类">
+          <value>宅邸与收藏</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://gulbenkian.pt/museu/en/publications/directors-choice-calouste-gulbenkian-museum/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Calouste_Gulbenkian_Museum</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-9.15416667,38.73666667,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c22-s05">
+      <name>里斯本 · 05 弗龙特拉侯爵宫</name>
+      <description>很贴近你们喜欢的“走进家族古宅”体验。宫邸、艺术廊、花园和瓷砖装饰可以一起欣赏：既看建筑，也看贵族家庭如何用历史叙事和装饰表达自己的身份。
+建议预留：1.5–2.5 小时
+看点：宫内导览、花园与蓝白瓷砖装饰；重点放在瓷砖画面和宅邸空间，不必赶着打卡。
+参观提示：官网明确宫内参观必须参加导览；庭园票与宫殿加庭园票不同。提前确认英语场次、余位及开放区域，不能把只买花园票当作可入内。
+景点官网：https://fronteira-alorna.pt/en/to-visit/
+位置来源：https://en.wikipedia.org/wiki/Palace_of_the_Marquises_of_Fronteira
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c22-s05</value>
+        </Data>
+        <Data name="城市">
+          <value>里斯本</value>
+        </Data>
+        <Data name="分类">
+          <value>宅邸与收藏</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://fronteira-alorna.pt/en/to-visit/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Palace_of_the_Marquises_of_Fronteira</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-9.18027778,38.74,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c22-s06">
+      <name>里斯本 · 06 阿茹达国家宫</name>
+      <description>十九世纪葡萄牙王室旧居，适合喜欢完整房间陈设的人：家具、织物、瓷器、绘画与装饰艺术放在宫殿空间中看，能理解宫廷生活与礼仪的尺度。它与古尔本基安的收藏型参观形成互补。
+建议预留：1.5–2 小时；珍宝馆另计
+看点：宫殿厅室、家具、玻璃与瓷器等装饰收藏；珠宝兴趣强可另看同址的皇家珍宝博物馆。
+参观提示：国家宫与皇家珍宝博物馆是不同参观内容，核对票种和各自开放日。宫殿也承担官方活动，出发前查看临时安排。
+景点官网：https://www.visitportugal.com/en/content/palacio-nacional-da-ajuda
+位置来源：https://en.wikipedia.org/wiki/Palace_of_Ajuda
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c22-s06</value>
+        </Data>
+        <Data name="城市">
+          <value>里斯本</value>
+        </Data>
+        <Data name="分类">
+          <value>宅邸与收藏</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.visitportugal.com/en/content/palacio-nacional-da-ajuda</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Palace_of_Ajuda</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-9.19832778,38.70759444,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c22-s07">
+      <name>里斯本 · 07 MAAT 艺术、建筑与科技博物馆</name>
+      <description>特茹河边的当代文化机构把艺术、建筑、科技与旧发电站的工业历史相连。适合从河岸公共空间进入，再按当期主题选择展览，不局限于古典藏品。
+建议预留：1.5–2.5 小时
+看点：河岸建筑与公共空间、当期艺术展，以及旧发电站相关展示。
+参观提示：新馆、旧电厂及特别展的开放与票种分别核对；河岸散步和入馆参观是不同安排。
+景点官网：https://www.maat.pt/en
+位置来源：https://en.wikipedia.org/wiki/Museum_of_Art%2C_Architecture_and_Technology
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c22-s07</value>
+        </Data>
+        <Data name="城市">
+          <value>里斯本</value>
+        </Data>
+        <Data name="分类">
+          <value>艺术与建筑</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.maat.pt/en</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Museum_of_Art%2C_Architecture_and_Technology</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-9.19464,38.69591,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

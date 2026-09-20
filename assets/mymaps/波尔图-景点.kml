@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>波尔图 · 景点</name>
+    <description>7 处公共景点，来自旅游网页的中文介绍和参考坐标。</description>
+    <Placemark id="c23-s01">
+      <name>波尔图 · 01 里贝拉河岸与广场</name>
+      <description>波尔图老城与杜罗河相接的核心区域。彩色建筑、河岸步道和小广场适合慢行，也是把老城、路易一世大桥和对岸盖亚连起来的出发点；这里的价值在街景与氛围。
+建议预留：2–3 小时；加过河与酒窖可半天
+看点：里贝拉广场、河岸街景和桥景；有余力再去盖亚一侧回望波尔图。
+参观提示：上下城高差明显，不要只按平面距离安排步行。若想参观波特酒酒窖，另选酒庄官网预约并确认品酒内容。
+景点官网：https://visitporto.travel/en-GB/poi/5cd04b4ff979e00001f6f762
+位置来源：https://en.wikipedia.org/wiki/Ribeira_Square
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c23-s01</value>
+        </Data>
+        <Data name="城市">
+          <value>波尔图</value>
+        </Data>
+        <Data name="分类">
+          <value>老城与河岸</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://visitporto.travel/en-GB/poi/5cd04b4ff979e00001f6f762</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Ribeira_Square</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-8.613,41.1407,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c23-s02">
+      <name>波尔图 · 02 圣本笃车站</name>
+      <description>这是一座仍在使用的火车站，也是一处容易顺路加入的瓷砖艺术空间。大厅中的大型蓝白瓷砖画把历史叙事带进日常交通建筑，值得停下来从远景与近处细节两个尺度看。
+建议预留：20–40 分钟
+看点：车站大厅瓷砖画、建筑外立面；与街头普通瓷砖立面作对照更有趣。
+参观提示：在公共大厅观赏时留出旅客通行空间；不要为了拍照进入需要乘车资格的区域。与老城散步顺路安排即可。
+景点官网：https://visitporto.travel/pt-PT/poi/5cd04b4ef979e00001fe480a
+位置来源：https://en.wikipedia.org/wiki/S%C3%A3o_Bento_railway_station
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c23-s02</value>
+        </Data>
+        <Data name="城市">
+          <value>波尔图</value>
+        </Data>
+        <Data name="分类">
+          <value>地方特色</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://visitporto.travel/pt-PT/poi/5cd04b4ef979e00001fe480a</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/S%C3%A3o_Bento_railway_station</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-8.61033333,41.14555556,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c23-s03">
+      <name>波尔图 · 03 证券交易所宫</name>
+      <description>建筑由波尔图商会使用，华丽厅堂呈现港口商业城市的财富与审美。它的重点是室内空间与装饰工艺，可以补充河岸散步中不容易看到的城市另一面。
+建议预留：约 1 小时，含报到余量
+看点：万国庭院、楼梯和阿拉伯厅；跟随导览观察墙面、木作与不同房间的用途。
+参观提示：按官方导览语言和可订时段安排，热门场次提前订。官网明确图书馆不对参观者开放，不要将它列为必看的房间。
+景点官网：https://palaciodabolsa.com/turismo/
+位置来源：https://en.wikipedia.org/wiki/Pal%C3%A1cio_da_Bolsa
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c23-s03</value>
+        </Data>
+        <Data name="城市">
+          <value>波尔图</value>
+        </Data>
+        <Data name="分类">
+          <value>地方特色</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://palaciodabolsa.com/turismo/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Pal%C3%A1cio_da_Bolsa</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-8.615428,41.141367,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c23-s04">
+      <name>波尔图 · 04 塞拉维斯美术馆与庄园</name>
+      <description>这里把当代艺术馆、粉色别墅与大型公园放在同一庄园中。西扎设计的美术馆和老别墅提供不同的建筑体验，适合愿意留半天、在看展之间走走花园的人。
+建议预留：3–4 小时，建议半天
+看点：当代艺术展、西扎建筑、塞拉维斯别墅与公园；电影馆和树冠步道按兴趣与体力取舍。
+参观提示：公园票与包含馆舍的票种不同，选票前确认能否进入别墅与美术馆。临时展会更换，出发前按当期展览重新挑选。
+景点官网：https://www.serralves.pt/en/visitar-serralves/
+位置来源：https://en.wikipedia.org/wiki/Serralves
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c23-s04</value>
+        </Data>
+        <Data name="城市">
+          <value>波尔图</value>
+        </Data>
+        <Data name="分类">
+          <value>美术馆</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.serralves.pt/en/visitar-serralves/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Serralves</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-8.6577,41.1585,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c23-s05">
+      <name>波尔图 · 05 苏亚雷斯·多斯·雷斯国家博物馆</name>
+      <description>博物馆设在卡兰卡斯宫，适合在河岸和建筑之外补上葡萄牙艺术。绘画、雕塑、家具、陶瓷与其他装饰艺术让波尔图的地方文化更具体，不需要熟悉艺术史也可以选一两类慢看。
+建议预留：1.5–2.5 小时
+看点：苏亚雷斯·多斯·雷斯的雕塑、葡萄牙绘画与北部陶瓷；注意展品和宫殿房间之间的关系。
+参观提示：图片中的单件藏品仅作收藏参考，不保证到访当天展出。若已安排塞拉维斯，建议把两馆拆到不同天。
+景点官网：https://museusoaresdosreis.gov.pt/colecoes/
+位置来源：https://en.wikipedia.org/wiki/Soares_dos_Reis_National_Museum
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c23-s05</value>
+        </Data>
+        <Data name="城市">
+          <value>波尔图</value>
+        </Data>
+        <Data name="分类">
+          <value>美术馆</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://museusoaresdosreis.gov.pt/colecoes/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Soares_dos_Reis_National_Museum</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-8.6217,41.1478,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c23-s06">
+      <name>波尔图 · 06 莱罗书店</name>
+      <description>仍在营业的历史书店，吸引人的地方是红色楼梯、彩色玻璃、书架和室内空间的组合。适合喜欢书店与建筑细节的人，把它作为老城中一处短参观即可。
+建议预留：45–60 分钟，排队另计
+看点：标志性的红色楼梯、采光玻璃和上下两层书架；若有兴趣，再挑一本书带走。
+参观提示：使用官网按时段购票，核对购书抵扣规则和票种包含的区域；空间紧凑、游客较多，不宜预期安静独享。
+景点官网：https://livrarialello.pt/en/
+位置来源：https://en.wikipedia.org/wiki/Livraria_Lello
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c23-s06</value>
+        </Data>
+        <Data name="城市">
+          <value>波尔图</value>
+        </Data>
+        <Data name="分类">
+          <value>地方特色</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://livrarialello.pt/en/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Livraria_Lello</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-8.61472222,41.14694444,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c23-s07">
+      <name>波尔图 · 07 波尔图音乐之家</name>
+      <description>雷姆·库哈斯设计的音乐厅既是演出场所，也是波尔图当代建筑的重要一站。建筑导览与听音乐会是两种参观方式，可根据当期节目和导览场次分别选择。
+建议预留：导览约 1 小时；演出另按节目时长
+看点：混凝土外形、室内声学与空间设计；官方导览介绍建筑和音乐功能。
+参观提示：排练和演出可能限制部分厅室进入，官网明确需确认当天可参观空间。
+景点官网：https://casadamusica.com/en/a-casa/guided-tours/
+位置来源：https://en.wikipedia.org/wiki/Casa_da_M%C3%BAsica
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c23-s07</value>
+        </Data>
+        <Data name="城市">
+          <value>波尔图</value>
+        </Data>
+        <Data name="分类">
+          <value>艺术与建筑</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://casadamusica.com/en/a-casa/guided-tours/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Casa_da_M%C3%BAsica</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-8.63083333,41.15861111,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

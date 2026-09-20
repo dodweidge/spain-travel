@@ -1,53 +1,277 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>西班牙城市与推荐景点</name><description>中文城市与景点名称、简介和参考坐标；不含个人行程或住宿信息。</description><Placemark><name>塞维利亚 · 01 塞维利亚王宫</name><description>塞维利亚王宫是一组经过不同时期增建的宫殿，穆德哈尔装饰、庭院、水景与花园构成核心体验。建筑中的伊斯兰艺术语言与基督教王室需求相结合，使这里适合观察西班牙南部文化交汇留下的具体痕迹。
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>塞维利亚 · 景点</name>
+    <description>9 处公共景点，来自旅游网页的中文介绍和参考坐标。</description>
+    <Placemark id="c04-s01">
+      <name>塞维利亚 · 01 塞维利亚王宫</name>
+      <description>塞维利亚王宫是一组经过不同时期增建的宫殿，穆德哈尔装饰、庭院、水景与花园构成核心体验。建筑中的伊斯兰艺术语言与基督教王室需求相结合，使这里适合观察西班牙南部文化交汇留下的具体痕迹。
 建议预留：2–3 小时
 看点：少女庭院、使节厅的装饰，以及宫殿后的花园；重点观察拱门、瓷砖和木作之间的呼应。
 参观提示：建议提前安排入场时段，并把花园时间算进去。可与圣十字区同日游览，大教堂则视体力分开安排。
 景点官网：https://www.spain.info/en/destination/seville/
 位置来源：https://es.wikipedia.org/wiki/Real_Alc%C3%A1zar_de_Sevilla
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>塞维利亚</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-5.99118663,37.38442615,0</coordinates></Point></Placemark><Placemark><name>塞维利亚 · 02 塞维利亚大教堂与吉拉达塔</name><description>塞维利亚大教堂以宏大的哥特式空间著称，吉拉达塔则保留了先前宣礼塔的建筑基础，并在后期加入钟楼。把教堂与塔楼一起看，可以直接感受到城市宗教与建筑历史的层层变化。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c04-s01</value>
+        </Data>
+        <Data name="城市">
+          <value>塞维利亚</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/seville/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://es.wikipedia.org/wiki/Real_Alc%C3%A1zar_de_Sevilla</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.99118663,37.38442615,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c04-s02">
+      <name>塞维利亚 · 02 塞维利亚大教堂与吉拉达塔</name>
+      <description>塞维利亚大教堂以宏大的哥特式空间著称，吉拉达塔则保留了先前宣礼塔的建筑基础，并在后期加入钟楼。把教堂与塔楼一起看，可以直接感受到城市宗教与建筑历史的层层变化。
 建议预留：1.5–2 小时
 看点：主祭坛、哥伦布墓，以及塔顶向老城展开的视野；留意塔楼内部坡道式的上行路线。
 参观提示：登塔仍需要体力，建议与长时间步行错开；宗教活动会影响部分区域，先确认参观时段和是否包含吉拉达塔。
 景点官网：https://www.spain.info/en/destination/seville/
 位置来源：https://en.wikipedia.org/wiki/Seville_Cathedral
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>塞维利亚</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-5.99305556,37.38589444,0</coordinates></Point></Placemark><Placemark><name>塞维利亚 · 03 西班牙广场</name><description>西班牙广场为伊比利亚—美洲博览会而建，以半圆形建筑、运河与桥梁形成强烈的舞台感。红砖、彩色瓷砖和长廊组合出丰富层次，既适合拍大场景，也适合近看各省主题的装饰细节。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c04-s02</value>
+        </Data>
+        <Data name="城市">
+          <value>塞维利亚</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/seville/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Seville_Cathedral</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.99305556,37.38589444,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c04-s03">
+      <name>塞维利亚 · 03 西班牙广场</name>
+      <description>西班牙广场为伊比利亚—美洲博览会而建，以半圆形建筑、运河与桥梁形成强烈的舞台感。红砖、彩色瓷砖和长廊组合出丰富层次，既适合拍大场景，也适合近看各省主题的装饰细节。
 建议预留：1–1.5 小时
 看点：各省主题瓷砖壁龛、运河上的小桥，以及沿弧形延伸的柱廊。
 参观提示：可连同玛丽亚路易莎公园一起游览；早晚步行通常更舒适。若有活动布场，按现场开放范围调整拍摄位置。
 景点官网：https://www.spain.info/en/destination/seville/
 位置来源：https://en.wikipedia.org/wiki/Plaza_de_Espa%C3%B1a%2C_Seville
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>塞维利亚</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-5.98694444,37.37694444,0</coordinates></Point></Placemark><Placemark><name>塞维利亚 · 04 圣十字区</name><description>圣十字区是塞维利亚最适合步行感受老城气氛的街区之一，狭窄巷道、小广场、橙树与庭院构成鲜明印象。这里与历史上的犹太社区有关，如今也有大量餐饮和住宿，适合在参观王宫后慢慢逛。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c04-s03</value>
+        </Data>
+        <Data name="城市">
+          <value>塞维利亚</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/seville/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Plaza_de_Espa%C3%B1a%2C_Seville</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.98694444,37.37694444,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c04-s04">
+      <name>塞维利亚 · 04 圣十字区</name>
+      <description>圣十字区是塞维利亚最适合步行感受老城气氛的街区之一，狭窄巷道、小广场、橙树与庭院构成鲜明印象。这里与历史上的犹太社区有关，如今也有大量餐饮和住宿，适合在参观王宫后慢慢逛。
 建议预留：1–1.5 小时
 看点：白墙巷道、藏在转角的小广场，以及从街巷间突然出现的吉拉达塔视角。
 参观提示：不必每条街都走到，选两三个广场串联即可；住宅庭院要尊重门禁，看到开放参观标识后再进入。
 景点官网：https://www.spain.info/en/destination/seville/
 位置来源：https://en.wikipedia.org/wiki/Santa_Cruz%2C_Seville
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>塞维利亚</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-5.99027778,37.385,0</coordinates></Point></Placemark><Placemark><name>塞维利亚 · 05 莱布里哈伯爵夫人宫</name><description>对你们而言，这可能是塞维利亚最值得补的一站。伯爵夫人把考古与艺术收藏带进自己的宅邸，罗马马赛克、古物、雕塑与安达卢西亚式房间融为一体。好看的不只是“宫殿豪华”，更是主人如何用收藏构造自己的生活环境。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c04-s04</value>
+        </Data>
+        <Data name="城市">
+          <value>塞维利亚</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/seville/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Santa_Cruz%2C_Seville</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.99027778,37.385,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c04-s05">
+      <name>塞维利亚 · 05 莱布里哈伯爵夫人宫</name>
+      <description>对你们而言，这可能是塞维利亚最值得补的一站。伯爵夫人把考古与艺术收藏带进自己的宅邸，罗马马赛克、古物、雕塑与安达卢西亚式房间融为一体。好看的不只是“宫殿豪华”，更是主人如何用收藏构造自己的生活环境。
 建议预留：1–1.5 小时
 看点：马赛克地面、庭院、考古藏品与起居空间；记得抬头看房间，也低头看地面图案。
 参观提示：购票核对包含的楼层与讲解方式，不能把仅底层参观当成全宅邸体验。更想看生活陈设时优先确认上层是否可参观。
-顺路：可与美术馆组成文化半天；若细看两处，连午餐留 4 小时更舒服。
 景点官网：https://palaciodelebrija.com/
 位置来源：https://en.wikipedia.org/wiki/Palace_of_the_Countess_of_Lebrija
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>塞维利亚</value></Data><Data name="分类"><value>宅邸与收藏</value></Data></ExtendedData><Point><coordinates>-5.99361111,37.39222222,0</coordinates></Point></Placemark><Placemark><name>塞维利亚 · 06 彼拉多之家</name><description>以庭院、彩釉瓷砖和古典雕塑见长的贵族宅邸，适合对建筑细节与工艺感兴趣的人。它展现了塞维利亚穆德哈尔传统与文艺复兴趣味的交会；相较王宫，尺度更接近一座家族住宅，步行体验也更从容。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c04-s05</value>
+        </Data>
+        <Data name="城市">
+          <value>塞维利亚</value>
+        </Data>
+        <Data name="分类">
+          <value>宅邸与收藏</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://palaciodelebrija.com/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Palace_of_the_Countess_of_Lebrija</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.99361111,37.39222222,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c04-s06">
+      <name>塞维利亚 · 06 彼拉多之家</name>
+      <description>以庭院、彩釉瓷砖和古典雕塑见长的贵族宅邸，适合对建筑细节与工艺感兴趣的人。它展现了塞维利亚穆德哈尔传统与文艺复兴趣味的交会；相较王宫，尺度更接近一座家族住宅，步行体验也更从容。
 建议预留：1–1.5 小时
 看点：主庭院、瓷砖墙面、柱廊与雕塑的组合；留心不同材料和图案，而不是只拍一张对称庭院照。
 参观提示：底层与其他区域的开放、票种可能不同，从管理方售票入口核对。若只增加一处收藏宅邸，先选莱布里哈；偏建筑可选这里。
-顺路：与塞维利亚老城东侧散步组合；与莱布里哈按收藏／建筑偏好择一或分两天。
 景点官网：https://visitasevilla.es/en/pilatos-house/
 位置来源：https://en.wikipedia.org/wiki/Casa_de_Pilatos
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>塞维利亚</value></Data><Data name="分类"><value>宅邸与收藏</value></Data></ExtendedData><Point><coordinates>-5.98711,37.3899,0</coordinates></Point></Placemark><Placemark><name>塞维利亚 · 07 杜埃尼亚斯宫</name><description>阿尔瓦家族在塞维利亚的历史宅邸，以庭院花园、哥特－穆德哈尔与文艺复兴元素、室内艺术陈设共同构成参观体验。它适合偏爱庭院植物和贵族生活氛围的人，也可以与马德里的利里亚宫形成同一家族、不同城市的对照。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c04-s06</value>
+        </Data>
+        <Data name="城市">
+          <value>塞维利亚</value>
+        </Data>
+        <Data name="分类">
+          <value>宅邸与收藏</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://visitasevilla.es/en/pilatos-house/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Casa_de_Pilatos</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.98711,37.3899,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c04-s07">
+      <name>塞维利亚 · 07 杜埃尼亚斯宫</name>
+      <description>阿尔瓦家族在塞维利亚的历史宅邸，以庭院花园、哥特－穆德哈尔与文艺复兴元素、室内艺术陈设共同构成参观体验。它适合偏爱庭院植物和贵族生活氛围的人，也可以与马德里的利里亚宫形成同一家族、不同城市的对照。
 建议预留：1–1.5 小时
 看点：庭院花园、房间陈设与艺术收藏；比起追逐单件名作，更适合把房屋和生活环境整体看。
 参观提示：当期临展与活动可能改变开放区域；通过官网核对日期。不要将三座塞维利亚宅邸都设成一天必去。
-顺路：喜欢花园可用它替换彼拉多之家；已在利里亚看过家族收藏时仍可按建筑兴趣选择。
 景点官网：https://www.lasduenas.es/
 位置来源：https://es.wikipedia.org/wiki/Palacio_de_las_Due%C3%B1as_%28Sevilla%29
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>塞维利亚</value></Data><Data name="分类"><value>宅邸与收藏</value></Data></ExtendedData><Point><coordinates>-5.98916667,37.39472222,0</coordinates></Point></Placemark><Placemark><name>塞维利亚 · 08 塞维利亚美术博物馆</name><description>馆舍本身是历史修道院，院落与展厅让看画也带一点建筑漫游的感觉。收藏尤其适合认识塞维利亚绘画传统和西班牙巴洛克艺术；若你们已经在马德里看大馆，这里仍能补上更鲜明的地方艺术视角。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c04-s07</value>
+        </Data>
+        <Data name="城市">
+          <value>塞维利亚</value>
+        </Data>
+        <Data name="分类">
+          <value>宅邸与收藏</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.lasduenas.es/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://es.wikipedia.org/wiki/Palacio_de_las_Due%C3%B1as_%28Sevilla%29</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.98916667,37.39472222,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c04-s08">
+      <name>塞维利亚 · 08 塞维利亚美术博物馆</name>
+      <description>馆舍本身是历史修道院，院落与展厅让看画也带一点建筑漫游的感觉。收藏尤其适合认识塞维利亚绘画传统和西班牙巴洛克艺术；若你们已经在马德里看大馆，这里仍能补上更鲜明的地方艺术视角。
 建议预留：1.5–2 小时
 看点：穆里略、苏尔巴兰等画家的作品与修道院空间；先挑巴洛克重点，不必把宗教题材展厅全部细读。
 参观提示：与宅邸收藏是不同体验：这里以绘画为主。临展、开放与门票条件以官方当期信息为准。
-顺路：美术馆＋莱布里哈宫，适合多住一晚后增加的文化半天。
 景点官网：https://www.museosdeandalucia.es/web/museodebellasartesdesevilla
 位置来源：https://en.wikipedia.org/wiki/Museum_of_Fine_Arts_of_Seville
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>塞维利亚</value></Data><Data name="分类"><value>美术馆</value></Data></ExtendedData><Point><coordinates>-6.00013,37.39265,0</coordinates></Point></Placemark></Document></kml>
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c04-s08</value>
+        </Data>
+        <Data name="城市">
+          <value>塞维利亚</value>
+        </Data>
+        <Data name="分类">
+          <value>美术馆</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.museosdeandalucia.es/web/museodebellasartesdesevilla</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Museum_of_Fine_Arts_of_Seville</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.00013,37.39265,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c04-s09">
+      <name>塞维利亚 · 09 伊塔利卡罗马遗址（城外）</name>
+      <description>在塞维利亚近郊 Santiponce，可以从罗马圆形竞技场、街道和住宅遗迹理解古代城市生活。它补充了塞维利亚王宫与大教堂之外的罗马历史层次。
+建议预留：2–3 小时，另加往返交通
+看点：圆形竞技场、住宅马赛克与古代街道布局。
+参观提示：遗址无遮阴的路段较多；具体可入内区域和马赛克展示以保护安排为准。
+景点官网：https://www.spain.info/en/places-of-interest/archaeological-site-of-italica/
+位置来源：https://en.wikipedia.org/wiki/Italica
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c04-s09</value>
+        </Data>
+        <Data name="城市">
+          <value>塞维利亚</value>
+        </Data>
+        <Data name="分类">
+          <value>历史与考古</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/places-of-interest/archaeological-site-of-italica/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Italica</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.04666667,37.44388889,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

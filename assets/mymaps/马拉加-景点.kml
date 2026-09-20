@@ -1,39 +1,247 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>西班牙城市与推荐景点</name><description>中文城市与景点名称、简介和参考坐标；不含个人行程或住宿信息。</description><Placemark><name>马拉加 · 01 马拉加城堡</name><description>马拉加城堡 Alcazaba 是依山而建的伊斯兰时期宫堡，城墙、门道和庭院随着地势层层升高。它既有防御设施的厚重，也有水池、植物和拱廊带来的细腻空间；从这里还能看见山脚罗马剧场与现代港口，体会城市不同时代的重叠。
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>马拉加 · 景点</name>
+    <description>8 处公共景点，来自旅游网页的中文介绍和参考坐标。</description>
+    <Placemark id="c07-s01">
+      <name>马拉加 · 01 马拉加城堡</name>
+      <description>马拉加城堡 Alcazaba 是依山而建的伊斯兰时期宫堡，城墙、门道和庭院随着地势层层升高。它既有防御设施的厚重，也有水池、植物和拱廊带来的细腻空间；从这里还能看见山脚罗马剧场与现代港口，体会城市不同时代的重叠。
 建议预留：1–1.5 小时
 看点：折转的城门通道、庭院拱廊与花园，以及俯瞰老城和海港的视角。
 参观提示：可先看山脚的罗马剧场，再上行参观宫堡。它与更高处的希布拉尔法罗城堡是两处景点，安排交通时要分别定位。
 景点官网：https://www.spain.info/en/destination/malaga/
 位置来源：https://en.wikipedia.org/wiki/Alcazaba_of_M%C3%A1laga
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>马拉加</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-4.41555556,36.72138889,0</coordinates></Point></Placemark><Placemark><name>马拉加 · 02 毕加索博物馆</name><description>马拉加是毕加索的出生地，这座博物馆通过绘画、雕塑、陶瓷等作品呈现他不断改变表达方式的创作过程。馆舍本身是一座历史宫邸，适合在较亲切的尺度中看作品如何从人物形象、线条和材料出发，逐渐走向不同艺术实验。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c07-s01</value>
+        </Data>
+        <Data name="城市">
+          <value>马拉加</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/malaga/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Alcazaba_of_M%C3%A1laga</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.41555556,36.72138889,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c07-s02">
+      <name>马拉加 · 02 毕加索博物馆</name>
+      <description>马拉加是毕加索的出生地，这座博物馆通过绘画、雕塑、陶瓷等作品呈现他不断改变表达方式的创作过程。馆舍本身是一座历史宫邸，适合在较亲切的尺度中看作品如何从人物形象、线条和材料出发，逐渐走向不同艺术实验。
 建议预留：1.5–2 小时
 看点：比较不同阶段的人像、造型与材料处理；同时留意宫邸庭院和展厅建筑。
 参观提示：常设展与临时展内容会变化，出发前看展览介绍，挑自己感兴趣的主题；这里不是收藏所有毕加索最著名作品的综合馆。
 景点官网：https://www.spain.info/en/places-of-interest/museum-picasso-malaga/
 位置来源：https://en.wikipedia.org/wiki/Museo_Picasso_M%C3%A1laga
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>马拉加</value></Data><Data name="分类"><value>美术馆</value></Data></ExtendedData><Point><coordinates>-4.41833333,36.72166667,0</coordinates></Point></Placemark><Placemark><name>马拉加 · 03 希布拉尔法罗城堡</name><description>希布拉尔法罗城堡位于马拉加老城上方的山脊，过去承担保护下方宫堡和控制周边通道的任务。今天的主要体验是沿城墙步行，从高处辨认港口、斗牛场、海岸和城市街区，适合想看马拉加整体地形的人。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c07-s02</value>
+        </Data>
+        <Data name="城市">
+          <value>马拉加</value>
+        </Data>
+        <Data name="分类">
+          <value>美术馆</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/places-of-interest/museum-picasso-malaga/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Museo_Picasso_M%C3%A1laga</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.41833333,36.72166667,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c07-s03">
+      <name>马拉加 · 03 希布拉尔法罗城堡</name>
+      <description>希布拉尔法罗城堡位于马拉加老城上方的山脊，过去承担保护下方宫堡和控制周边通道的任务。今天的主要体验是沿城墙步行，从高处辨认港口、斗牛场、海岸和城市街区，适合想看马拉加整体地形的人。
 建议预留：城堡内约 1 小时；步行上下山另计
 看点：城墙步道、塔楼与海港全景；从不同转角比较城市和海岸线的方向。
 参观提示：山路较陡，可按体力选择步行或乘车上山；傍晚适合看城市色调变化，但要先核对闭馆时间，避免只赶上门口。
 景点官网：https://www.spain.info/en/destination/malaga/
 位置来源：https://en.wikipedia.org/wiki/Gibralfaro
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>马拉加</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-4.41083333,36.72333333,0</coordinates></Point></Placemark><Placemark><name>马拉加 · 04 马拉格塔海滩</name><description>马拉格塔是距离市中心较近的城市海滩，背后连接滨海步道，适合在博物馆和老城行程之间留一段海边休息。这里的吸引力是方便、开放和有生活气息：可以看海、散步，也能顺路延伸到港区。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c07-s03</value>
+        </Data>
+        <Data name="城市">
+          <value>马拉加</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/malaga/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Gibralfaro</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.41083333,36.72333333,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c07-s04">
+      <name>马拉加 · 04 马拉格塔海滩</name>
+      <description>马拉格塔是距离市中心较近的城市海滩，背后连接滨海步道，适合在博物馆和老城行程之间留一段海边休息。这里的吸引力是方便、开放和有生活气息：可以看海、散步，也能顺路延伸到港区。
 建议预留：1–2 小时；用餐另留时间
 看点：沙滩上的 Malagueta 标识、海岸步道与临海城市景观。
 参观提示：从老城步行到海边时可串联港区。四月海风可能偏凉，把它当作散步与午餐地点会比专门安排长时间下水更灵活。
 景点官网：https://www.spain.info/en/destination/malaga/
 位置来源：https://es.wikipedia.org/wiki/Playa_de_La_Malagueta
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>马拉加</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-4.40981143,36.71719734,0</coordinates></Point></Placemark><Placemark><name>马拉加 · 05 卡门·提森博物馆</name><description>以卡门·提森收藏为基础，适合看十九世纪西班牙、尤其安达卢西亚的风景和生活题材。相较毕加索的形式探索，这里更容易把画面与旅途中的城市、乡野和地方风情联系起来，是马拉加很值得补的一座馆。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c07-s04</value>
+        </Data>
+        <Data name="城市">
+          <value>马拉加</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/malaga/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://es.wikipedia.org/wiki/Playa_de_La_Malagueta</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.40981143,36.71719734,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c07-s05">
+      <name>马拉加 · 05 卡门·提森博物馆</name>
+      <description>以卡门·提森收藏为基础，适合看十九世纪西班牙、尤其安达卢西亚的风景和生活题材。相较毕加索的形式探索，这里更容易把画面与旅途中的城市、乡野和地方风情联系起来，是马拉加很值得补的一座馆。
 建议预留：1.5–2 小时
 看点：浪漫主义风景、风俗画与世纪之交绘画；馆设于历史宫邸，但不是提森家族保留原样的居所。
 参观提示：时间有限时与毕加索馆按兴趣二选一；喜欢传统绘画和地方风景，优先这里。临展票务另查。
-顺路：老城慢行＋提森＋海边晚餐，很适合马拉加休整日。
 景点官网：https://www.carmenthyssenmalaga.org/coleccion
 位置来源：https://en.wikipedia.org/wiki/Carmen_Thyssen_Museum
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>马拉加</value></Data><Data name="分类"><value>美术馆</value></Data></ExtendedData><Point><coordinates>-4.42277778,36.72138889,0</coordinates></Point></Placemark><Placemark><name>马拉加 · 06 马拉加博物馆</name><description>在旧海关宫中同时看地方考古与美术，比只看海滨更能理解马拉加。馆史还与洛林侯爵家族等私人收藏的汇入有关，适合对“藏品怎样从私人宅园进入公共博物馆”感兴趣的人。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c07-s05</value>
+        </Data>
+        <Data name="城市">
+          <value>马拉加</value>
+        </Data>
+        <Data name="分类">
+          <value>美术馆</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.carmenthyssenmalaga.org/coleccion</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Carmen_Thyssen_Museum</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.42277778,36.72138889,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c07-s06">
+      <name>马拉加 · 06 马拉加博物馆</name>
+      <description>在旧海关宫中同时看地方考古与美术，比只看海滨更能理解马拉加。馆史还与洛林侯爵家族等私人收藏的汇入有关，适合对“藏品怎样从私人宅园进入公共博物馆”感兴趣的人。
 建议预留：1.5–2.5 小时
 看点：洛林考古收藏的线索、当地历史与绘画；按考古或美术兴趣选一条主线即可。
 参观提示：这是一座公共博物馆，原家族庄园并非此处；不要把展示中的旧收藏误作完整原宅陈设。
-顺路：与城堡、罗马剧场周边同一天，但爬山和看馆之间留休息。
 景点官网：https://www.museosdeandalucia.es/web/museodemalaga/historia
 位置来源：https://en.wikipedia.org/wiki/Museo_de_M%C3%A1laga
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>马拉加</value></Data><Data name="分类"><value>地方特色</value></Data></ExtendedData><Point><coordinates>-4.417401,36.720087,0</coordinates></Point></Placemark></Document></kml>
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c07-s06</value>
+        </Data>
+        <Data name="城市">
+          <value>马拉加</value>
+        </Data>
+        <Data name="分类">
+          <value>地方特色</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.museosdeandalucia.es/web/museodemalaga/historia</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Museo_de_M%C3%A1laga</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.417401,36.720087,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c07-s07">
+      <name>马拉加 · 07 拉孔塞普西翁历史植物园</name>
+      <description>马拉加北侧的历史植物园以亚热带植被、林荫路径和景观园林见长。适合把海岸城市的行程延伸到植物与花园，而非只在沙滩和市中心活动。
+建议预留：2–3 小时
+看点：亚热带植物、历史园路与不同高度的景观视角。
+参观提示：花期受天气影响，不能保证四月某一种花正盛开；园路有坡度，先查看导览图。
+景点官网：https://laconcepcion.malaga.eu/es/
+位置来源：https://en.wikipedia.org/wiki/Jard%C3%ADn_Bot%C3%A1nico_La_Concepci%C3%B3n
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c07-s07</value>
+        </Data>
+        <Data name="城市">
+          <value>马拉加</value>
+        </Data>
+        <Data name="分类">
+          <value>自然与风景</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://laconcepcion.malaga.eu/es/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Jard%C3%ADn_Bot%C3%A1nico_La_Concepci%C3%B3n</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.42666667,36.76222222,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c07-s08">
+      <name>马拉加 · 08 马拉加蓬皮杜中心</name>
+      <description>港口彩色立方体下的艺术空间，提供现代与当代艺术展览。与毕加索、提森等馆相比，可把注意力放在不同媒介、当代主题与展览策划。
+建议预留：1.5–2 小时
+看点：按当期展览选择绘画、影像、装置或雕塑；彩色立方体与港口步道。
+参观提示：馆藏借展与临时展会更新，以官网展期为准；建筑外观不需要等同于购买展览门票。
+景点官网：https://centrepompidou-malaga.eu/
+位置来源：https://es.wikipedia.org/wiki/Centro_Pompidou_de_M%C3%A1laga
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c07-s08</value>
+        </Data>
+        <Data name="城市">
+          <value>马拉加</value>
+        </Data>
+        <Data name="分类">
+          <value>美术馆</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://centrepompidou-malaga.eu/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://es.wikipedia.org/wiki/Centro_Pompidou_de_M%C3%A1laga</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.4125449,36.7189799,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

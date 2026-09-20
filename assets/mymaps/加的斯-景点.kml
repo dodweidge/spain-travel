@@ -1,19 +1,127 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>西班牙城市与推荐景点</name><description>中文城市与景点名称、简介和参考坐标；不含个人行程或住宿信息。</description><Placemark><name>加的斯 · 01 加的斯大教堂</name><description>加的斯大教堂的浅色石墙和黄色穹顶构成老城临海天际线的重要部分，建筑融合巴洛克与新古典主义特征。它体现了海港城市昔日的繁荣；从狭窄街道走到教堂前的广场，再看向海边，空间变化很有戏剧感。
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>加的斯 · 景点</name>
+    <description>4 处公共景点，来自旅游网页的中文介绍和参考坐标。</description>
+    <Placemark id="c18-s01">
+      <name>加的斯 · 01 加的斯大教堂</name>
+      <description>加的斯大教堂的浅色石墙和黄色穹顶构成老城临海天际线的重要部分，建筑融合巴洛克与新古典主义特征。它体现了海港城市昔日的繁荣；从狭窄街道走到教堂前的广场，再看向海边，空间变化很有戏剧感。
 建议预留：1–1.5 小时；登塔另留时间
 看点：黄色穹顶、内部柱列与地下墓室；开放塔楼可提供老城和海岸视角。
 参观提示：教堂与塔楼是否同时开放需核对；可与老城步行连在一起，再向拉卡莱塔海滩方向移动。
 景点官网：https://www.spain.info/en/destination/cadiz/
 位置来源：https://en.wikipedia.org/wiki/C%C3%A1diz_Cathedral
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>加的斯</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-6.295254,36.529135,0</coordinates></Point></Placemark><Placemark><name>加的斯 · 02 拉卡莱塔海滩</name><description>拉卡莱塔海滩被老城和两侧防御建筑围合，是加的斯很有生活气息的一片海湾。渔船、海面、沙滩和古堡共同构成紧凑景观，适合短距离散步与看日落，而不是追求一望无际的大型度假海滩。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c18-s01</value>
+        </Data>
+        <Data name="城市">
+          <value>加的斯</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/cadiz/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/C%C3%A1diz_Cathedral</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.295254,36.529135,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c18-s02">
+      <name>加的斯 · 02 拉卡莱塔海滩</name>
+      <description>拉卡莱塔海滩被老城和两侧防御建筑围合，是加的斯很有生活气息的一片海湾。渔船、海面、沙滩和古堡共同构成紧凑景观，适合短距离散步与看日落，而不是追求一望无际的大型度假海滩。
 建议预留：1–1.5 小时
 看点：圣卡塔利娜与圣塞巴斯蒂安两座城堡方向的轮廓、停泊小船和傍晚海面。
 参观提示：想看日落可先留意当天云量；通往城堡的步道和入内参观有各自条件，不要把海滩开放等同于城堡随时可进。
 景点官网：https://www.spain.info/en/destination/cadiz/
 位置来源：https://en.wikipedia.org/wiki/La_Caleta%2C_Spain
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>加的斯</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-6.30583333,36.53027778,0</coordinates></Point></Placemark><Placemark><name>加的斯 · 03 塔维拉塔</name><description>塔维拉塔是加的斯历史商贸时期的瞭望塔，体现了海运城市借高处观察船只与港口的传统。除了登高看密集屋顶，馆内暗箱装置会利用光学原理把外部实时景象投到室内，让人用另一种方式观察整座城市。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c18-s02</value>
+        </Data>
+        <Data name="城市">
+          <value>加的斯</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/cadiz/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/La_Caleta%2C_Spain</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.30583333,36.53027778,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c18-s03">
+      <name>加的斯 · 03 塔维拉塔</name>
+      <description>塔维拉塔是加的斯历史商贸时期的瞭望塔，体现了海运城市借高处观察船只与港口的传统。除了登高看密集屋顶，馆内暗箱装置会利用光学原理把外部实时景象投到室内，让人用另一种方式观察整座城市。
 建议预留：45–60 分钟
 看点：屋顶平台的城市全景，以及带讲解的暗箱影像演示。
 参观提示：暗箱演示通常按场次组织，建议提前查看并预约合适时段；这里需要爬楼，城市高处视野也会受天气影响。
 景点官网：https://torretavira.com/en/reservas
 位置来源：https://es.wikipedia.org/wiki/Torre_Tavira
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>加的斯</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-6.2983833,36.532017,0</coordinates></Point></Placemark></Document></kml>
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c18-s03</value>
+        </Data>
+        <Data name="城市">
+          <value>加的斯</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://torretavira.com/en/reservas</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://es.wikipedia.org/wiki/Torre_Tavira</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.2983833,36.532017,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c18-s04">
+      <name>加的斯 · 04 加的斯博物馆</name>
+      <description>通过腓尼基、罗马遗物和艺术收藏，理解加的斯作为古老海港的历史。它比单看大教堂和海岸更能说明城市为何与地中海航路长期相连。
+建议预留：1.5–2 小时
+看点：腓尼基人形石棺与古代海港相关器物；有余力再看绘画。
+参观提示：馆藏介绍不代表每层或每厅均开放，出发前确认临时关闭和展览安排。
+景点官网：https://www.museosdeandalucia.es/web/museodecadiz
+位置来源：https://es.wikipedia.org/wiki/Museo_de_C%C3%A1diz
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c18-s04</value>
+        </Data>
+        <Data name="城市">
+          <value>加的斯</value>
+        </Data>
+        <Data name="分类">
+          <value>历史与考古</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.museosdeandalucia.es/web/museodecadiz</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://es.wikipedia.org/wiki/Museo_de_C%C3%A1diz</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.29625242,36.53504313,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

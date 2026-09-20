@@ -64,7 +64,7 @@ def attractions(pending_only):
     return rows
 
 
-def export(rows, output, title):
+def export(rows, output, title, *, csv_output=True):
     if not rows:
         raise ValueError('No attractions to export; no files were written.')
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -84,17 +84,29 @@ def export(rows, output, title):
         ET.SubElement(point, f'{{{NS}}}coordinates').text = row['经度'] + ',' + row['纬度'] + ',0'
     ET.indent(kml, space='  ')
     ET.ElementTree(kml).write(output.with_suffix('.kml'), encoding='utf-8', xml_declaration=True)
-    with output.with_suffix('.csv').open('w', encoding='utf-8-sig', newline='') as target:
-        writer = csv.DictWriter(target, fieldnames=list(rows[0]))
-        writer.writeheader()
-        writer.writerows(rows)
-    return {'count': len(rows), 'cities': len({r['城市'] for r in rows}), 'kml': str(output.with_suffix('.kml')), 'csv': str(output.with_suffix('.csv'))}
+    result = {'count': len(rows), 'cities': len({r['城市'] for r in rows}), 'kml': str(output.with_suffix('.kml'))}
+    if csv_output:
+        with output.with_suffix('.csv').open('w', encoding='utf-8-sig', newline='') as target:
+            writer = csv.DictWriter(target, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+        result['csv'] = str(output.with_suffix('.csv'))
+    return result
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--pending-only', action='store_true', help='Only attractions whose googleImported flag is false.')
+    parser.add_argument('--per-city', action='store_true', help='Also refresh each city KML beside the combined export (all-attraction export only).')
     parser.add_argument('--output', type=Path, required=True, help='Output filename stem (writes .kml and .csv).')
     parser.add_argument('--title', default='西班牙与葡萄牙城市景点')
     options = parser.parse_args()
-    print(json.dumps(export(attractions(options.pending_only), options.output, options.title), ensure_ascii=False))
+    if options.pending_only and options.per_city:
+        parser.error('--per-city requires a full export; do not replace city files with partial data.')
+    rows = attractions(options.pending_only)
+    result = export(rows, options.output, options.title)
+    if options.per_city:
+        for city in dict.fromkeys(row['城市'] for row in rows):
+            export([row for row in rows if row['城市'] == city], options.output.parent / (city + '-景点'), city + ' · 景点', csv_output=False)
+        result['city_files'] = len({row['城市'] for row in rows})
+    print(json.dumps(result, ensure_ascii=False))

@@ -1,19 +1,127 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>西班牙城市与推荐景点</name><description>中文城市与景点名称、简介和参考坐标；不含个人行程或住宿信息。</description><Placemark><name>塞哥维亚 · 01 古罗马渡槽</name><description>塞哥维亚古罗马渡槽是古代城市供水工程的鲜明遗存，高大的花岗岩拱券跨越广场，依靠精密的石块排列与结构受力保持稳定。它既是一处古迹，也仍然深深嵌在今天的城市生活中，走近看石块与退远看整体都有意思。
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>塞哥维亚 · 景点</name>
+    <description>4 处公共景点，来自旅游网页的中文介绍和参考坐标。</description>
+    <Placemark id="c10-s01">
+      <name>塞哥维亚 · 01 古罗马渡槽</name>
+      <description>塞哥维亚古罗马渡槽是古代城市供水工程的鲜明遗存，高大的花岗岩拱券跨越广场，依靠精密的石块排列与结构受力保持稳定。它既是一处古迹，也仍然深深嵌在今天的城市生活中，走近看石块与退远看整体都有意思。
 建议预留：30–45 分钟
 看点：阿索格霍广场上方的双层拱券、石块接缝，以及从邻近高处看到的渡槽延伸方向。
 参观提示：从渡槽一带开始步行进入老城很顺路。拍完广场正面后，可在允许通行的高处换个视角，再沿主街前往大教堂。
 景点官网：https://www.spain.info/en/destination/segovia/
 位置来源：https://en.wikipedia.org/wiki/Aqueduct_of_Segovia
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>塞哥维亚</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-4.1178,40.9479,0</coordinates></Point></Placemark><Placemark><name>塞哥维亚 · 02 塞哥维亚城堡</name><description>塞哥维亚城堡占据河谷交汇附近的岩石高地，尖塔、城墙与狭长地形让它具有鲜明的剪影。内部展现王室和军事历史，外部则适合观察城堡如何利用地势形成防御优势；无需借助童话联想，建筑本身就足够吸引人。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c10-s01</value>
+        </Data>
+        <Data name="城市">
+          <value>塞哥维亚</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/segovia/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Aqueduct_of_Segovia</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.1178,40.9479,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c10-s02">
+      <name>塞哥维亚 · 02 塞哥维亚城堡</name>
+      <description>塞哥维亚城堡占据河谷交汇附近的岩石高地，尖塔、城墙与狭长地形让它具有鲜明的剪影。内部展现王室和军事历史，外部则适合观察城堡如何利用地势形成防御优势；无需借助童话联想，建筑本身就足够吸引人。
 建议预留：1–1.5 小时；登塔另留约半小时
 看点：尖塔外观、装饰厅室与盔甲展示；若登塔，可从高处回看老城和周边平原。
 参观提示：登塔通常涉及较多狭窄台阶，按体力选择；主建筑与塔楼的参观内容可能分开，购票时确认即可。
 景点官网：https://www.spain.info/en/destination/segovia/
 位置来源：https://en.wikipedia.org/wiki/Alc%C3%A1zar_of_Segovia
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>塞哥维亚</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-4.1325,40.9525,0</coordinates></Point></Placemark><Placemark><name>塞哥维亚 · 03 塞哥维亚大教堂</name><description>塞哥维亚大教堂位于老城主广场边，浅色石材与密集尖塔形成轻盈的天际轮廓。内部哥特式柱列与拱顶强调向上的空间感，和附近王城、渡槽一起，可以看见这座小城横跨古罗马、中世纪与后续时期的历史层次。
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c10-s02</value>
+        </Data>
+        <Data name="城市">
+          <value>塞哥维亚</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/segovia/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Alc%C3%A1zar_of_Segovia</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.1325,40.9525,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c10-s03">
+      <name>塞哥维亚 · 03 塞哥维亚大教堂</name>
+      <description>塞哥维亚大教堂位于老城主广场边，浅色石材与密集尖塔形成轻盈的天际轮廓。内部哥特式柱列与拱顶强调向上的空间感，和附近王城、渡槽一起，可以看见这座小城横跨古罗马、中世纪与后续时期的历史层次。
 建议预留：45–75 分钟
 看点：主广场方向的整体外观、内部高耸拱顶、回廊及彩色玻璃。
 参观提示：可放在渡槽到城堡的步行线路中间，正好形成休息节点；若想参加钟楼等专项参观，需要额外核对时段。
 景点官网：https://www.spain.info/en/destination/segovia/
 位置来源：https://en.wikipedia.org/wiki/Segovia_Cathedral
-位置为旅行规划参考，不代表售票口或唯一入口。</description><ExtendedData><Data name="城市"><value>塞哥维亚</value></Data><Data name="分类"><value>经典景点</value></Data></ExtendedData><Point><coordinates>-4.12528,40.95,0</coordinates></Point></Placemark></Document></kml>
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c10-s03</value>
+        </Data>
+        <Data name="城市">
+          <value>塞哥维亚</value>
+        </Data>
+        <Data name="分类">
+          <value>经典景点</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/en/destination/segovia/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Segovia_Cathedral</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.12528,40.95,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="c10-s04">
+      <name>塞哥维亚 · 04 拉格兰哈皇家花园（城外）</name>
+      <description>塞哥维亚附近的法式皇家花园以林荫轴线、神话雕塑与大型喷泉组成景观。可把旅行重点放在园林设计与山地背景，宫殿内部另作可选。
+建议预留：2–3 小时，另加往返交通
+看点：雕塑喷泉、花园轴线和山林环境。
+参观提示：花园开放与喷泉喷水是两回事；喷水有特定日历，并受供水和维护影响，四月不能默认看到全部喷泉运行。
+景点官网：https://www.spain.info/es/lugares-interes/jardines-granja-san-ildefonso/
+位置来源：https://en.wikipedia.org/wiki/Royal_Palace_of_La_Granja_de_San_Ildefonso
+位置为旅行规划参考，不代表售票口或唯一入口。</description>
+      <ExtendedData>
+        <Data name="景点ID">
+          <value>c10-s04</value>
+        </Data>
+        <Data name="城市">
+          <value>塞哥维亚</value>
+        </Data>
+        <Data name="分类">
+          <value>自然与风景</value>
+        </Data>
+        <Data name="景点官网">
+          <value>https://www.spain.info/es/lugares-interes/jardines-granja-san-ildefonso/</value>
+        </Data>
+        <Data name="位置来源">
+          <value>https://en.wikipedia.org/wiki/Royal_Palace_of_La_Granja_de_San_Ildefonso</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.00444444,40.8975,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
