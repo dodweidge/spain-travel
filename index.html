@@ -881,8 +881,8 @@ function focusCitySidebarActivities(){
 function addCityExtras(){const h=$('detail').querySelector('.detail-head');if(!h)return;if(Number(selected)===19&&!h.querySelector('.tenerife-city-guide'))h.insertAdjacentHTML('beforeend','<p class="culture-extra tenerife-city-guide"><strong>按全岛安排 4–6 天</strong>北部古城与云雾林、中央火山、西部悬崖和南部海岸分区游览。<a href="#tenerife">查看住宿与分区组合 →</a></p>');const list=localActivities.filter(a=>a.city===Number(selected));if(!h.querySelector('.city-extra-links'))h.insertAdjacentHTML('beforeend','<div class="city-extra-links"><button type="button" data-drive-from="'+selected+'">从这里出发的车程</button>'+(list.length?'<button type="button" data-city-activities>'+list.length+' 项当地特色活动 ↓</button>':'')+'</div>');}
 let onlineMapMode='local',onlineMapQuery='',onlineMapLabel='',onlineMapZoom=14,onlineOpening=false,pendingActivity=null;
 function onlineCityQuery(){return cities[cityMapCity].en+' '+(cities[cityMapCity].country||'Spain')}
-function setOnlinePlace(query,label,zoom=16){onlineMapQuery=query;onlineMapLabel=label;onlineMapZoom=zoom;updateGoogleMap();}
-function updateGoogleMap(){const c=cities[cityMapCity];$('googlePlaceTitle').textContent=onlineMapLabel||c.name+'全城';$('googleFullMap').href=googleSearch(onlineMapQuery||onlineCityQuery());$('googleRestaurants').href=googleSearch('restaurants near '+(onlineMapQuery||onlineCityQuery()));$('googleCafes').href=googleSearch('cafes near '+(onlineMapQuery||onlineCityQuery()));if(onlineMapMode!=='google'||!$('cityMapDialog').open)return;const frame=$('cityGoogleFrame'),url='https://www.google.com/maps?q='+encodeURIComponent(onlineMapQuery||onlineCityQuery())+'&hl=zh-CN&z='+onlineMapZoom+'&output=embed';if(frame.getAttribute('src')!==url)frame.src=url;frame.title='谷歌在线地图：'+(onlineMapLabel||c.name)+'及周边地点';}
+function setOnlinePlace(query,label,zoom=16,force=false){onlineMapQuery=query;onlineMapLabel=label;onlineMapZoom=zoom;updateGoogleMap(force);}
+function updateGoogleMap(force=false){const c=cities[cityMapCity];$('googlePlaceTitle').textContent=onlineMapLabel||c.name+'全城';$('googleFullMap').href=googleSearch(onlineMapQuery||onlineCityQuery());$('googleRestaurants').href=googleSearch('restaurants near '+(onlineMapQuery||onlineCityQuery()));$('googleCafes').href=googleSearch('cafes near '+(onlineMapQuery||onlineCityQuery()));if(onlineMapMode!=='google'||!$('cityMapDialog').open)return;const frame=$('cityGoogleFrame'),url='https://www.google.com/maps?q='+encodeURIComponent(onlineMapQuery||onlineCityQuery())+'&hl=zh-CN&z='+onlineMapZoom+'&output=embed';if(force||frame.getAttribute('src')!==url)frame.src=url;frame.title='谷歌在线地图：'+(onlineMapLabel||c.name)+'及周边地点';}
 function setOnlineMode(mode){onlineMapMode=mode;const online=mode==='google';$('cityMapDialog').classList.toggle('google-mode',online);$('cityMapCanvas').hidden=online;document.querySelector('.city-map-foot').hidden=online;$('cityGooglePane').hidden=!online;$('googleOptions').hidden=!online;$('googleMapSearch').hidden=!online;$('localMapMode').setAttribute('aria-pressed',String(!online));$('googleMapMode').setAttribute('aria-pressed',String(online));$('cityMapFit').textContent=online?'查看全城':'显示全部景点';$('cityOnlineHint').textContent=online?'拖动、缩放查看谷歌提供的周边地点；点击景点清单可切换定位。本页一次定位一处，全部推荐编号请切回本地景点图。':'本地可定位推荐景点；城外新增地点可能超出已保存街道范围。切到谷歌可查看周边道路与地点。';if(online)updateGoogleMap();else if(cityMap)requestAnimationFrame(()=>{cityMap.invalidateSize();fitCityMap()})}
 function syncOnlineSpot(index){if(onlineOpening)return;const c=cities[cityMapCity],s=c.spots[index];if(s)setOnlinePlace((s.q||s.en||s.n)+' '+c.en+' '+(c.country||'Spain'),s.n,16)}
 function onlineCityMapOpened(id,spot){onlineOpening=false;if(id!==cityMapCity)return;const list=localActivities.filter(a=>a.city===id);$('cityMapActivities').innerHTML='<h3>当地特色活动</h3>'+(list.length?list.map(a=>'<button type="button" data-activity-map="'+a.id+'">'+safe(a.title)+'<small>谷歌位置 · '+safe(a.venue)+'</small></button>').join('')+'<button type="button" data-activities-from-map="'+id+'">查看这些活动的完整介绍 ↗</button>':'<p class="online-note">这座城市暂未增补活动；可先探索上方推荐景点。</p>');$('googleMapTerm').value='';if(pendingActivity){const a=pendingActivity;pendingActivity=null;setOnlinePlace(a.query,a.title,16);setOnlineMode('google');}else{if(spot>=0)syncOnlineSpot(spot);else setOnlinePlace(onlineCityQuery(),cities[id].name+'全城',id===19?13:14);setOnlineMode(onlineMapMode)}}
@@ -896,7 +896,8 @@ function initOnlineTravel(){
  $('googleMapSearch').onsubmit=e=>{e.preventDefault();const term=$('googleMapTerm').value.trim();setOnlinePlace(term?term+' '+onlineCityQuery():onlineCityQuery(),term?cities[cityMapCity].name+' · '+term:cities[cityMapCity].name+'全城',term?15:14)};
  const originalSelect=select;select=function(...args){originalSelect(...args);addCityExtras()};addCityExtras();
  const originalOpen=openCityMap;openCityMap=function(...args){onlineOpening=true;$('cityMapCanvas').hidden=false;$('cityGooglePane').hidden=true;originalOpen(...args)};
- const originalSpot=selectCityMapSpot;selectCityMapSpot=function(index,focus){originalSpot(index,onlineMapMode==='google'?false:focus);syncOnlineSpot(index)};
+ // Reading another attraction must not reload an embedded map: its current viewport is owned by Google.
+ const originalSpot=selectCityMapSpot;selectCityMapSpot=function(index,focus){const online=onlineMapMode==='google'||onlineMapMode==='mymaps';originalSpot(index,online?false:focus);syncOnlineSpot(index,{focusMap:false});if(online&&focus&&!onlineOpening)$('cityMapFocus').scrollIntoView({block:innerWidth>700?'nearest':'start',behavior:'instant'})};
  document.addEventListener('click',e=>{const pair=e.target.closest('[data-drive-pair]'),from=e.target.closest('[data-drive-from]'),route=e.target.closest('[data-drive-route]'),filter=e.target.closest('[data-activity-filter]'),activity=e.target.closest('[data-activity-map]'),fromMap=e.target.closest('[data-activities-from-map]');if(pair){const ids=pair.dataset.drivePair.split(',');chooseDrivePair(...ids)}else if(from){const id=Number(from.dataset.driveFrom);chooseDrivePair(id,id===19?'tf:teide':id===0?1:0)}else if(route){setMapRoute(Number(route.dataset.driveRoute));if(Number(route.dataset.driveRoute)===3){$('optionalRoutes').checked=$('driveToledo').checked;renderRoute()}revealPageTarget($('atlas')).scrollIntoView({behavior:'instant'})}else if(filter){showCityActivities(filter.dataset.activityFilter)}else if(activity){const a=localActivities.find(a=>a.id===activity.dataset.activityMap);if(a){pendingActivity=a;openCityMap(a.city);requestAnimationFrame(()=>{if(innerWidth<=700)$('cityMapDialog').querySelector('.city-map-body').scrollTop=0})}}else if(fromMap){const id=Number(fromMap.dataset.activitiesFromMap);closeCityMap();showCityActivities(id)}});
 }
 initOnlineTravel();
@@ -1073,13 +1074,13 @@ function myMapsCityView(index=-1){
  const zx=Math.log2(w*360/(256*Math.max(maxX-minX,.002))),zy=Math.log2(h*2*Math.PI/(256*Math.max(maxY-minY,.00003)));
  return{lat:(Math.atan(Math.exp((minY+maxY)/2))-Math.PI/4)*360/Math.PI,lon:(minX+maxX)/2,zoom:Math.max(7,Math.min(16,Math.floor(Math.min(zx,zy))))};
 }
-function updateMyMapsFrame(index=-1){
+function updateMyMapsFrame(index=-1,force=false){
  const connected=!!connectedMyMapsId;$('myMapsConnect').hidden=connected;$('cityMyMapsFrame').hidden=!connected;$('myMapsManage').hidden=!connected;
- $('myMapsConnectStatus').textContent=connected?'已连接谷歌景点地图；可在地图上点击标记查看介绍。需联网访问 Google。':'尚未连接 My Maps；景点文件已准备好，导入后连接分享链接。';
+ $('myMapsConnectStatus').textContent=connected?'地图标记显示 Google 介绍；右侧清单显示本站介绍，切换时保留地图视野。需联网访问 Google。':'尚未连接 My Maps；景点文件已准备好，导入后连接分享链接。';
  $('myMapsCityFile').href='assets/mymaps/'+cities[cityMapCity].name+'-景点.kml';$('myMapsCityFile').textContent='下载'+cities[cityMapCity].name+'景点';
  if(!connected||onlineMapMode!=='mymaps'||!$('cityMapDialog').open)return;
  const v=myMapsCityView(index),url='https://www.google.com/maps/d/embed?mid='+encodeURIComponent(connectedMyMapsId)+'&ehbc=2E312F&ll='+v.lat.toFixed(6)+','+v.lon.toFixed(6)+'&z='+v.zoom;
- if($('cityMyMapsFrame').getAttribute('src')!==url)$('cityMyMapsFrame').src=url;
+ if(force||$('cityMyMapsFrame').getAttribute('src')!==url)$('cityMyMapsFrame').src=url;
  $('cityMyMapsFrame').title=cities[cityMapCity].name+' · 已导入景点的谷歌地图';
  $('myMapsFull').href='https://www.google.com/maps/d/viewer?mid='+encodeURIComponent(connectedMyMapsId)+'&ll='+v.lat.toFixed(6)+','+v.lon.toFixed(6)+'&z='+v.zoom;
  $('myMapsCurrent').textContent=index<0?cities[cityMapCity].name+' · '+cities[cityMapCity].spots.filter(s=>s.googleImported).length+' 处已导入景点':cities[cityMapCity].name+' · '+cities[cityMapCity].spots[index].n;
@@ -1088,22 +1089,24 @@ const onlineModeBeforeMyMaps=setOnlineMode;
 setOnlineMode=function(mode){
  onlineModeBeforeMyMaps(mode==='mymaps'?'local':mode);onlineMapMode=mode;
  const my=mode==='mymaps';$('cityMyMapsPane').hidden=!my;$('myMapsMode').setAttribute('aria-pressed',String(my));
- if(my){$('localMapMode').setAttribute('aria-pressed','false');$('cityMapCanvas').hidden=true;document.querySelector('.city-map-foot').hidden=true;$('cityMapDialog').classList.add('google-mode');$('cityMapFit').textContent='本城已导入景点';$('cityOnlineHint').textContent=connectedMyMapsId?'23 个目的地的 146 处景点已同步到 My Maps；点选右侧景点可在同一张谷歌地图上定位。':'首次使用需要导入准备好的景点文件，并连接你的 My Maps 分享链接。';updateMyMapsFrame();}
- else if(mode==='google'){$('cityMapFit').textContent='定位当前景点';$('cityOnlineHint').textContent='当前景点按坐标定位；可拖动缩放查看周边店铺。全部自定义景点请切换“谷歌景点地图”。';}
+ if(my){$('localMapMode').setAttribute('aria-pressed','false');$('cityMapCanvas').hidden=true;document.querySelector('.city-map-foot').hidden=true;$('cityMapDialog').classList.add('google-mode');$('cityMapFit').textContent='显示本城全部景点';$('cityOnlineHint').textContent=connectedMyMapsId?'23 个目的地的 146 处景点已同步到 My Maps。右侧切换介绍时，地图保持原位置和缩放；需要移动地图时，点击“定位所选景点”。':'首次使用需要导入准备好的景点文件，并连接你的 My Maps 分享链接。';updateMyMapsFrame();}
+ else if(mode==='google'){$('cityMapFit').textContent='定位当前景点';$('cityOnlineHint').textContent='点击地图中的地点可查看 Google 信息。右侧切换介绍时保留地图视野；点击“定位当前景点”再移动地图。';}
 };
 const syncBeforeMyMaps=syncOnlineSpot;
-syncOnlineSpot=function(index){if(onlineOpening)return;const p=cityCoordinates.find(p=>p.city===cityMapCity&&p.index===index),s=cities[cityMapCity].spots[index];if(p&&s)setOnlinePlace(p.lat+','+p.lon,s.n,16);else syncBeforeMyMaps(index);if(onlineMapMode==='mymaps')updateMyMapsFrame(index)};
+syncOnlineSpot=function(index,{focusMap=true,force=false}={}){if(onlineOpening||!focusMap)return;const p=cityCoordinates.find(p=>p.city===cityMapCity&&p.index===index),s=cities[cityMapCity].spots[index];if(p&&s)setOnlinePlace(p.lat+','+p.lon,s.n,16,force);else syncBeforeMyMaps(index);if(onlineMapMode==='mymaps')updateMyMapsFrame(index,force)};
 const openDoneBeforeMyMaps=onlineCityMapOpened;
 onlineCityMapOpened=function(id,spot){openDoneBeforeMyMaps(id,spot);if(id===cityMapCity){if(onlineMapMode==='mymaps')updateMyMapsFrame(spot);else if(onlineMapMode==='google'&&onlineMapQuery===onlineCityQuery())syncOnlineSpot(cityMapSelected>=0?cityMapSelected:0)}};
 const spotBeforeMyMaps=selectCityMapSpot;
-selectCityMapSpot=function(index,focus){spotBeforeMyMaps(index,onlineMapMode==='mymaps'?false:focus)};
+selectCityMapSpot=function(index,focus){spotBeforeMyMaps(index,focus)};
 function initMyMaps(){
  $('googleMapMode').textContent='谷歌查周边';
  $('googleMapMode').insertAdjacentHTML('beforebegin','<button type="button" id="myMapsMode" aria-pressed="false">谷歌景点地图</button>');
  $('cityGooglePane').insertAdjacentHTML('afterend','<div class="city-mymaps-pane" id="cityMyMapsPane" hidden><div class="mymaps-manage" id="myMapsManage" hidden><strong id="myMapsCurrent"></strong><a id="myMapsFull" target="_blank" rel="noopener noreferrer">谷歌中打开 ↗</a><button type="button" id="myMapsSettings">连接设置</button></div><div class="mymaps-connect" id="myMapsConnect"><h3>把全部景点标在谷歌地图上</h3><p>当前地图已同步 23 个目的地、146 处景点，包含特内里费全岛、里斯本与波尔图；各城市会自动聚焦到对应范围。下方文件可用于备份或另建地图。</p><ol><li><a href="assets/mymaps/西班牙与葡萄牙全部景点.kml" download>下载全部 146 处景点文件</a>，或<a id="myMapsCityFile" download>只下载当前城市</a>。</li><li><a href="https://www.google.com/maps/d/" target="_blank" rel="noopener noreferrer">打开 Google My Maps ↗</a>，创建地图并点击图层“导入”，选择下载的文件。</li><li>将地图设为公开可查看，复制分享链接，粘贴到下方。文件只含公共景点资料。</li></ol><form id="myMapsLinkForm"><label for="myMapsLink">你的 My Maps 分享链接</label><div><input id="myMapsLink" type="url" placeholder="https://www.google.com/maps/d/…?mid=…" required><button type="submit">连接景点地图</button></div></form><p id="myMapsLinkError" role="alert"></p><a href="assets/mymaps/导入说明.md" target="_blank">完整导入说明 ↗</a></div><iframe id="cityMyMapsFrame" title="谷歌景点地图" referrerpolicy="no-referrer-when-downgrade" allowfullscreen hidden></iframe><p class="city-online-status" id="myMapsConnectStatus" role="status"></p></div>');
  $('myMapsMode').onclick=()=>setOnlineMode('mymaps');
  $('googleMapMode').onclick=()=>{setOnlineMode('google');syncOnlineSpot(cityMapSelected>=0?cityMapSelected:0)};
- $('cityMapFit').onclick=()=>{if(onlineMapMode==='mymaps')updateMyMapsFrame();else if(onlineMapMode==='google')syncOnlineSpot(cityMapSelected>=0?cityMapSelected:0);else fitCityMap()};
+ $('myMapsCurrent').insertAdjacentHTML('afterend','<button type="button" id="myMapsLocate">定位所选景点</button>');
+ $('myMapsLocate').onclick=()=>syncOnlineSpot(cityMapSelected>=0?cityMapSelected:0,{force:true});
+ $('cityMapFit').onclick=()=>{if(onlineMapMode==='mymaps')updateMyMapsFrame(-1,true);else if(onlineMapMode==='google')syncOnlineSpot(cityMapSelected>=0?cityMapSelected:0,{force:true});else fitCityMap()};
  $('myMapsSettings').onclick=()=>{$('myMapsConnect').hidden=!$('myMapsConnect').hidden;if(!$('myMapsConnect').hidden){$('myMapsLink').value=connectedMyMapsId?'https://www.google.com/maps/d/viewer?mid='+connectedMyMapsId:'';updateMyMapsCityFile();}};
  $('myMapsLinkForm').onsubmit=e=>{e.preventDefault();const id=parseMyMapsLink($('myMapsLink').value.trim());if(!id){$('myMapsLinkError').textContent='请粘贴 Google My Maps 的完整分享链接（需包含 mid）。';return}connectedMyMapsId=id;try{localStorage.setItem('spain-mymaps-id',id)}catch(e){}$('myMapsLinkError').textContent='';setOnlineMode('mymaps')};
  if(connectedMyMapsId)onlineMapMode='mymaps';
@@ -1141,11 +1144,11 @@ function bindCityMouseActions(button,id){
 
 // Only points actually imported into My Maps use the combined layer.
 const syncBeforeCharacter=syncOnlineSpot;
-syncOnlineSpot=function(index){
- if(onlineOpening)return;
+syncOnlineSpot=function(index,options={}){
+ if(onlineOpening||options.focusMap===false)return;
  const s=cities[cityMapCity]?.spots[index];
  if(s&&s.googleImported===false&&onlineMapMode==='mymaps')setOnlineMode('google');
- syncBeforeCharacter(index);
+ syncBeforeCharacter(index,options);
  if(s&&s.googleImported===false&&onlineMapMode==='google')$('cityOnlineHint').textContent='此景点尚未导入 Google My Maps 整层，现已按参考坐标单独定位；可拖动、缩放查看周边信息。';
 };
 const openedBeforeCharacter=onlineCityMapOpened;
