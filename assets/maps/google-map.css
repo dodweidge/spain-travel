@@ -21,19 +21,35 @@
 .google-live-local-results button:hover,.google-live-local-results button:focus-visible{background:#e9efdf;border-color:#78947b}
 #googleLiveRemoteResults gmp-place-search{display:block;width:100%;border:0;margin:10px 0 0;font-size:13px;color-scheme:light}
 .google-search-place-details{display:block;width:min(300px,65vw);max-height:240px;overflow:auto;border:0;color-scheme:light;font-size:13px}
-.gmap-search-marker{display:grid;place-items:center;width:30px;height:30px;border:2px solid white;border-radius:50%;background:#2568b2;color:white;box-shadow:0 2px 5px #173f4055;font:700 11px/1 sans-serif;cursor:pointer}
+.gmap-marker-search .gmap-marker-face{display:grid;place-items:center;border:2px solid white;border-radius:50%;background:#2568b2;box-shadow:0 2px 5px #173f4055;font:700 11px/1 sans-serif}
 #googleLiveSearchExternal,.google-live-message a{color:#365f8b;line-height:1.8}
 #googleMapSearch input:disabled,#googleMapSearch button:disabled{opacity:.55;cursor:default}
-.gmap-marker{position:relative;width:32px;height:32px;font:12px/1.3 "Microsoft YaHei","PingFang SC",sans-serif;color:white;cursor:pointer}
+.gmap-marker{position:relative;width:32px;height:32px;overflow:visible;font:12px/1.3 "Microsoft YaHei","PingFang SC",sans-serif;color:white;pointer-events:none}
+.gmap-marker-face{position:absolute;inset:0;width:32px;height:32px;pointer-events:auto;cursor:pointer}
+.gmap-marker-leader{position:absolute;left:16px;top:16px;display:none;width:1px;height:1px;overflow:visible;pointer-events:none;fill:none}
+.gmap-marker.displaced .gmap-marker-leader{display:block}
+.gmap-leader-halo{stroke:#fffef8;stroke-width:4;stroke-linecap:round}
+.gmap-leader-line{stroke:var(--marker-color);stroke-width:1.5;stroke-linecap:round}
+.gmap-marker-leader circle{fill:var(--marker-color);stroke:#fffef8;stroke-width:1.5}
 .gmap-marker-number{position:relative;z-index:1;display:grid;place-items:center;width:32px;height:32px;border:2px solid #fffef7;border-radius:50%;background:var(--marker-color,#b15c42);box-shadow:0 2px 5px #173f4055;font-size:12px;font-weight:700}
 .gmap-marker-name{position:absolute;left:27px;top:2px;display:none;max-width:190px;min-height:28px;padding:6px 9px 5px 9px;border:1px solid #fffdf0;border-radius:0 7px 7px 0;background:var(--marker-color,#b15c42);box-shadow:0 2px 5px #173f4033;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px}
-.gmap-marker:hover .gmap-marker-name,.gmap-marker.active .gmap-marker-name,gmp-advanced-marker:focus .gmap-marker-name{display:block}
+.gmap-marker.expanded .gmap-marker-name,.gmap-marker.active .gmap-marker-name{display:block}
+.gmap-marker.name-left .gmap-marker-name{left:auto;right:27px;border-radius:7px 0 0 7px}
+.gmap-marker.expanded .gmap-marker-number{box-shadow:0 0 0 3px #fffdf7,0 3px 9px #173f4066}
 .gmap-marker.active .gmap-marker-number{border:3px solid #e6b157;box-shadow:0 0 0 3px #fffdf7,0 3px 9px #173f4066}
 .gmap-marker.active .gmap-marker-name{font-weight:700;max-width:250px}
+.google-live-legend{display:flex;flex-wrap:wrap;align-items:center;gap:5px 13px;padding:8px 12px;border-top:1px solid #d4dfd4;background:#f6f7ef;color:#506e5d;font-size:10px;line-height:1.6}
+.google-live-legend>span{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.google-live-legend>span::before{content:"";width:9px;height:9px;border-radius:50%;background:#c46445}
+.google-live-legend .legend-culture::before{background:#286c68}
+.google-live-legend .legend-warning::before{background:#9d7b28}
+.google-live-legend .legend-selected::before{background:#fffdf7;border:2px solid #e6b157}
+.google-live-legend .legend-search::before{background:#2568b2}
+.google-live-legend small{font:inherit;flex-basis:100%;color:#697c6d}
 .city-map-dialog.interactive-map-mode .city-map-main{min-width:0;min-height:0}
 @media(max-width:700px){
  .city-map-dialog.interactive-map-mode .city-map-main{height:auto!important;min-height:0}
- .google-live-pane{flex:none;height:440px;min-height:440px}
+ .google-live-pane{flex:none;height:auto;min-height:440px}
  .google-live-stage{min-height:380px}
  .google-live-tools{gap:8px}
  .google-live-tools strong{flex-basis:100%}

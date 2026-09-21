@@ -7,7 +7,8 @@
     sdk: null, map: null, markers: new Map(), city: null,
     generation: 0, error: false, preserveNextOpen: false, activeKey: null,
     searchGeneration: 0, placesLibrary: null, searchElement: null,
-    searchMarkers: new Map(), searchInfo: null, searchTimer: null
+    searchMarkers: new Map(), searchInfo: null, searchTimer: null,
+    labels: new Map(), projection: null, layoutFrame: null, resizeObserver: null
   };
   const points = cityCoordinates.filter(p => cities[p.city]?.spots[p.index]
     && Number.isFinite(p.lat) && Number.isFinite(p.lon));
@@ -78,6 +79,99 @@
     } else selectCityMapSpot(p.index, true);
   }
 
+  function scheduleLayout() {
+    if (!state.map || !isVisible() || state.layoutFrame !== null) return;
+    state.layoutFrame = requestAnimationFrame(() => {
+      state.layoutFrame = null;
+      layoutLabels();
+    });
+  }
+
+  function attachLabel(id, marker, label, p = null) {
+    const face = document.createElement('div');
+    face.className = 'gmap-marker-face';
+    face.append(...label.childNodes);
+    const leader = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    leader.classList.add('gmap-marker-leader');
+    leader.setAttribute('aria-hidden', 'true');
+    leader.innerHTML = '<path class="gmap-leader-halo"/><path class="gmap-leader-line"/><circle r="3.5"/>';
+    label.replaceChildren(leader, face);
+    // Only the visible face receives clicks; the empty anchor and leader are transparent.
+    marker.style.pointerEvents = 'none';
+    const entry = {marker, label, face, leader, p, name: label.querySelector('.gmap-marker-name'),
+      hovered: false, focused: false, placement: null};
+    const expand = () => {
+      label.classList.toggle('expanded', entry.hovered || entry.focused);
+      scheduleLayout();
+    };
+    face.addEventListener('pointerenter', () => { entry.hovered = true; expand(); });
+    face.addEventListener('pointerleave', () => { entry.hovered = false; expand(); });
+    marker.addEventListener('focusin', () => { entry.focused = true; expand(); });
+    marker.addEventListener('focusout', () => { entry.focused = false; expand(); });
+    state.labels.set(id, entry);
+    return entry;
+  }
+
+  function moveLabel(entry, placement) {
+    const {dx, dy, side} = placement;
+    entry.placement = placement;
+    entry.face.style.transform = `translate(${dx}px,${dy}px)`;
+    entry.label.classList.toggle('name-left', side === 'left');
+    const distance = Math.hypot(dx, dy);
+    entry.label.classList.toggle('displaced', distance > 1);
+    // Stop the leader at the number's edge; its small dot stays at the true coordinate.
+    const scale = distance > 18 ? (distance - 18) / distance : 0;
+    const path = `M0 0 L${dx * scale} ${dy * scale}`;
+    entry.leader.querySelectorAll('path').forEach(line => line.setAttribute('d', path));
+  }
+
+  function layoutLabels() {
+    const canvas = $('googleLiveCanvas');
+    const width = canvas.clientWidth, height = canvas.clientHeight;
+    const projection = state.projection?.getProjection();
+    if (!isVisible() || !projection || width < 120 || height < 100 || !window.TravelMarkerLayout) return;
+    const items = [];
+    const entries = [...state.labels.values()];
+    const pinned = entries.find(entry => entry.hovered) || entries.find(entry => entry.focused);
+    for (const [id, entry] of state.labels) {
+      const pixel = projection.fromLatLngToContainerPixel(entry.marker.position);
+      if (!pixel || pixel.x < -24 || pixel.y < -24 || pixel.x > width + 24 || pixel.y > height + 24) {
+        moveLabel(entry, {dx: 0, dy: 0, side: 'right'});
+        continue;
+      }
+      const active = id === state.activeKey;
+      const expanded = active || entry.hovered || entry.focused;
+      if (entry.name) entry.name.style.maxWidth = Math.min(width <= 700 ? 150 : active ? 250 : 190, width - 64) + 'px';
+      const nameWidth = expanded && entry.name ? entry.name.getBoundingClientRect().width : 0;
+      const priority = entry.hovered || entry.focused ? 20000 : active ? 10000 : !entry.p ? 2000 : entry.p.city === cityMapCity ? 100 : 1;
+      entry.marker.zIndex = priority;
+      items.push({id, x: pixel.x, y: pixel.y, nameWidth, priority,
+        fixed: entry === pinned && !!entry.placement, previous: entry.placement});
+    }
+    // Leave the map-type and zoom controls clear, along with the search results panel.
+    const obstacles = [
+      {left: 0, top: 0, right: Math.min(240, width), bottom: 48},
+      {left: width - 58, top: height - 145, right: width, bottom: height}
+    ];
+    if (!$('googleLiveResults').hidden) {
+      const origin = canvas.getBoundingClientRect(), box = $('googleLiveResults').getBoundingClientRect();
+      obstacles.push({left: box.left - origin.left, top: box.top - origin.top,
+        right: box.right - origin.left, bottom: box.bottom - origin.top});
+    }
+    for (const placement of window.TravelMarkerLayout(items, {width, height, obstacles})) {
+      moveLabel(state.labels.get(placement.id), placement);
+    }
+  }
+
+  function clearSearchMarkers() {
+    state.searchMarkers.forEach((marker, id) => {
+      marker.map = null;
+      state.labels.delete('search:' + id);
+    });
+    state.searchMarkers.clear();
+    scheduleLayout();
+  }
+
   function createMap(maps) {
     const first = currentPoint(0) || points[0];
     state.map = new maps.Map($('googleLiveCanvas'), {
@@ -106,8 +200,18 @@
       });
       marker.append(label);
       marker.addListener('click', () => chooseMarker(p));
-      state.markers.set(p.key, {marker, label, p});
+      state.markers.set(p.key, attachLabel(p.key, marker, label, p));
     }
+    const overlay = new maps.OverlayView();
+    overlay.onAdd = () => {};
+    overlay.draw = scheduleLayout;
+    overlay.onRemove = () => {};
+    state.projection = overlay;
+    overlay.setMap(state.map);
+    state.map.addListener('idle', scheduleLayout);
+    state.resizeObserver = new ResizeObserver(scheduleLayout);
+    state.resizeObserver.observe($('googleLiveCanvas'));
+    state.resizeObserver.observe($('googleLiveResults'));
     // Leave basemap clicks alone so Google's own POI information windows keep working.
   }
 
@@ -123,6 +227,7 @@
     $('googleLiveCurrent').textContent = spot ? cities[cityMapCity].name + ' · ' + spot.n : cities[cityMapCity].name;
     $('googleLiveLocate').disabled = !state.map || state.error || !p;
     $('googleLiveExternal').href = googleSearch(p ? p.lat + ',' + p.lon : onlineCityQuery());
+    scheduleLayout();
     // Highlighting alone leaves the camera unchanged; sidebar clicks also call focus().
   }
 
@@ -148,8 +253,7 @@
     state.searchTimer = null;
     state.searchElement?.remove();
     state.searchElement = null;
-    state.searchMarkers.forEach(marker => { marker.map = null; });
-    state.searchMarkers.clear();
+    clearSearchMarkers();
     state.searchInfo?.close();
     $('googleLiveResults').hidden = true;
     $('googleLiveResults').setAttribute('aria-busy', 'false');
@@ -189,6 +293,7 @@
     }
     $('googleLiveResults').hidden = false;
     $('googleLiveSearchClear').hidden = false;
+    scheduleLayout();
     return results;
   }
 
@@ -226,8 +331,7 @@
       clearTimeout(state.searchTimer);
       state.searchElement?.remove();
       state.searchElement = null;
-      state.searchMarkers.forEach(marker => { marker.map = null; });
-      state.searchMarkers.clear();
+      clearSearchMarkers();
       state.searchInfo?.close();
       $('googleLiveResults').setAttribute('aria-busy', 'false');
       $('googleLiveSearchStatus').textContent = 'Google 地点搜索暂时不可用。可选择已收录的景点，或稍后重试。';
@@ -256,27 +360,29 @@
         if (!current()) return;
         clearTimeout(state.searchTimer);
         $('googleLiveResults').setAttribute('aria-busy', 'false');
-        state.searchMarkers.forEach(marker => { marker.map = null; });
-        state.searchMarkers.clear();
+        clearSearchMarkers();
         const results = element.places.filter(place => place.location);
         results.forEach((place, index) => {
           const label = document.createElement('div');
-          label.className = 'gmap-search-marker';
+          label.className = 'gmap-marker gmap-marker-search';
+          label.style.setProperty('--marker-color', '#2568b2');
           label.textContent = 'S' + (index + 1);
           const marker = new window.google.maps.marker.AdvancedMarkerElement({
             map: state.map, position: place.location, title: '搜索结果 ' + (index + 1),
-            gmpClickable: true, zIndex: 2000,
+            gmpClickable: true, zIndex: 2000, collisionBehavior: window.google.maps.CollisionBehavior.REQUIRED,
             anchorLeft: '-50%', anchorTop: '-50%'
           });
           marker.append(label);
           marker.addListener('click', () => showSearchPlace(place));
           state.searchMarkers.set(place.id, marker);
+          attachLabel('search:' + place.id, marker, label);
         });
         $('googleLiveSearchStatus').textContent = results.length
           ? '找到 ' + results.length + ' 处地点，点击结果或蓝色标记查看。'
           : '未找到匹配的地点，请换个名称或加上城市名。';
         // Search results use the same map and retain its current zoom level.
         if (results.length) state.map.panTo(results[0].location);
+        scheduleLayout();
       });
       element.addEventListener('gmp-select', event => {
         if (current()) showSearchPlace(event.place);
@@ -358,7 +464,7 @@
     tabs.removeAttribute('role');
     tabs.removeAttribute('aria-label');
     document.querySelector('.city-online-bar').insertAdjacentHTML('beforeend', '<div class="google-live-tools" id="googleLiveTools" hidden><strong id="googleLiveCurrent"></strong><button type="button" id="googleLiveLocate" disabled>定位所选景点</button><a id="googleLiveExternal" target="_blank" rel="noopener noreferrer">在 Google 中打开 ↗</a></div>');
-    $('cityGooglePane').insertAdjacentHTML('beforebegin', '<section class="google-live-pane" id="googleLivePane" aria-label="谷歌互动景点地图" hidden><div class="google-live-stage"><div id="googleLiveCanvas" role="region" aria-label="谷歌地图与推荐景点" tabindex="0"></div><section class="google-live-results" id="googleLiveResults" aria-label="地点搜索结果" hidden><div class="google-search-results-head"><strong>搜索结果</strong><button type="button" id="googleLiveResultsClose" aria-label="关闭搜索结果">关闭 ×</button></div><p id="googleLiveSearchStatus" role="status"></p><div class="google-live-local-results" id="googleLiveLocalResults"></div><div id="googleLiveRemoteResults"></div><a id="googleLiveSearchExternal" target="_blank" rel="noopener noreferrer" hidden>在 Google 地图中搜索 ↗</a></section><div class="google-live-message" id="googleLiveMessage" role="status"><p id="googleLiveMessageText">正在加载谷歌地图…</p><div id="googleLiveRecovery" hidden><button type="button" id="googleLiveReload">重新加载页面</button><a id="googleLiveOpenExternal" target="_blank" rel="noopener noreferrer">在 Google 地图中打开 ↗</a></div></div></div><p class="city-online-status">编号与介绍来自本站；道路、其他地点信息与在线搜索由 Google 提供。</p></section>');
+    $('cityGooglePane').insertAdjacentHTML('beforebegin', '<section class="google-live-pane" id="googleLivePane" aria-label="谷歌互动景点地图" hidden><div class="google-live-stage"><div id="googleLiveCanvas" role="region" aria-label="谷歌地图与推荐景点" tabindex="0"></div><section class="google-live-results" id="googleLiveResults" aria-label="地点搜索结果" hidden><div class="google-search-results-head"><strong>搜索结果</strong><button type="button" id="googleLiveResultsClose" aria-label="关闭搜索结果">关闭 ×</button></div><p id="googleLiveSearchStatus" role="status"></p><div class="google-live-local-results" id="googleLiveLocalResults"></div><div id="googleLiveRemoteResults"></div><a id="googleLiveSearchExternal" target="_blank" rel="noopener noreferrer" hidden>在 Google 地图中搜索 ↗</a></section><div class="google-live-message" id="googleLiveMessage" role="status"><p id="googleLiveMessageText">正在加载谷歌地图…</p><div id="googleLiveRecovery" hidden><button type="button" id="googleLiveReload">重新加载页面</button><a id="googleLiveOpenExternal" target="_blank" rel="noopener noreferrer">在 Google 地图中打开 ↗</a></div></div></div><div class="google-live-legend" aria-label="地图标记图例"><span class="legend-classic">经典景点</span><span class="legend-culture">博物馆／文化收藏</span><span class="legend-warning">开放待复核</span><span class="legend-selected">当前选中</span><span class="legend-search">搜索结果</span><small>错开标记用细线连接，线端小圆点是实际位置。</small></div></section>');
     $('googleLiveLocate').onclick = () => focus();
     $('cityMapList').addEventListener('click', event => {
       const button = event.target.closest('button[data-map-spot]');
