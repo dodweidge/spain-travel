@@ -5,7 +5,9 @@
   if (!config?.apiKey) return;
   const state = {
     sdk: null, map: null, markers: new Map(), city: null,
-    generation: 0, error: false, preserveNextOpen: false, activeKey: null
+    generation: 0, error: false, preserveNextOpen: false, activeKey: null,
+    searchGeneration: 0, placesLibrary: null, searchElement: null,
+    searchMarkers: new Map(), searchInfo: null, searchTimer: null
   };
   const points = cityCoordinates.filter(p => cities[p.city]?.spots[p.index]
     && Number.isFinite(p.lat) && Number.isFinite(p.lon));
@@ -18,15 +20,18 @@
     $('googleLiveRecovery').hidden = !failed;
     $('googleLivePane').setAttribute('aria-busy', String(!failed));
     $('googleLiveLocate').disabled = true;
+    $('googleMapTerm').disabled = true;
+    $('googleMapSearch').querySelector('[type="submit"]').disabled = true;
     $('cityMapFit').disabled = onlineMapMode === 'interactive';
   }
 
   function fail() {
     state.error = true;
-    if (isVisible()) message('互动地图暂时无法加载。可切换备用地图，或稍后重新加载。', true);
+    resetSearch();
+    if (isVisible()) message('互动地图暂时无法加载，请稍后重新加载，或在 Google 地图中打开。', true);
   }
 
-  // One script request per page, only after the map is opened. No geocoding or Places requests.
+  // Load the map once per page; Places UI Kit is loaded only when a search is submitted.
   function loadSdk() {
     if (state.sdk) return state.sdk;
     state.sdk = new Promise((resolve, reject) => {
@@ -65,6 +70,7 @@
 
   function chooseMarker(p) {
     if (!isVisible()) return;
+    resetSearch(false);
     if (p.city !== cityMapCity) {
       // A marker in a neighbouring city changes the sidebar, never the camera.
       state.preserveNextOpen = true;
@@ -136,6 +142,149 @@
     // Both sidebar selection and explicit positioning preserve the user's zoom level.
   }
 
+  function resetSearch(clearInput = true) {
+    ++state.searchGeneration;
+    clearTimeout(state.searchTimer);
+    state.searchTimer = null;
+    state.searchElement?.remove();
+    state.searchElement = null;
+    state.searchMarkers.forEach(marker => { marker.map = null; });
+    state.searchMarkers.clear();
+    state.searchInfo?.close();
+    $('googleLiveResults').hidden = true;
+    $('googleLiveResults').setAttribute('aria-busy', 'false');
+    $('googleLiveLocalResults').replaceChildren();
+    $('googleLiveRemoteResults').replaceChildren();
+    $('googleLiveSearchStatus').textContent = '';
+    $('googleLiveSearchExternal').hidden = true;
+    if (clearInput) $('googleMapTerm').value = '';
+    $('googleLiveSearchClear').hidden = !$('googleMapTerm').value.trim();
+  }
+
+  const normalized = text => String(text || '').normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
+  function pointNames(p) {
+    const spot = cities[p.city].spots[p.index];
+    return [spot.n, spot.en, spot.q, cityMapNames[p.key]].filter(Boolean);
+  }
+
+  function localResults(query) {
+    const term = normalized(query);
+    if (!term) return [];
+    return points.filter(p => pointNames(p).some(name =>
+      normalized(name).includes(term) || normalized(cities[p.city].name + name).includes(term)))
+      .sort((a, b) => Number(b.city === cityMapCity) - Number(a.city === cityMapCity)).slice(0, 8);
+  }
+
+  function showLocalResults(query) {
+    const results = localResults(query);
+    const list = $('googleLiveLocalResults');
+    list.replaceChildren();
+    for (const point of results) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = cities[point.city].name + ' · ' + cities[point.city].spots[point.index].n;
+      button.onclick = () => { chooseMarker(point); focus(point.index); };
+      list.append(button);
+    }
+    $('googleLiveResults').hidden = false;
+    $('googleLiveSearchClear').hidden = false;
+    return results;
+  }
+
+  function showSearchPlace(place) {
+    const marker = state.searchMarkers.get(place.id);
+    if (!marker || !place.location || !isVisible() || state.error) return;
+    state.map.panTo(place.location);
+    const details = document.createElement('gmp-place-details-compact');
+    details.className = 'google-search-place-details';
+    details.setAttribute('orientation', 'horizontal');
+    details.setAttribute('truncation-preferred', '');
+    const request = document.createElement('gmp-place-details-place-request');
+    request.place = place;
+    details.append(request, document.createElement('gmp-place-standard-content'));
+    if (!state.searchInfo) state.searchInfo = new window.google.maps.InfoWindow({disableAutoPan: true, maxWidth: 320});
+    state.searchInfo.setContent(details);
+    state.searchInfo.open({map: state.map, anchor: marker, shouldFocus: false});
+  }
+
+  async function search(query) {
+    query = String(query || '').trim();
+    if (!state.map || state.error || !isVisible()) return;
+    resetSearch(false);
+    $('googleMapTerm').value = query;
+    if (!query) { resetSearch(); return; }
+    const matches = showLocalResults(query);
+    const exact = matches.find(p => pointNames(p).some(name => normalized(name) === normalized(query)));
+    if (exact) { chooseMarker(exact); focus(exact.index); return; }
+    const generation = state.searchGeneration, city = cityMapCity;
+    let failed = false;
+    const current = () => !failed && generation === state.searchGeneration && city === cityMapCity && isVisible();
+    const failSearch = () => {
+      if (!current()) return;
+      failed = true;
+      clearTimeout(state.searchTimer);
+      state.searchElement?.remove();
+      state.searchElement = null;
+      state.searchMarkers.forEach(marker => { marker.map = null; });
+      state.searchMarkers.clear();
+      state.searchInfo?.close();
+      $('googleLiveResults').setAttribute('aria-busy', 'false');
+      $('googleLiveSearchStatus').textContent = 'Google 地点搜索暂时不可用。可选择已收录的景点，或稍后重试。';
+      const link = $('googleLiveSearchExternal');
+      link.href = googleSearch(query + ' ' + onlineCityQuery());
+      link.hidden = false;
+    };
+    $('googleLiveSearchStatus').textContent = '正在搜索地图附近的地点…';
+    $('googleLiveResults').setAttribute('aria-busy', 'true');
+    state.searchTimer = setTimeout(failSearch, 15000);
+    try {
+      if (!state.placesLibrary) state.placesLibrary = window.google.maps.importLibrary('places').catch(error => {
+        state.placesLibrary = null;
+        throw error;
+      });
+      const {PlaceSearchElement, PlaceTextSearchRequestElement} = await state.placesLibrary;
+      if (!current()) return;
+      const element = new PlaceSearchElement({selectable: true, truncationPreferred: true});
+      const request = new PlaceTextSearchRequestElement({
+        textQuery: query, locationBias: state.map.getCenter(), maxResultCount: 5
+      });
+      state.searchElement = element;
+      element.append(document.createElement('gmp-place-standard-content'), request);
+      element.addEventListener('gmp-error', failSearch);
+      element.addEventListener('gmp-load', () => {
+        if (!current()) return;
+        clearTimeout(state.searchTimer);
+        $('googleLiveResults').setAttribute('aria-busy', 'false');
+        state.searchMarkers.forEach(marker => { marker.map = null; });
+        state.searchMarkers.clear();
+        const results = element.places.filter(place => place.location);
+        results.forEach((place, index) => {
+          const label = document.createElement('div');
+          label.className = 'gmap-search-marker';
+          label.textContent = 'S' + (index + 1);
+          const marker = new window.google.maps.marker.AdvancedMarkerElement({
+            map: state.map, position: place.location, title: '搜索结果 ' + (index + 1),
+            gmpClickable: true, zIndex: 2000,
+            anchorLeft: '-50%', anchorTop: '-50%'
+          });
+          marker.append(label);
+          marker.addListener('click', () => showSearchPlace(place));
+          state.searchMarkers.set(place.id, marker);
+        });
+        $('googleLiveSearchStatus').textContent = results.length
+          ? '找到 ' + results.length + ' 处地点，点击结果或蓝色标记查看。'
+          : '未找到匹配的地点，请换个名称或加上城市名。';
+        // Search results use the same map and retain its current zoom level.
+        if (results.length) state.map.panTo(results[0].location);
+      });
+      element.addEventListener('gmp-select', event => {
+        if (current()) showSearchPlace(event.place);
+      });
+      $('googleLiveRemoteResults').append(element);
+    } catch { failSearch(); }
+  }
+
   function showPane() {
     $('cityMapDialog').classList.add('google-mode', 'interactive-map-mode');
     $('cityMapCanvas').hidden = true;
@@ -143,15 +292,13 @@
     $('cityGooglePane').hidden = true;
     $('cityMyMapsPane').hidden = true;
     $('googleOptions').hidden = true;
-    $('googleMapSearch').hidden = true;
+    $('googleMapSearch').hidden = false;
     $('googleLivePane').hidden = false;
     $('googleLiveTools').hidden = false;
-    for (const id of ['localMapMode', 'googleMapMode', 'myMapsMode']) $(id).setAttribute('aria-pressed', 'false');
-    $('googleLiveMode').setAttribute('aria-pressed', 'true');
     $('cityMapFit').textContent = '显示本城全部景点';
     $('cityMapFit').disabled = !state.map || state.error;
     $('cityOnlineHint').textContent = '点编号标记查看右侧介绍；右侧选点自动定位，保持当前缩放；点其他地点查看 Google 信息。';
-    $('googleMapAlternatives').open = false;
+    $('googleLiveOpenExternal').href = googleSearch(onlineCityQuery());
   }
 
   async function activate({spot = -1, preserveView = false} = {}) {
@@ -169,6 +316,8 @@
       $('googleLiveMessage').hidden = true;
       $('googleLivePane').setAttribute('aria-busy', 'false');
       $('cityMapFit').disabled = false;
+      $('googleMapTerm').disabled = false;
+      $('googleMapSearch').querySelector('[type="submit"]').disabled = false;
       if (city !== state.city && !preserveView) {
         const point = currentPoint(spot);
         if (point) {
@@ -178,49 +327,64 @@
       } else if (spot >= 0 && !preserveView) focus(spot);
       state.city = city;
       select(cityMapSelected);
+      return true;
     } catch {
       if (generation === state.generation && isVisible()) fail();
     }
   }
 
-  function opened(id, spot) {
+  function opened(id, spot, query = '') {
     if (id !== cityMapCity) return;
+    resetSearch();
     const preserveView = state.preserveNextOpen;
     state.preserveNextOpen = false;
-    void activate({spot, preserveView});
+    void activate({spot, preserveView}).then(ready => {
+      if (ready && query && id === cityMapCity && isVisible()) void search(query);
+    });
   }
 
   function deactivate() {
     ++state.generation;
-    $('googleMapAlternatives').open = false;
+    resetSearch();
     $('googleLivePane').hidden = true;
     $('googleLiveTools').hidden = true;
-    $('googleLiveMode').setAttribute('aria-pressed', 'false');
     $('cityMapDialog').classList.remove('interactive-map-mode');
     $('cityMapFit').disabled = false;
   }
 
   function init() {
     const tabs = document.querySelector('.city-online-tabs');
-    tabs.insertAdjacentHTML('afterbegin', '<button type="button" id="googleLiveMode" aria-pressed="false">谷歌互动地图</button>');
-    tabs.insertAdjacentHTML('beforeend', '<details class="google-map-alternatives" id="googleMapAlternatives"><summary>更多地图</summary><div class="google-map-alternative-buttons"></div></details>');
-    const alternatives = tabs.querySelector('.google-map-alternative-buttons');
-    $('myMapsMode').textContent = '备用景点地图';
-    $('googleMapMode').textContent = '地点搜索';
-    alternatives.append($('myMapsMode'), $('googleMapMode'));
+    tabs.innerHTML = '<strong class="google-live-heading">谷歌互动地图</strong>';
+    tabs.removeAttribute('role');
+    tabs.removeAttribute('aria-label');
     document.querySelector('.city-online-bar').insertAdjacentHTML('beforeend', '<div class="google-live-tools" id="googleLiveTools" hidden><strong id="googleLiveCurrent"></strong><button type="button" id="googleLiveLocate" disabled>定位所选景点</button><a id="googleLiveExternal" target="_blank" rel="noopener noreferrer">在 Google 中打开 ↗</a></div>');
-    $('cityGooglePane').insertAdjacentHTML('beforebegin', '<section class="google-live-pane" id="googleLivePane" aria-label="谷歌互动景点地图" hidden><div class="google-live-stage"><div id="googleLiveCanvas" role="region" aria-label="谷歌地图与推荐景点" tabindex="0"></div><div class="google-live-message" id="googleLiveMessage" role="status"><p id="googleLiveMessageText">正在加载谷歌地图…</p><div id="googleLiveRecovery" hidden><button type="button" id="googleLiveBackup">使用备用地图</button><button type="button" id="googleLiveReload">重新加载页面</button></div></div></div><p class="city-online-status">编号与介绍来自本站；道路和其他地点信息由 Google 提供。互动地图为测试版。</p></section>');
-    $('googleLiveMode').onclick = () => setOnlineMode('interactive');
+    $('cityGooglePane').insertAdjacentHTML('beforebegin', '<section class="google-live-pane" id="googleLivePane" aria-label="谷歌互动景点地图" hidden><div class="google-live-stage"><div id="googleLiveCanvas" role="region" aria-label="谷歌地图与推荐景点" tabindex="0"></div><section class="google-live-results" id="googleLiveResults" aria-label="地点搜索结果" hidden><div class="google-search-results-head"><strong>搜索结果</strong><button type="button" id="googleLiveResultsClose" aria-label="关闭搜索结果">关闭 ×</button></div><p id="googleLiveSearchStatus" role="status"></p><div class="google-live-local-results" id="googleLiveLocalResults"></div><div id="googleLiveRemoteResults"></div><a id="googleLiveSearchExternal" target="_blank" rel="noopener noreferrer" hidden>在 Google 地图中搜索 ↗</a></section><div class="google-live-message" id="googleLiveMessage" role="status"><p id="googleLiveMessageText">正在加载谷歌地图…</p><div id="googleLiveRecovery" hidden><button type="button" id="googleLiveReload">重新加载页面</button><a id="googleLiveOpenExternal" target="_blank" rel="noopener noreferrer">在 Google 地图中打开 ↗</a></div></div></div><p class="city-online-status">编号与介绍来自本站；道路、其他地点信息与在线搜索由 Google 提供。</p></section>');
     $('googleLiveLocate').onclick = () => focus();
     $('cityMapList').addEventListener('click', event => {
       const button = event.target.closest('button[data-map-spot]');
-      if (button) focus(Number(button.dataset.mapSpot));
+      if (button) { resetSearch(false); focus(Number(button.dataset.mapSpot)); }
     });
-    $('googleLiveBackup').onclick = () => setOnlineMode(connectedMyMapsId ? 'mymaps' : 'google');
+    const form = $('googleMapSearch');
+    form.insertAdjacentHTML('beforeend', '<button type="button" id="googleLiveSearchClear" hidden>清除</button>');
+    const input = $('googleMapTerm');
+    input.placeholder = '搜索景点、餐厅、酒店或地址';
+    input.setAttribute('aria-label', '在当前互动地图搜索地点');
+    input.autocomplete = 'off';
+    form.onsubmit = event => { event.preventDefault(); void search(input.value); };
+    input.oninput = () => {
+      resetSearch(false);
+      const query = input.value.trim();
+      if (!query) return;
+      const matches = showLocalResults(query);
+      $('googleLiveSearchStatus').textContent = matches.length
+        ? '已收录的景点可直接定位；点击“查找”搜索更多地点。'
+        : '点击“查找”，搜索当前地图附近的地点。';
+    };
+    $('googleLiveSearchClear').onclick = () => resetSearch();
+    $('googleLiveResultsClose').onclick = () => resetSearch();
     $('googleLiveReload').onclick = () => window.location.reload();
-    const legacyFit = $('cityMapFit').onclick;
-    $('cityMapFit').onclick = event => onlineMapMode === 'interactive' ? fit() : legacyFit(event);
-    $('cityMapDialog').addEventListener('close', () => { ++state.generation; state.preserveNextOpen = false; });
+    $('cityMapFit').onclick = () => { resetSearch(); fit(); };
+    $('cityMapDialog').addEventListener('close', () => { ++state.generation; state.preserveNextOpen = false; resetSearch(); });
     // Focus the visible map when returning from the details on narrow screens.
     document.addEventListener('click', event => {
       if (event.target.closest('#cityMapBack') && isVisible()) $('googleLiveCanvas').focus({preventScroll: true});
@@ -228,6 +392,6 @@
     onlineMapMode = 'interactive';
   }
 
-  window.TravelGoogleMap = Object.freeze({activate, deactivate, opened, select, focus, fit});
+  window.TravelGoogleMap = Object.freeze({activate, deactivate, opened, select, focus, fit, search});
   init();
 })();
