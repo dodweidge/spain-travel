@@ -3,16 +3,18 @@
   'use strict';
   const intersects = (a, b, gap = 4) => a.left < b.right + gap && a.right + gap > b.left
     && a.top < b.bottom + gap && a.bottom + gap > b.top;
+  // Matches the 32px number/search circles in google-map.css; shadows and names do not count.
+  const iconDiameter = 32;
 
   function fanPositions(items) {
     const remaining = new Set(items), targets = new Map();
-    // Move a close pair together, so neither number sits on the other's leader.
+    // Only actual circle overlap at the unshifted coordinates starts a callout group.
     while (remaining.size) {
       const group = [remaining.values().next().value];
       remaining.delete(group[0]);
       for (let i = 0; i < group.length; i++) {
         for (const other of remaining) {
-          if (Math.hypot(group[i].x - other.x, group[i].y - other.y) < 48) {
+          if (Math.hypot(group[i].x - other.x, group[i].y - other.y) < iconDiameter) {
             group.push(other);
             remaining.delete(other);
           }
@@ -41,6 +43,17 @@
     const ordered = [...items].sort((a, b) => Number(b.fixed) - Number(a.fixed)
       || b.priority - a.priority || a.id.localeCompare(b.id));
     const fans = fanPositions(items);
+    // Everything outside an overlapping group stays exactly at its own coordinate,
+    // including hovered labels, viewport edges and labels underneath map controls.
+    // Reserve those positions first so callouts cannot push a stationary icon away.
+    for (const item of ordered) {
+      if (fans.has(item.id)) continue;
+      const rect = {left: item.x - 20, right: item.x + Math.max(20, 14 + item.nameWidth),
+        top: item.y - 20, bottom: item.y + 20};
+      placed.push({id: item.id, dx: 0, dy: 0, side: 'right', rect, endX: 0});
+      occupied.push(rect);
+    }
+    if (!fans.size) return placed;
     const offsets = [{x: 0, y: 0}];
     const limit = Math.ceil(Math.max(width, height) / 40);
     for (let ring = 1; ring <= limit; ring++) {
@@ -54,14 +67,15 @@
     }
     for (const item of ordered) {
       const fan = fans.get(item.id);
-      const preferredSide = fan?.side || (item.x > width / 2 ? 'left' : 'right');
+      if (!fan) continue;
+      const preferredSide = fan.side;
       const sides = [preferredSide, preferredSide === 'left' ? 'right' : 'left'];
       const size = side => ({
         left: side === 'left' && item.nameWidth ? 14 + item.nameWidth : 20,
         right: side === 'right' && item.nameWidth ? 14 + item.nameWidth : 20
       });
       let best = null, bestScore = Infinity;
-      const target = fan ? {x: fan.x - item.x, y: fan.y - item.y} : {x: 0, y: 0};
+      const target = {x: fan.x - item.x, y: fan.y - item.y};
       // The first candidate is a left/right callout with a short diagonal and horizontal tail.
       // Further rows / columns are used only when the preferred callout cannot fit.
       const alternatives = offsets.map(offset => ({x: target.x + offset.x, y: target.y + offset.y}));
@@ -94,8 +108,8 @@
           const dx = x - item.x, dy = y - item.y;
           const sidePenalty = side === preferredSide ? 0 : 20000;
           // At an edge, use the spacious side instead of turning the name across its own leader.
-          const inward = fan && side !== (dx < 0 ? 'left' : 'right');
-          const shortTail = fan ? Math.max(0, 64 - Math.abs(dx)) : 0;
+          const inward = side !== (dx < 0 ? 'left' : 'right');
+          const shortTail = Math.max(0, 64 - Math.abs(dx));
           const score = (overlap + overflow) * 1e9 + (inward ? 1e7 : 0) + shortTail * 1e4
             + (dx - target.x) ** 2 + (dy - target.y) ** 2 + sidePenalty;
           if (score < bestScore) { bestScore = score; best = {id: item.id, dx, dy, side, rect,

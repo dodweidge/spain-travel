@@ -54,9 +54,9 @@ assert.equal(held.dx, old.dx); assert.equal(held.dy, old.dy);
 clearLabels(layout(Array.from({length: 16}, (_, i) => point(String(i), 400, 260)), viewport));
 const dense = Array.from({length: 24}, (_, i) => point(String(i), 365 + (i % 6) * 12, 240 + Math.floor(i / 6) * 12));
 clearLabels(layout(dense, viewport));
-// Edge labels choose the inward side; narrow screens also keep names readable.
+// A lone icon is never displaced or reoriented, even if its name reaches the edge.
 const edge = layout([point('edge', 770, 220, 150, 10000)], viewport)[0];
-assert.equal(edge.side, 'left'); assert.equal(edge.dx, 0);
+assert.equal(edge.side, 'right'); assert.equal(edge.dx, 0); assert.equal(edge.dy, 0);
 const mobile = {width: 320, height: 380};
 clearLabels(layout([point('a', 300, 55, 150), point('b', 295, 60), point('c', 290, 68)], mobile), mobile);
 const edgePair = layout([point('03', 465, 180), point('05', 470, 164, 104, 10000)], {width: 550, height: 270});
@@ -71,4 +71,25 @@ for (const p of withPanel) assert(p.rect.right + 4 <= obstacle.left || p.rect.le
 // Zooming in releases displaced labels back to their own coordinates.
 const separated = layout([point('03', 180, 230), point('05', 480, 260, 104, 10000)], viewport);
 assert(separated.every(p => p.dx === 0 && p.dy === 0));
-console.log('Marker layout: paired callouts, elbow leaders, stable sides, dense, hovered, edge, mobile and camera-independent anchors passed.');
+// Nearness, touching circles and diagonal bounding-box overlap are not icon overlap.
+for (const [dx, dy] of [[32, 0], [33, 0], [47, 0], [24, 24]]) {
+  const unchanged = layout([point('a', 300, 250), point('b', 300 + dx, 250 + dy)], viewport);
+  assert(unchanged.every(p => p.dx === 0 && p.dy === 0), `non-overlapping circles ${dx},${dy} stay put`);
+}
+assert(layout([point('a', 300, 250), point('b', 331, 250)], viewport).some(p => p.dx || p.dy));
+// Expanded names, selection/hover, old offsets, controls and viewport edges never initiate avoidance.
+const unchangedCases = [
+  [point('name', 300, 250, 250, 10000), point('nearby', 365, 250)],
+  [point('corner', 1, 1, 150), point('edge', 799, 549, 150)],
+  [{...point('hover', 300, 250, 250, 20000), fixed: true, previous: {dx: 96, dy: -36}}, point('far', 600, 250)]
+];
+for (const items of unchangedCases) {
+  const unchanged = layout(items, {...viewport, obstacles: [{left: 0, top: 0, right: 800, bottom: 550}]});
+  assert(unchanged.every(p => p.dx === 0 && p.dy === 0 && p.endX === 0));
+}
+// Only members of the overlapping group may move, even if its callouts approach another icon.
+const mixed = layout([...neighbours, point('stationary', 500, 260)], viewport);
+clearLabels(mixed);
+const stationary = mixed.find(p => p.id === 'stationary');
+assert.equal(stationary.dx, 0); assert.equal(stationary.dy, 0);
+console.log('Marker layout: actual-circle overlap only; names, hover, edges and controls stay put; elbow callouts and reset passed.');
