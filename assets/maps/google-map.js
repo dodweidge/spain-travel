@@ -117,7 +117,7 @@
     $('googleLiveCurrent').textContent = spot ? cities[cityMapCity].name + ' · ' + spot.n : cities[cityMapCity].name;
     $('googleLiveLocate').disabled = !state.map || state.error || !p;
     $('googleLiveExternal').href = googleSearch(p ? p.lat + ',' + p.lon : onlineCityQuery());
-    // Deliberately no setCenter, panTo, fitBounds or setZoom in this selection path.
+    // Highlighting alone leaves the camera unchanged; sidebar clicks also call focus().
   }
 
   function fit() {
@@ -133,7 +133,7 @@
     if (!state.map || state.error || !isVisible()) return;
     const p = currentPoint(index);
     if (p) state.map.panTo({lat: p.lat, lng: p.lon});
-    // Explicit positioning also preserves the user's zoom level.
+    // Both sidebar selection and explicit positioning preserve the user's zoom level.
   }
 
   function showPane() {
@@ -150,7 +150,7 @@
     $('googleLiveMode').setAttribute('aria-pressed', 'true');
     $('cityMapFit').textContent = '显示本城全部景点';
     $('cityMapFit').disabled = !state.map || state.error;
-    $('cityOnlineHint').textContent = '点编号标记查看右侧介绍；点其他地点查看 Google 信息。切换景点保持地图视野，需要移动时点击“定位所选景点”。';
+    $('cityOnlineHint').textContent = '点编号标记查看右侧介绍；右侧选点自动定位，保持当前缩放；点其他地点查看 Google 信息。';
     $('googleMapAlternatives').open = false;
   }
 
@@ -212,6 +212,10 @@
     $('cityGooglePane').insertAdjacentHTML('beforebegin', '<section class="google-live-pane" id="googleLivePane" aria-label="谷歌互动景点地图" hidden><div class="google-live-stage"><div id="googleLiveCanvas" role="region" aria-label="谷歌地图与推荐景点" tabindex="0"></div><div class="google-live-message" id="googleLiveMessage" role="status"><p id="googleLiveMessageText">正在加载谷歌地图…</p><div id="googleLiveRecovery" hidden><button type="button" id="googleLiveBackup">使用备用地图</button><button type="button" id="googleLiveReload">重新加载页面</button></div></div></div><p class="city-online-status">编号与介绍来自本站；道路和其他地点信息由 Google 提供。互动地图为测试版。</p></section>');
     $('googleLiveMode').onclick = () => setOnlineMode('interactive');
     $('googleLiveLocate').onclick = () => focus();
+    $('cityMapList').addEventListener('click', event => {
+      const button = event.target.closest('button[data-map-spot]');
+      if (button) focus(Number(button.dataset.mapSpot));
+    });
     $('googleLiveBackup').onclick = () => setOnlineMode(connectedMyMapsId ? 'mymaps' : 'google');
     $('googleLiveReload').onclick = () => window.location.reload();
     const legacyFit = $('cityMapFit').onclick;
