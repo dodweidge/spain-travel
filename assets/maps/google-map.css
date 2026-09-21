@@ -28,9 +28,9 @@
 .gmap-marker-face{position:absolute;inset:0;width:32px;height:32px;pointer-events:auto;cursor:pointer}
 .gmap-marker-leader{position:absolute;left:16px;top:16px;display:none;width:1px;height:1px;overflow:visible;pointer-events:none;fill:none}
 .gmap-marker.displaced .gmap-marker-leader{display:block}
-.gmap-leader-halo{stroke:#fffef8;stroke-width:4;stroke-linecap:round}
-.gmap-leader-line{stroke:var(--marker-color);stroke-width:1.5;stroke-linecap:round}
-.gmap-marker-leader circle{fill:var(--marker-color);stroke:#fffef8;stroke-width:1.5}
+.gmap-leader-halo{stroke:#fffef8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.gmap-leader-line{stroke:var(--marker-color);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.gmap-marker-leader circle{fill:var(--marker-color);stroke:#fffef8;stroke-width:1}
 .gmap-marker-number{position:relative;z-index:1;display:grid;place-items:center;width:32px;height:32px;border:2px solid #fffef7;border-radius:50%;background:var(--marker-color,#b15c42);box-shadow:0 2px 5px #173f4055;font-size:12px;font-weight:700}
 .gmap-marker-name{position:absolute;left:27px;top:2px;display:none;max-width:190px;min-height:28px;padding:6px 9px 5px 9px;border:1px solid #fffdf0;border-radius:0 7px 7px 0;background:var(--marker-color,#b15c42);box-shadow:0 2px 5px #173f4033;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px}
 .gmap-marker.expanded .gmap-marker-name,.gmap-marker.active .gmap-marker-name{display:block}

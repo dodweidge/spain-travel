@@ -4,12 +4,43 @@
   const intersects = (a, b, gap = 4) => a.left < b.right + gap && a.right + gap > b.left
     && a.top < b.bottom + gap && a.bottom + gap > b.top;
 
+  function fanPositions(items) {
+    const remaining = new Set(items), targets = new Map();
+    // Move a close pair together, so neither number sits on the other's leader.
+    while (remaining.size) {
+      const group = [remaining.values().next().value];
+      remaining.delete(group[0]);
+      for (let i = 0; i < group.length; i++) {
+        for (const other of remaining) {
+          if (Math.hypot(group[i].x - other.x, group[i].y - other.y) < 48) {
+            group.push(other);
+            remaining.delete(other);
+          }
+        }
+      }
+      if (group.length < 2) continue;
+      group.sort((a, b) => a.x - b.x || a.id.localeCompare(b.id));
+      const split = Math.ceil(group.length / 2);
+      const left = Math.min(...group.map(p => p.x)) - 96;
+      const right = Math.max(...group.map(p => p.x)) + 96;
+      for (const [side, column] of [['left', group.slice(0, split)], ['right', group.slice(split)]]) {
+        column.sort((a, b) => a.y - b.y || a.id.localeCompare(b.id));
+        const centerY = column.reduce((sum, p) => sum + p.y, 0) / column.length - 36;
+        column.forEach((item, i) => targets.set(item.id, {side,
+          x: side === 'left' ? left : right,
+          y: centerY + (i - (column.length - 1) / 2) * 48}));
+      }
+    }
+    return targets;
+  }
+
   window.TravelMarkerLayout = (items, {width, height, obstacles = []}) => {
     const bounds = {left: 8, top: 8, right: width - 8, bottom: height - 28};
     const placed = [], occupied = [...obstacles];
     // Stable ordering prevents labels swapping places while the map is dragged.
     const ordered = [...items].sort((a, b) => Number(b.fixed) - Number(a.fixed)
       || b.priority - a.priority || a.id.localeCompare(b.id));
+    const fans = fanPositions(items);
     const offsets = [{x: 0, y: 0}];
     const limit = Math.ceil(Math.max(width, height) / 40);
     for (let ring = 1; ring <= limit; ring++) {
@@ -22,15 +53,21 @@
       offsets.push(...shell);
     }
     for (const item of ordered) {
-      const sides = item.nameWidth ? ['right', 'left'] : ['right'];
+      const fan = fans.get(item.id);
+      const preferredSide = fan?.side || (item.x > width / 2 ? 'left' : 'right');
+      const sides = [preferredSide, preferredSide === 'left' ? 'right' : 'left'];
       const size = side => ({
         left: side === 'left' && item.nameWidth ? 14 + item.nameWidth : 20,
         right: side === 'right' && item.nameWidth ? 14 + item.nameWidth : 20
       });
       let best = null, bestScore = Infinity;
+      const target = fan ? {x: fan.x - item.x, y: fan.y - item.y} : {x: 0, y: 0};
+      // The first candidate is a left/right callout with a short diagonal and horizontal tail.
+      // Further rows / columns are used only when the preferred callout cannot fit.
+      const alternatives = offsets.map(offset => ({x: target.x + offset.x, y: target.y + offset.y}));
       const candidates = item.fixed && item.previous
         ? [{x: item.previous.dx, y: item.previous.dy}]
-        : offsets;
+        : alternatives;
       for (const offset of candidates) {
         let fits = false;
         for (const side of sides) {
@@ -55,9 +92,16 @@
           const overflow = Math.max(0, bounds.left - rect.left) + Math.max(0, rect.right - bounds.right)
             + Math.max(0, bounds.top - rect.top) + Math.max(0, rect.bottom - bounds.bottom);
           const dx = x - item.x, dy = y - item.y;
-          const score = (overlap + overflow) * 1e9 + dx * dx + dy * dy + (side === 'left' ? 1 : 0);
-          if (score < bestScore) { bestScore = score; best = {id: item.id, dx, dy, side, rect}; }
-          if (!overlap && !overflow) fits = true;
+          const sidePenalty = side === preferredSide ? 0 : 20000;
+          // At an edge, use the spacious side instead of turning the name across its own leader.
+          const inward = fan && side !== (dx < 0 ? 'left' : 'right');
+          const shortTail = fan ? Math.max(0, 64 - Math.abs(dx)) : 0;
+          const score = (overlap + overflow) * 1e9 + (inward ? 1e7 : 0) + shortTail * 1e4
+            + (dx - target.x) ** 2 + (dy - target.y) ** 2 + sidePenalty;
+          if (score < bestScore) { bestScore = score; best = {id: item.id, dx, dy, side, rect,
+            // Attach to the near edge of the entire label if its name extends inward.
+            endX: (dx >= 0 ? rect.left + 3 : rect.right - 3) - item.x}; }
+          if (!overlap && !overflow && !inward && !shortTail) fits = true;
         }
         // All earlier candidates are closer rings. Stop once the label fits freely.
         if (fits) break;
@@ -66,5 +110,11 @@
       placed.push(best);
     }
     return placed;
+  };
+
+  window.TravelMarkerLayout.leader = ({dx, dy, endX}) => {
+    const end = endX ?? dx - Math.sign(dx) * 17;
+    const knee = Math.sign(end) * Math.min(Math.abs(dy), Math.max(0, Math.abs(end) - 28));
+    return `M0 0 L${knee} ${dy} L${end} ${dy}`;
   };
 })();

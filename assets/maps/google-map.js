@@ -94,7 +94,7 @@
     const leader = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     leader.classList.add('gmap-marker-leader');
     leader.setAttribute('aria-hidden', 'true');
-    leader.innerHTML = '<path class="gmap-leader-halo"/><path class="gmap-leader-line"/><circle r="3.5"/>';
+    leader.innerHTML = '<path class="gmap-leader-halo"/><path class="gmap-leader-line"/><circle r="2.5"/>';
     label.replaceChildren(leader, face);
     // Only the visible face receives clicks; the empty anchor and leader are transparent.
     marker.style.pointerEvents = 'none';
@@ -119,9 +119,8 @@
     entry.label.classList.toggle('name-left', side === 'left');
     const distance = Math.hypot(dx, dy);
     entry.label.classList.toggle('displaced', distance > 1);
-    // Stop the leader at the number's edge; its small dot stays at the true coordinate.
-    const scale = distance > 18 ? (distance - 18) / distance : 0;
-    const path = `M0 0 L${dx * scale} ${dy * scale}`;
+    // A diagonal leaves the true coordinate, then a horizontal tail meets the label.
+    const path = window.TravelMarkerLayout.leader(placement);
     entry.leader.querySelectorAll('path').forEach(line => line.setAttribute('d', path));
   }
 
