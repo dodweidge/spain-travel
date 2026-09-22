@@ -3,18 +3,19 @@
   'use strict';
   const intersects = (a, b, gap = 4) => a.left < b.right + gap && a.right + gap > b.left
     && a.top < b.bottom + gap && a.bottom + gap > b.top;
-  // Matches the 32px number/search circles in google-map.css; shadows and names do not count.
-  const iconDiameter = 32;
+  // 32px circles must overlap by more than 12px along their centres before moving.
+  // Light overlap, shadows and names never start avoidance.
+  const overlapDistance = 20;
 
   function fanPositions(items) {
     const remaining = new Set(items), targets = new Map();
-    // Only actual circle overlap at the unshifted coordinates starts a callout group.
+    // Only substantial circle overlap at the unshifted coordinates starts a callout group.
     while (remaining.size) {
       const group = [remaining.values().next().value];
       remaining.delete(group[0]);
       for (let i = 0; i < group.length; i++) {
         for (const other of remaining) {
-          if (Math.hypot(group[i].x - other.x, group[i].y - other.y) < iconDiameter) {
+          if (Math.hypot(group[i].x - other.x, group[i].y - other.y) < overlapDistance) {
             group.push(other);
             remaining.delete(other);
           }
@@ -23,14 +24,14 @@
       if (group.length < 2) continue;
       group.sort((a, b) => a.x - b.x || a.id.localeCompare(b.id));
       const split = Math.ceil(group.length / 2);
-      const left = Math.min(...group.map(p => p.x)) - 96;
-      const right = Math.max(...group.map(p => p.x)) + 96;
+      const left = Math.min(...group.map(p => p.x)) - 56;
+      const right = Math.max(...group.map(p => p.x)) + 56;
       for (const [side, column] of [['left', group.slice(0, split)], ['right', group.slice(split)]]) {
         column.sort((a, b) => a.y - b.y || a.id.localeCompare(b.id));
-        const centerY = column.reduce((sum, p) => sum + p.y, 0) / column.length - 36;
+        const centerY = column.reduce((sum, p) => sum + p.y, 0) / column.length - 24;
         column.forEach((item, i) => targets.set(item.id, {side,
           x: side === 'left' ? left : right,
-          y: centerY + (i - (column.length - 1) / 2) * 48}));
+          y: centerY + (i - (column.length - 1) / 2) * 44}));
       }
     }
     return targets;
@@ -109,7 +110,7 @@
           const sidePenalty = side === preferredSide ? 0 : 20000;
           // At an edge, use the spacious side instead of turning the name across its own leader.
           const inward = side !== (dx < 0 ? 'left' : 'right');
-          const shortTail = Math.max(0, 64 - Math.abs(dx));
+          const shortTail = Math.max(0, 40 - Math.abs(dx));
           const score = (overlap + overflow) * 1e9 + (inward ? 1e7 : 0) + shortTail * 1e4
             + (dx - target.x) ** 2 + (dy - target.y) ** 2 + sidePenalty;
           if (score < bestScore) { bestScore = score; best = {id: item.id, dx, dy, side, rect,
@@ -128,7 +129,7 @@
 
   window.TravelMarkerLayout.leader = ({dx, dy, endX}) => {
     const end = endX ?? dx - Math.sign(dx) * 17;
-    const knee = Math.sign(end) * Math.min(Math.abs(dy), Math.max(0, Math.abs(end) - 28));
+    const knee = Math.sign(end) * Math.min(Math.abs(dy), Math.max(0, Math.abs(end) - 16));
     return `M0 0 L${knee} ${dy} L${end} ${dy}`;
   };
 })();

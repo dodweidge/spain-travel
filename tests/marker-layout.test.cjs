@@ -20,7 +20,7 @@ function clearLabels(result, area = viewport) {
   }
 }
 // Casa Batlló and Casa Amatller: nearby numbers, with the selected name expanded.
-const neighbours = [point('03', 370, 278), point('05', 390, 260, 104, 10000)];
+const neighbours = [point('03', 370, 278), point('05', 382, 270, 104, 10000)];
 const original = JSON.stringify(neighbours);
 const result = layout(neighbours, viewport);
 clearLabels(result);
@@ -29,14 +29,14 @@ assert.equal(JSON.stringify(neighbours), original, 'geographic anchors are immut
 assert.equal(JSON.stringify(result), JSON.stringify(layout(neighbours, viewport)), 'stable placement');
 // Reference style: both numbers fan out, with a diagonal followed by a horizontal leader.
 const leftCallout = result.find(p => p.id === '03'), rightCallout = result.find(p => p.id === '05');
-assert(leftCallout.dx <= -60 && rightCallout.dx >= 60, 'close pair opens to opposite sides');
-assert(leftCallout.dy < 0 && rightCallout.dy < 0);
+assert(leftCallout.dx === -56 && rightCallout.dx === 56, 'close pair opens to opposite sides');
+assert.equal(leftCallout.dy, -24); assert.equal(rightCallout.dy, -24);
 assert.equal(leftCallout.side, 'left'); assert.equal(rightCallout.side, 'right');
 for (const p of result) {
   const segments = layout.leader(p).match(/-?\d+(?:\.\d+)?/g).map(Number);
   assert.equal(segments.length, 6, 'one diagonal and one horizontal segment');
   assert.equal(segments[3], segments[5], 'horizontal tail');
-  assert(Math.abs(segments[4] - segments[2]) >= 28, 'visible horizontal length');
+  assert(Math.abs(segments[4] - segments[2]) >= 16, 'visible horizontal length');
   assert(Math.abs(segments[2]) > 0 && Math.abs(segments[3]) > 0, 'diagonal leaves the true coordinate');
 }
 const compactPair = neighbours.map(p => ({...p, nameWidth: 0, priority: 1}));
@@ -71,12 +71,12 @@ for (const p of withPanel) assert(p.rect.right + 4 <= obstacle.left || p.rect.le
 // Zooming in releases displaced labels back to their own coordinates.
 const separated = layout([point('03', 180, 230), point('05', 480, 260, 104, 10000)], viewport);
 assert(separated.every(p => p.dx === 0 && p.dy === 0));
-// Nearness, touching circles and diagonal bounding-box overlap are not icon overlap.
-for (const [dx, dy] of [[32, 0], [33, 0], [47, 0], [24, 24]]) {
+// Light overlap, touching circles and diagonal overlap never start avoidance.
+for (const [dx, dy] of [[20, 0], [24, 0], [31, 0], [32, 0], [33, 0], [47, 0], [16, 16]]) {
   const unchanged = layout([point('a', 300, 250), point('b', 300 + dx, 250 + dy)], viewport);
   assert(unchanged.every(p => p.dx === 0 && p.dy === 0), `non-overlapping circles ${dx},${dy} stay put`);
 }
-assert(layout([point('a', 300, 250), point('b', 331, 250)], viewport).some(p => p.dx || p.dy));
+assert(layout([point('a', 300, 250), point('b', 319, 250)], viewport).some(p => p.dx || p.dy));
 // Expanded names, selection/hover, old offsets, controls and viewport edges never initiate avoidance.
 const unchangedCases = [
   [point('name', 300, 250, 250, 10000), point('nearby', 365, 250)],
@@ -92,4 +92,4 @@ const mixed = layout([...neighbours, point('stationary', 500, 260)], viewport);
 clearLabels(mixed);
 const stationary = mixed.find(p => p.id === 'stationary');
 assert.equal(stationary.dx, 0); assert.equal(stationary.dy, 0);
-console.log('Marker layout: actual-circle overlap only; names, hover, edges and controls stay put; elbow callouts and reset passed.');
+console.log('Marker layout: substantial circle overlap only; shorter callouts; names, hover, edges and controls stay put; elbow callouts and reset passed.');

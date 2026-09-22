@@ -12,6 +12,15 @@
 .google-live-tools button:disabled{opacity:.5;cursor:default}
 .google-live-tools a{color:#3b725c}
 .google-live-heading{font-size:14px;font-weight:600;color:#365e51}
+.city-map-filter-bar{margin-top:10px;padding-top:9px;border-top:1px solid #d8e1d4}
+.city-map-filter-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:7px;color:#57735f;font-size:11px}
+.city-map-filter-heading strong{font-weight:500}
+.city-map-filters{display:flex;flex-wrap:wrap;gap:6px}
+.city-map-filters button{border:1px solid #cfdbcd;border-radius:16px;padding:5px 11px;background:#fffdf6;color:#446654;font-family:inherit;font-size:11px;line-height:1.4;cursor:pointer}
+.city-map-filters button[aria-pressed=true]{background:#285c57;border-color:#285c57;color:white}
+.city-map-filters button:hover{border-color:#527d65}
+.city-map-filter-empty{padding:12px 0;color:#697c6d;font-size:12px;line-height:1.8}
+.city-map-list[hidden],.city-map-list>li[hidden],#cityMapActivities[hidden],#cityMapActivities button[hidden],#cityMapFocus[hidden],#cityMapFilterEmpty[hidden]{display:none!important}
 .google-live-results{position:absolute;top:52px;left:10px;z-index:3;width:min(320px,calc(100% - 72px));max-height:calc(100% - 95px);overflow:auto;overscroll-behavior:contain;padding:12px;border:1px solid #c7d5c7;border-radius:9px;background:#fffef8;box-shadow:0 4px 18px #233f3229;color:#365e51;font-size:12px}
 .google-search-results-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .google-search-results-head button{border:0;padding:4px;background:transparent;color:#526f5d;font:inherit;cursor:pointer}

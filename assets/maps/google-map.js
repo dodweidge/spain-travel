@@ -8,12 +8,77 @@
     generation: 0, error: false, preserveNextOpen: false, activeKey: null,
     searchGeneration: 0, placesLibrary: null, searchElement: null,
     searchMarkers: new Map(), searchInfo: null, searchTimer: null,
-    labels: new Map(), projection: null, layoutFrame: null, resizeObserver: null
+    labels: new Map(), projection: null, layoutFrame: null, resizeObserver: null,
+    filter: '全部', filterCity: null
   };
   const points = cityCoordinates.filter(p => cities[p.city]?.spots[p.index]
     && Number.isFinite(p.lat) && Number.isFinite(p.lon));
   const currentPoint = index => points.find(p => p.city === cityMapCity && p.index === index);
   const isVisible = () => onlineMapMode === 'interactive' && $('cityMapDialog').open;
+  const matchesSpot = p => cityEntryMatches(cities[p.city].spots[p.index].cat, 'spot', state.filter);
+
+  function renderFilters() {
+    const group = $('cityMapFilters');
+    group.replaceChildren();
+    for (const category of cityEntryCategories(cityMapCity)) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.dataset.cityMapFilter = category;
+      button.textContent = category;
+      button.setAttribute('aria-pressed', String(category === state.filter));
+      group.append(button);
+    }
+  }
+
+  function applyFilters() {
+    const cityPoints = points.filter(p => p.city === cityMapCity && matchesSpot(p));
+    const indices = new Set(cityPoints.map(p => p.index));
+    for (const entry of state.markers.values()) {
+      const visible = matchesSpot(entry.p);
+      entry.marker.map = visible ? state.map : null;
+      if (!visible) {
+        entry.hovered = entry.focused = false;
+        entry.label.classList.remove('expanded');
+        moveLabel(entry, {dx: 0, dy: 0, side: 'right'});
+      }
+    }
+    $('cityMapList').querySelectorAll('[data-map-spot]').forEach(button => {
+      button.closest('li').hidden = !indices.has(Number(button.dataset.mapSpot));
+    });
+    const activities = cityActivities(cityMapCity);
+    const activityIds = new Set(activities.filter(a => cityEntryMatches(a.type, 'activity', state.filter)).map(a => a.id));
+    $('cityMapActivities').querySelectorAll('[data-activity-map]').forEach(button => {
+      button.hidden = !activityIds.has(button.dataset.activityMap);
+    });
+    $('cityMapActivities').hidden = activityIds.size === 0;
+    const count = cityPoints.length + activityIds.size;
+    $('cityMapFilterCount').textContent = '显示 ' + count + ' / ' + (cities[cityMapCity].spots.length + activities.length) + ' 项';
+    $('cityMapFilterEmpty').hidden = count > 0;
+    $('cityMapList').hidden = cityPoints.length === 0;
+    if (!indices.has(cityMapSelected)) {
+      if (cityPoints.length) selectCityMapSpot(cityPoints[0].index, false);
+      else {
+        cityMapSelected = -1;
+        $('cityMapList').querySelectorAll('[aria-pressed]').forEach(button => button.setAttribute('aria-pressed', 'false'));
+        select(-1);
+      }
+    }
+    $('cityMapFocus').hidden = !indices.has(cityMapSelected);
+    $('cityMapFit').textContent = state.filter === '全部' ? '显示本城全部景点' : '显示筛选景点';
+    $('cityMapFit').disabled = !state.map || state.error || cityPoints.length === 0;
+    $('cityMapFilters').querySelectorAll('button').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.cityMapFilter === state.filter));
+    });
+    scheduleLayout();
+  }
+
+  function prepareFilters(id, spot) {
+    if (state.filterCity !== id || !cityEntryCategories(id).includes(state.filter)
+      || (spot >= 0 && !cityEntryMatches(cities[id].spots[spot]?.cat, 'spot', state.filter))) state.filter = '全部';
+    state.filterCity = id;
+    renderFilters();
+    applyFilters();
+  }
 
   function message(text, failed = false) {
     $('googleLiveMessage').hidden = false;
@@ -72,6 +137,11 @@
   function chooseMarker(p) {
     if (!isVisible()) return;
     resetSearch(false);
+    // An explicit search result may reveal a place excluded by the current category.
+    if (p.city === cityMapCity && !matchesSpot(p)) {
+      state.filter = '全部';
+      applyFilters();
+    }
     if (p.city !== cityMapCity) {
       // A marker in a neighbouring city changes the sidebar, never the camera.
       state.preserveNextOpen = true;
@@ -133,6 +203,7 @@
     const entries = [...state.labels.values()];
     const pinned = entries.find(entry => entry.hovered) || entries.find(entry => entry.focused);
     for (const [id, entry] of state.labels) {
+      if (entry.marker.map !== state.map) continue;
       const pixel = projection.fromLatLngToContainerPixel(entry.marker.position);
       if (!pixel || pixel.x < -24 || pixel.y < -24 || pixel.x > width + 24 || pixel.y > height + 24) {
         moveLabel(entry, {dx: 0, dy: 0, side: 'right'});
@@ -224,7 +295,8 @@
     if (entry) { entry.label.classList.add('active'); entry.marker.zIndex = 10000; }
     const spot = cities[cityMapCity]?.spots[index];
     $('googleLiveCurrent').textContent = spot ? cities[cityMapCity].name + ' · ' + spot.n : cities[cityMapCity].name;
-    $('googleLiveLocate').disabled = !state.map || state.error || !p;
+    $('googleLiveLocate').disabled = !state.map || state.error || !p || !matchesSpot(p);
+    $('cityMapFocus').hidden = !p || !matchesSpot(p);
     $('googleLiveExternal').href = googleSearch(p ? p.lat + ',' + p.lon : onlineCityQuery());
     scheduleLayout();
     // Highlighting alone leaves the camera unchanged; sidebar clicks also call focus().
@@ -232,7 +304,7 @@
 
   function fit() {
     if (!state.map || state.error || !isVisible()) return;
-    const cityPoints = points.filter(p => p.city === cityMapCity);
+    const cityPoints = points.filter(p => p.city === cityMapCity && matchesSpot(p));
     if (!cityPoints.length) return;
     const bounds = new window.google.maps.LatLngBounds();
     cityPoints.forEach(p => bounds.extend({lat: p.lat, lng: p.lon}));
@@ -242,7 +314,7 @@
   function focus(index = cityMapSelected) {
     if (!state.map || state.error || !isVisible()) return;
     const p = currentPoint(index);
-    if (p) state.map.panTo({lat: p.lat, lng: p.lon});
+    if (p && matchesSpot(p)) state.map.panTo({lat: p.lat, lng: p.lon});
     // Both sidebar selection and explicit positioning preserve the user's zoom level.
   }
 
@@ -400,8 +472,8 @@
     $('googleMapSearch').hidden = false;
     $('googleLivePane').hidden = false;
     $('googleLiveTools').hidden = false;
-    $('cityMapFit').textContent = '显示本城全部景点';
-    $('cityMapFit').disabled = !state.map || state.error;
+    $('cityMapFit').textContent = state.filter === '全部' ? '显示本城全部景点' : '显示筛选景点';
+    $('cityMapFit').disabled = !state.map || state.error || !points.some(p => p.city === cityMapCity && matchesSpot(p));
     $('cityOnlineHint').textContent = '点编号标记查看右侧介绍；右侧选点自动定位，保持当前缩放；点其他地点查看 Google 信息。';
     $('googleLiveOpenExternal').href = googleSearch(onlineCityQuery());
   }
@@ -420,7 +492,7 @@
       if (!state.map) createMap(maps);
       $('googleLiveMessage').hidden = true;
       $('googleLivePane').setAttribute('aria-busy', 'false');
-      $('cityMapFit').disabled = false;
+      applyFilters();
       $('googleMapTerm').disabled = false;
       $('googleMapSearch').querySelector('[type="submit"]').disabled = false;
       if (city !== state.city && !preserveView) {
@@ -441,6 +513,7 @@
   function opened(id, spot, query = '') {
     if (id !== cityMapCity) return;
     resetSearch();
+    prepareFilters(id, spot);
     const preserveView = state.preserveNextOpen;
     state.preserveNextOpen = false;
     void activate({spot, preserveView}).then(ready => {
@@ -462,8 +535,17 @@
     tabs.innerHTML = '<strong class="google-live-heading">谷歌互动地图</strong>';
     tabs.removeAttribute('role');
     tabs.removeAttribute('aria-label');
+    $('cityMapList').insertAdjacentHTML('afterend', '<p class="city-map-filter-empty" id="cityMapFilterEmpty" role="status" hidden>此筛选下暂无地点，请选择其他类型。</p>');
+    document.querySelector('.city-online-bar').insertAdjacentHTML('beforeend', '<section class="city-map-filter-bar" aria-label="城市地图筛选"><div class="city-map-filter-heading"><strong>收录地点筛选</strong><span id="cityMapFilterCount" aria-live="polite"></span></div><div class="city-map-filters" id="cityMapFilters" role="group" aria-label="景点与活动类型"></div></section>');
+    $('cityMapFilters').addEventListener('click', event => {
+      const button = event.target.closest('[data-city-map-filter]');
+      if (!button) return;
+      state.filter = button.dataset.cityMapFilter;
+      resetSearch();
+      applyFilters();
+    });
     document.querySelector('.city-online-bar').insertAdjacentHTML('beforeend', '<div class="google-live-tools" id="googleLiveTools" hidden><strong id="googleLiveCurrent"></strong><button type="button" id="googleLiveLocate" disabled>定位所选景点</button><a id="googleLiveExternal" target="_blank" rel="noopener noreferrer">在 Google 中打开 ↗</a></div>');
-    $('cityGooglePane').insertAdjacentHTML('beforebegin', '<section class="google-live-pane" id="googleLivePane" aria-label="谷歌互动景点地图" hidden><div class="google-live-stage"><div id="googleLiveCanvas" role="region" aria-label="谷歌地图与推荐景点" tabindex="0"></div><section class="google-live-results" id="googleLiveResults" aria-label="地点搜索结果" hidden><div class="google-search-results-head"><strong>搜索结果</strong><button type="button" id="googleLiveResultsClose" aria-label="关闭搜索结果">关闭 ×</button></div><p id="googleLiveSearchStatus" role="status"></p><div class="google-live-local-results" id="googleLiveLocalResults"></div><div id="googleLiveRemoteResults"></div><a id="googleLiveSearchExternal" target="_blank" rel="noopener noreferrer" hidden>在 Google 地图中搜索 ↗</a></section><div class="google-live-message" id="googleLiveMessage" role="status"><p id="googleLiveMessageText">正在加载谷歌地图…</p><div id="googleLiveRecovery" hidden><button type="button" id="googleLiveReload">重新加载页面</button><a id="googleLiveOpenExternal" target="_blank" rel="noopener noreferrer">在 Google 地图中打开 ↗</a></div></div></div><div class="google-live-legend" aria-label="地图标记图例"><span class="legend-classic">经典景点</span><span class="legend-culture">博物馆／文化收藏</span><span class="legend-warning">开放待复核</span><span class="legend-selected">当前选中</span><span class="legend-search">搜索结果</span><small>错开标记用细线连接，线端小圆点是实际位置。</small></div></section>');
+    $('cityGooglePane').insertAdjacentHTML('beforebegin', '<section class="google-live-pane" id="googleLivePane" aria-label="谷歌互动城市地图" hidden><div class="google-live-stage"><div id="googleLiveCanvas" role="region" aria-label="谷歌地图与收录地点" tabindex="0"></div><section class="google-live-results" id="googleLiveResults" aria-label="地点搜索结果" hidden><div class="google-search-results-head"><strong>搜索结果</strong><button type="button" id="googleLiveResultsClose" aria-label="关闭搜索结果">关闭 ×</button></div><p id="googleLiveSearchStatus" role="status"></p><div class="google-live-local-results" id="googleLiveLocalResults"></div><div id="googleLiveRemoteResults"></div><a id="googleLiveSearchExternal" target="_blank" rel="noopener noreferrer" hidden>在 Google 地图中搜索 ↗</a></section><div class="google-live-message" id="googleLiveMessage" role="status"><p id="googleLiveMessageText">正在加载谷歌地图…</p><div id="googleLiveRecovery" hidden><button type="button" id="googleLiveReload">重新加载页面</button><a id="googleLiveOpenExternal" target="_blank" rel="noopener noreferrer">在 Google 地图中打开 ↗</a></div></div></div><div class="google-live-legend" aria-label="地图标记图例"><span class="legend-classic">经典景点</span><span class="legend-culture">博物馆／文化收藏</span><span class="legend-warning">开放待复核</span><span class="legend-selected">当前选中</span><span class="legend-search">搜索结果</span><small>错开标记用细线连接，线端小圆点是实际位置。</small></div></section>');
     $('googleLiveLocate').onclick = () => focus();
     $('cityMapList').addEventListener('click', event => {
       const button = event.target.closest('button[data-map-spot]');
