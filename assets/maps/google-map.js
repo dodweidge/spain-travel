@@ -51,6 +51,7 @@
       button.hidden = !activityIds.has(button.dataset.activityMap);
     });
     $('cityMapActivities').hidden = activityIds.size === 0;
+    $('cityMapUnlocated').innerHTML = renderUnlocatedPlaces(cityMapCity, state.filter);
     const count = cityPoints.length + activityIds.size;
     $('cityMapFilterCount').textContent = '显示 ' + count + ' / ' + (cities[cityMapCity].spots.length + activities.length) + ' 项';
     $('cityMapFilterEmpty').hidden = count > 0;
@@ -64,7 +65,7 @@
       }
     }
     $('cityMapFocus').hidden = !indices.has(cityMapSelected);
-    $('cityMapFit').textContent = state.filter === '全部' ? '显示本城全部景点' : '显示筛选景点';
+    $('cityMapFit').textContent = state.filter === '全部' ? '显示本城全部地点' : '显示筛选地点';
     $('cityMapFit').disabled = !state.map || state.error || cityPoints.length === 0;
     $('cityMapFilters').querySelectorAll('button').forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.cityMapFilter === state.filter));
@@ -405,7 +406,7 @@
       clearSearchMarkers();
       state.searchInfo?.close();
       $('googleLiveResults').setAttribute('aria-busy', 'false');
-      $('googleLiveSearchStatus').textContent = 'Google 地点搜索暂时不可用。可选择已收录的景点，或稍后重试。';
+      $('googleLiveSearchStatus').textContent = 'Google 地点搜索暂时不可用。可选择已收录的地点，或稍后重试。';
       const link = $('googleLiveSearchExternal');
       link.href = googleSearch(query + ' ' + onlineCityQuery());
       link.hidden = false;
@@ -472,7 +473,7 @@
     $('googleMapSearch').hidden = false;
     $('googleLivePane').hidden = false;
     $('googleLiveTools').hidden = false;
-    $('cityMapFit').textContent = state.filter === '全部' ? '显示本城全部景点' : '显示筛选景点';
+    $('cityMapFit').textContent = state.filter === '全部' ? '显示本城全部地点' : '显示筛选地点';
     $('cityMapFit').disabled = !state.map || state.error || !points.some(p => p.city === cityMapCity && matchesSpot(p));
     $('cityOnlineHint').textContent = '点编号标记查看右侧介绍；右侧选点自动定位，保持当前缩放；点其他地点查看 Google 信息。';
     $('googleLiveOpenExternal').href = googleSearch(onlineCityQuery());
@@ -531,12 +532,13 @@
   }
 
   function init() {
+    $('cityMapFocus').insertAdjacentHTML('afterend', '<div id="cityMapUnlocated"></div>');
     const tabs = document.querySelector('.city-online-tabs');
     tabs.innerHTML = '<strong class="google-live-heading">谷歌互动地图</strong>';
     tabs.removeAttribute('role');
     tabs.removeAttribute('aria-label');
     $('cityMapList').insertAdjacentHTML('afterend', '<p class="city-map-filter-empty" id="cityMapFilterEmpty" role="status" hidden>此筛选下暂无地点，请选择其他类型。</p>');
-    document.querySelector('.city-online-bar').insertAdjacentHTML('beforeend', '<section class="city-map-filter-bar" aria-label="城市地图筛选"><div class="city-map-filter-heading"><strong>收录地点筛选</strong><span id="cityMapFilterCount" aria-live="polite"></span></div><div class="city-map-filters" id="cityMapFilters" role="group" aria-label="景点与活动类型"></div></section>');
+    document.querySelector('.city-online-bar').insertAdjacentHTML('beforeend', '<section class="city-map-filter-bar" aria-label="城市地图筛选"><div class="city-map-filter-heading"><strong>收录地点筛选</strong><span id="cityMapFilterCount" aria-live="polite"></span></div><div class="city-map-filters" id="cityMapFilters" role="group" aria-label="地点类型筛选"></div></section>');
     $('cityMapFilters').addEventListener('click', event => {
       const button = event.target.closest('[data-city-map-filter]');
       if (!button) return;
@@ -544,8 +546,8 @@
       resetSearch();
       applyFilters();
     });
-    document.querySelector('.city-online-bar').insertAdjacentHTML('beforeend', '<div class="google-live-tools" id="googleLiveTools" hidden><strong id="googleLiveCurrent"></strong><button type="button" id="googleLiveLocate" disabled>定位所选景点</button><a id="googleLiveExternal" target="_blank" rel="noopener noreferrer">在 Google 中打开 ↗</a></div>');
-    $('cityGooglePane').insertAdjacentHTML('beforebegin', '<section class="google-live-pane" id="googleLivePane" aria-label="谷歌互动城市地图" hidden><div class="google-live-stage"><div id="googleLiveCanvas" role="region" aria-label="谷歌地图与收录地点" tabindex="0"></div><section class="google-live-results" id="googleLiveResults" aria-label="地点搜索结果" hidden><div class="google-search-results-head"><strong>搜索结果</strong><button type="button" id="googleLiveResultsClose" aria-label="关闭搜索结果">关闭 ×</button></div><p id="googleLiveSearchStatus" role="status"></p><div class="google-live-local-results" id="googleLiveLocalResults"></div><div id="googleLiveRemoteResults"></div><a id="googleLiveSearchExternal" target="_blank" rel="noopener noreferrer" hidden>在 Google 地图中搜索 ↗</a></section><div class="google-live-message" id="googleLiveMessage" role="status"><p id="googleLiveMessageText">正在加载谷歌地图…</p><div id="googleLiveRecovery" hidden><button type="button" id="googleLiveReload">重新加载页面</button><a id="googleLiveOpenExternal" target="_blank" rel="noopener noreferrer">在 Google 地图中打开 ↗</a></div></div></div><div class="google-live-legend" aria-label="地图标记图例"><span class="legend-classic">经典景点</span><span class="legend-culture">博物馆／文化收藏</span><span class="legend-warning">开放待复核</span><span class="legend-selected">当前选中</span><span class="legend-search">搜索结果</span><small>错开标记用细线连接，线端小圆点是实际位置。</small></div></section>');
+    document.querySelector('.city-online-bar').insertAdjacentHTML('beforeend', '<div class="google-live-tools" id="googleLiveTools" hidden><strong id="googleLiveCurrent"></strong><button type="button" id="googleLiveLocate" disabled>定位所选地点</button><a id="googleLiveExternal" target="_blank" rel="noopener noreferrer">在 Google 中打开 ↗</a></div>');
+    $('cityGooglePane').insertAdjacentHTML('beforebegin', '<section class="google-live-pane" id="googleLivePane" aria-label="谷歌互动城市地图" hidden><div class="google-live-stage"><div id="googleLiveCanvas" role="region" aria-label="谷歌地图与收录地点" tabindex="0"></div><section class="google-live-results" id="googleLiveResults" aria-label="地点搜索结果" hidden><div class="google-search-results-head"><strong>搜索结果</strong><button type="button" id="googleLiveResultsClose" aria-label="关闭搜索结果">关闭 ×</button></div><p id="googleLiveSearchStatus" role="status"></p><div class="google-live-local-results" id="googleLiveLocalResults"></div><div id="googleLiveRemoteResults"></div><a id="googleLiveSearchExternal" target="_blank" rel="noopener noreferrer" hidden>在 Google 地图中搜索 ↗</a></section><div class="google-live-message" id="googleLiveMessage" role="status"><p id="googleLiveMessageText">正在加载谷歌地图…</p><div id="googleLiveRecovery" hidden><button type="button" id="googleLiveReload">重新加载页面</button><a id="googleLiveOpenExternal" target="_blank" rel="noopener noreferrer">在 Google 地图中打开 ↗</a></div></div></div><div class="google-live-legend" aria-label="地图标记图例"><span class="legend-classic">经典景点</span><span class="legend-culture">博物馆／文化收藏</span><span class="legend-restaurant">餐厅</span><span class="legend-hotel">酒店</span><span class="legend-warning">开放待复核</span><span class="legend-selected">当前选中</span><span class="legend-search">搜索结果</span><small>错开标记用细线连接，线端小圆点是实际位置。</small></div></section>');
     $('googleLiveLocate').onclick = () => focus();
     $('cityMapList').addEventListener('click', event => {
       const button = event.target.closest('button[data-map-spot]');
@@ -564,7 +566,7 @@
       if (!query) return;
       const matches = showLocalResults(query);
       $('googleLiveSearchStatus').textContent = matches.length
-        ? '已收录的景点可直接定位；点击“查找”搜索更多地点。'
+        ? '已收录的地点可直接定位；点击“查找”搜索更多地点。'
         : '点击“查找”，搜索当前地图附近的地点。';
     };
     $('googleLiveSearchClear').onclick = () => resetSearch();

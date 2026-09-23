@@ -1,0 +1,2152 @@
+{
+  "source": {
+    "file": "西班牙景点餐厅酒店整理.md",
+    "author": "WanderWithMira",
+    "videos": "西班牙 EP1–EP8",
+    "season": "冬季／圣诞前后",
+    "checked": "2026-09-23",
+    "note": "依据用户提供的整理文档，未观看未附上的视频；店址结合官网，坐标结合公开地点资料。历史账单不代表现价。"
+  },
+  "additions": [
+    {
+      "city": 1,
+      "index": 11,
+      "key": "c02-s12",
+      "place": {
+        "n": "米拉之家",
+        "en": "Casa Milà / La Pedrera",
+        "cat": "艺术与建筑",
+        "placeType": "attraction",
+        "address": "Passeig de Gràcia 92, Barcelona",
+        "q": "Casa Milà / La Pedrera Passeig de Gràcia 92, Barcelona",
+        "source": "https://www.lapedrera.com/",
+        "d": "高迪设计的现代主义住宅，屋顶的烟囱和通风塔是参观重点。",
+        "highlights": "屋顶雕塑般的烟囱、庭院与住宅空间。",
+        "tip": "文件作者选择较早时段和英文导览；可按语言需求提前查看场次，屋顶参观也受天气影响。",
+        "duration": "1.5–2 小时",
+        "importId": "mira-mila",
+        "travelNotes": [
+          {
+            "ref": "EP2 00:28"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s12",
+        "city": 1,
+        "index": 11,
+        "name": "米拉之家",
+        "title": "Casa Milà / La Pedrera",
+        "lang": "en",
+        "lat": 41.39527778,
+        "lon": 2.16166667,
+        "source": "https://en.wikipedia.org/wiki/La_Pedrera%2C_Barcelona"
+      },
+      "photo": {
+        "artist": "Thomas Ledl",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Casa_Mil%C3%A0,_general_view.jpg",
+        "caption": "米拉之家 · 地点实景参考",
+        "path": "assets/travel-notes/mila.jpg",
+        "key": "c02-s12"
+      }
+    },
+    {
+      "city": 1,
+      "index": 12,
+      "key": "c02-s13",
+      "place": {
+        "n": "文森之家",
+        "en": "Casa Vicens",
+        "cat": "艺术与建筑",
+        "placeType": "attraction",
+        "address": "Carrer de les Carolines 20–26, Barcelona",
+        "q": "Casa Vicens Carrer de les Carolines 20–26, Barcelona",
+        "source": "https://casavicens.org/",
+        "d": "位于格拉西亚街区的高迪早期住宅作品。",
+        "highlights": "彩色瓷砖外墙、蓝金色蜂巢状吸烟室与室内装饰。",
+        "tip": "作者参观约 2 小时；中文导览是否开放以预约页面为准，不把当日买到票作为旺季保证。",
+        "duration": "约 2 小时",
+        "importId": "mira-vicens",
+        "travelNotes": [
+          {
+            "ref": "EP2 06:42"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s13",
+        "city": 1,
+        "index": 12,
+        "name": "文森之家",
+        "title": "Casa Vicens",
+        "lang": "en",
+        "lat": 41.40358,
+        "lon": 2.15079,
+        "source": "https://en.wikipedia.org/wiki/Casa_Vicens"
+      },
+      "photo": {
+        "artist": "Canaan",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Gaud%C3%AD_-_Casa_Vicens.JPG",
+        "caption": "文森之家 · 地点实景参考",
+        "path": "assets/travel-notes/vicens.jpg",
+        "key": "c02-s13"
+      }
+    },
+    {
+      "city": 1,
+      "index": 13,
+      "key": "c02-s14",
+      "place": {
+        "n": "高迪故居博物馆",
+        "en": "Casa Museu Gaudí",
+        "cat": "宅邸与收藏",
+        "placeType": "attraction",
+        "address": "Park Güell, Barcelona",
+        "q": "Casa Museu Gaudí Park Güell, Barcelona",
+        "source": "https://sagradafamilia.org/en/gaudi-house-museum",
+        "d": "古埃尔公园内的粉红色住宅，高迪曾在这里居住。",
+        "highlights": "日常居所与家具，和公园的公共建筑一起看。",
+        "tip": "故居参观资格与公园入场安排应分别核对。",
+        "duration": "30–60 分钟",
+        "importId": "mira-gaudi-house",
+        "travelNotes": [
+          {
+            "ref": "EP2 11:17"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s14",
+        "city": 1,
+        "index": 13,
+        "name": "高迪故居博物馆",
+        "title": "Casa Museu Gaudí",
+        "lang": "en",
+        "lat": 41.41355,
+        "lon": 2.15216111,
+        "source": "https://sagradafamilia.org/en/gaudi-house-museum"
+      },
+      "photo": {
+        "artist": "Canaan",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Park_G%C3%BCell_-_Casa_Museu_Gaud%C3%AD.jpg",
+        "caption": "高迪故居博物馆 · 地点实景参考",
+        "path": "assets/travel-notes/gaudi-house.jpg",
+        "key": "c02-s14"
+      }
+    },
+    {
+      "city": 1,
+      "index": 14,
+      "key": "c02-s15",
+      "place": {
+        "n": "主教桥",
+        "en": "Pont del Bisbe",
+        "cat": "地方特色",
+        "placeType": "attraction",
+        "address": "Carrer del Bisbe, Barcelona",
+        "q": "Pont del Bisbe Carrer del Bisbe, Barcelona",
+        "source": "https://www.barcelona.cat/",
+        "d": "连接哥特区建筑的拱桥，是老城步行中的拍照点；现存桥并非中世纪原物。",
+        "highlights": "拱桥、石雕与两侧街巷。",
+        "tip": "街道狭窄，拍照时给行人留出通道。",
+        "duration": "10–20 分钟",
+        "importId": "mira-bisbe",
+        "travelNotes": [
+          {
+            "ref": "EP3 04:11"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s15",
+        "city": 1,
+        "index": 14,
+        "name": "主教桥",
+        "title": "Pont del Bisbe",
+        "lang": "en",
+        "lat": 41.3833,
+        "lon": 2.1764,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Pont+del+Bisbe+Carrer+del+Bisbe%2C+Barcelona+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Calle del Bisbe, 08002, el Gotic, Barcelona, Cataluña"
+      },
+      "photo": {
+        "artist": "Daniel Kraft",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Pont_del_Bisbe.jpg",
+        "caption": "主教桥 · 地点实景参考",
+        "path": "assets/travel-notes/bisbe.jpg",
+        "key": "c02-s15"
+      }
+    },
+    {
+      "city": 1,
+      "index": 15,
+      "key": "c02-s16",
+      "place": {
+        "n": "亲吻墙",
+        "en": "El món neix en cada besada",
+        "cat": "地方特色",
+        "placeType": "attraction",
+        "address": "Plaça d’Isidre Nonell, Barcelona",
+        "q": "El món neix en cada besada Plaça d’Isidre Nonell, Barcelona",
+        "source": "https://www.barcelona.cat/",
+        "d": "由照片马赛克拼成的亲吻壁画，近看和远看有不同层次。",
+        "highlights": "整体画面与每一格生活照片。",
+        "tip": "和主教桥、哥特区合并步行。",
+        "duration": "10–20 分钟",
+        "importId": "mira-kiss",
+        "travelNotes": [
+          {
+            "ref": "EP3 04:11"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s16",
+        "city": 1,
+        "index": 15,
+        "name": "亲吻墙",
+        "title": "El món neix en cada besada",
+        "lang": "en",
+        "lat": 41.38516,
+        "lon": 2.17482,
+        "source": "https://es.wikipedia.org/wiki/El_mundo_nace_en_cada_beso"
+      },
+      "photo": {
+        "artist": "Canaan",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:El_mundo_nace_en_cada_beso.jpg",
+        "caption": "亲吻墙 · 地点实景参考",
+        "path": "assets/travel-notes/kiss.jpg",
+        "key": "c02-s16"
+      }
+    },
+    {
+      "city": 1,
+      "index": 16,
+      "key": "c02-s17",
+      "place": {
+        "n": "皇家广场",
+        "en": "Plaça Reial",
+        "cat": "地方特色",
+        "placeType": "attraction",
+        "address": "Plaça Reial, Barcelona",
+        "q": "Plaça Reial Plaça Reial, Barcelona",
+        "source": "https://www.barcelona.cat/",
+        "d": "兰布拉大道旁的拱廊广场，适合老城散步途中停留。",
+        "highlights": "高迪设计的路灯、喷泉与棕榈树。",
+        "tip": "可接古埃尔宫；在露台用餐前查看菜单。",
+        "duration": "20–40 分钟",
+        "importId": "mira-reial",
+        "travelNotes": [
+          {
+            "ref": "EP3 05:06"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s17",
+        "city": 1,
+        "index": 16,
+        "name": "皇家广场",
+        "title": "Plaça Reial",
+        "lang": "en",
+        "lat": 41.38,
+        "lon": 2.175,
+        "source": "https://en.wikipedia.org/wiki/Royal_Square_%28Barcelona%29"
+      },
+      "photo": {
+        "artist": "Mac9",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "source": "https://commons.wikimedia.org/wiki/File:Barcellona_Pla%C3%A7a_Reial.jpg",
+        "caption": "皇家广场 · 地点实景参考",
+        "path": "assets/travel-notes/reial.jpg",
+        "key": "c02-s17"
+      }
+    },
+    {
+      "city": 1,
+      "index": 17,
+      "key": "c02-s18",
+      "place": {
+        "n": "古埃尔宫",
+        "en": "Palau Güell",
+        "cat": "艺术与建筑",
+        "placeType": "attraction",
+        "address": "Carrer Nou de la Rambla 3–5, Barcelona",
+        "q": "Palau Güell Carrer Nou de la Rambla 3–5, Barcelona",
+        "source": "https://palauguell.cat/",
+        "d": "高迪为古埃尔家族设计的城市宅邸。",
+        "highlights": "中央大厅、建筑空间与屋顶烟囱。",
+        "tip": "作者当次只看了外观，将内部参观列入下次愿望；如计划入内，先核对门票。",
+        "duration": "1–2 小时",
+        "importId": "mira-palau-guell",
+        "travelNotes": [
+          {
+            "ref": "EP3 05:06"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s18",
+        "city": 1,
+        "index": 17,
+        "name": "古埃尔宫",
+        "title": "Palau Güell",
+        "lang": "en",
+        "lat": 41.37882,
+        "lon": 2.17439,
+        "source": "https://es.wikipedia.org/wiki/Palacio_G%C3%BCell"
+      },
+      "photo": {
+        "artist": "Thomas Ledl",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Palau_G%C3%BCell,_Antoni_Gaudi,_Barcelona_2.jpg",
+        "caption": "古埃尔宫 · 地点实景参考",
+        "path": "assets/travel-notes/palau-guell.jpg",
+        "key": "c02-s18"
+      }
+    },
+    {
+      "city": 1,
+      "index": 18,
+      "key": "c02-s19",
+      "place": {
+        "n": "巴塞罗内塔海滩",
+        "en": "Platja de la Barceloneta",
+        "cat": "自然风景",
+        "placeType": "attraction",
+        "address": "Platja de la Barceloneta, Barcelona",
+        "q": "Platja de la Barceloneta Platja de la Barceloneta, Barcelona",
+        "source": "https://www.barcelona.cat/",
+        "d": "老城东侧的城市海滩，可与巴塞罗内塔街区一起散步。",
+        "highlights": "海滨步道与海景。",
+        "tip": "作者更推荐晴天傍晚；冬季风浪与夏季海滩体验不同。",
+        "duration": "30–90 分钟",
+        "importId": "mira-barceloneta",
+        "travelNotes": [
+          {
+            "ref": "EP3 · 海滩"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s19",
+        "city": 1,
+        "index": 18,
+        "name": "巴塞罗内塔海滩",
+        "title": "Platja de la Barceloneta",
+        "lang": "en",
+        "lat": 41.37841944,
+        "lon": 2.19241667,
+        "source": "https://es.wikipedia.org/wiki/Playa_de_la_Barceloneta"
+      },
+      "photo": {
+        "artist": "Sergi Larripa (User:SergiL)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "source": "https://commons.wikimedia.org/wiki/File:050529_Barcelona_059.jpg",
+        "caption": "巴塞罗内塔海滩 · 地点实景参考",
+        "path": "assets/travel-notes/barceloneta.jpg",
+        "key": "c02-s19"
+      }
+    },
+    {
+      "city": 1,
+      "index": 19,
+      "key": "c02-s20",
+      "place": {
+        "n": "波盖利亚市场",
+        "en": "Mercat de la Boqueria",
+        "cat": "地方特色",
+        "placeType": "attraction",
+        "address": "La Rambla 91, Barcelona",
+        "q": "Mercat de la Boqueria La Rambla 91, Barcelona",
+        "source": "https://www.boqueria.barcelona/",
+        "d": "兰布拉大道旁的食品市场，可看鲜食摊位与市场餐饮。",
+        "highlights": "熟食、果蔬与市场吧台。",
+        "tip": "热门时段较拥挤，先看标价再下单，注意随身物品。",
+        "duration": "45–90 分钟",
+        "importId": "mira-boqueria",
+        "travelNotes": [
+          {
+            "ref": "EP3 09:17"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s20",
+        "city": 1,
+        "index": 19,
+        "name": "波盖利亚市场",
+        "title": "Mercat de la Boqueria",
+        "lang": "en",
+        "lat": 41.38194444,
+        "lon": 2.17194444,
+        "source": "https://en.wikipedia.org/wiki/La_Boqueria"
+      },
+      "photo": {
+        "artist": "Didier Descouens",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Mercat_de_Sant_Josep_(la_Boqueria)_-_Entrance.jpg",
+        "caption": "波盖利亚市场 · 地点实景参考",
+        "path": "assets/travel-notes/boqueria.jpg",
+        "key": "c02-s20"
+      }
+    },
+    {
+      "city": 1,
+      "index": 20,
+      "key": "c02-s21",
+      "place": {
+        "n": "圣卡特琳娜市场",
+        "en": "Mercat de Santa Caterina",
+        "cat": "地方特色",
+        "placeType": "attraction",
+        "address": "Avinguda de Francesc Cambó 16, Barcelona",
+        "q": "Mercat de Santa Caterina Avinguda de Francesc Cambó 16, Barcelona",
+        "source": "https://www.mercatsantacaterina.com/",
+        "d": "以彩色屋顶闻名的食品市场，是文件中提到的另一种市场选择。",
+        "highlights": "市场建筑与日常生鲜摊位。",
+        "tip": "按营业日安排；文件将这里列作波盖利亚市场的备选，并非已完整游览记录。",
+        "duration": "45–60 分钟",
+        "importId": "mira-santa-caterina",
+        "travelNotes": [
+          {
+            "ref": "EP3 · 市场备选"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s21",
+        "city": 1,
+        "index": 20,
+        "name": "圣卡特琳娜市场",
+        "title": "Mercat de Santa Caterina",
+        "lang": "en",
+        "lat": 41.38618,
+        "lon": 2.17834,
+        "source": "https://es.wikipedia.org/wiki/Mercado_de_Santa_Catalina"
+      },
+      "photo": {
+        "artist": "Albert Prat",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Fa%C3%A7ana_Santa_Caterina.jpg",
+        "caption": "圣卡特琳娜市场 · 地点实景参考",
+        "path": "assets/travel-notes/santa-caterina.jpg",
+        "key": "c02-s21"
+      }
+    },
+    {
+      "city": 1,
+      "index": 21,
+      "key": "c02-s22",
+      "place": {
+        "n": "加泰罗尼亚广场",
+        "en": "Plaça de Catalunya",
+        "cat": "地方特色",
+        "placeType": "attraction",
+        "address": "Plaça de Catalunya, Barcelona",
+        "q": "Plaça de Catalunya Plaça de Catalunya, Barcelona",
+        "source": "https://www.barcelona.cat/",
+        "d": "连接老城与扩展区的大型广场，也是常见交通换乘点。",
+        "highlights": "城市广场与周边步行街。",
+        "tip": "换乘及人群密集时收好手机、钱包；交通安排以当天信息为准。",
+        "duration": "15–30 分钟",
+        "importId": "mira-catalunya",
+        "travelNotes": [
+          {
+            "ref": "EP3 · 城市步行"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s22",
+        "city": 1,
+        "index": 21,
+        "name": "加泰罗尼亚广场",
+        "title": "Plaça de Catalunya",
+        "lang": "en",
+        "lat": 41.38666667,
+        "lon": 2.17,
+        "source": "https://en.wikipedia.org/wiki/Pla%C3%A7a_de_Catalunya"
+      },
+      "photo": {
+        "artist": "Tango7174",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Catalunya_Barcelona1_tango7174.jpg",
+        "caption": "加泰罗尼亚广场 · 地点实景参考",
+        "path": "assets/travel-notes/catalunya.jpg",
+        "key": "c02-s22"
+      }
+    },
+    {
+      "city": 1,
+      "index": 22,
+      "key": "c02-s23",
+      "place": {
+        "n": "卡梅尔碉堡观景台",
+        "en": "Turó de la Rovira / Bunkers del Carmel",
+        "cat": "自然风景",
+        "placeType": "attraction",
+        "address": "Turó de la Rovira, Barcelona",
+        "q": "Turó de la Rovira / Bunkers del Carmel Turó de la Rovira, Barcelona",
+        "source": "https://www.barcelona.cat/museuhistoria/",
+        "d": "山顶的城市全景观景点。文件字幕不清，整理者推测指的是这里，尚未确认视频中的地点。",
+        "highlights": "巴塞罗那全景与山顶遗址。",
+        "tip": "这是愿望清单中的推测匹配；登山和开放时间需提前核对。",
+        "duration": "1–1.5 小时",
+        "importId": "mira-rovira",
+        "travelNotes": [
+          {
+            "ref": "EP3 · 下次想去（名称推测）"
+          }
+        ],
+        "priority": "来源匹配待确认"
+      },
+      "coordinate": {
+        "key": "c02-s23",
+        "city": 1,
+        "index": 22,
+        "name": "卡梅尔碉堡观景台",
+        "title": "Turó de la Rovira / Bunkers del Carmel",
+        "lang": "en",
+        "lat": 41.4194,
+        "lon": 2.16174,
+        "source": "https://es.wikipedia.org/wiki/Cerro_de_la_Rovira"
+      },
+      "photo": {
+        "artist": "Canaan",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Tur%C3%B3_Rovira.jpg",
+        "caption": "卡梅尔碉堡观景台 · 地点实景参考",
+        "path": "assets/travel-notes/rovira.jpg",
+        "key": "c02-s23"
+      }
+    },
+    {
+      "city": 1,
+      "index": 23,
+      "key": "c02-s24",
+      "place": {
+        "n": "Seventy Barcelona 酒店",
+        "en": "Seventy Barcelona",
+        "cat": "酒店",
+        "placeType": "hotel",
+        "address": "Carrer de Còrsega 344–352, Barcelona",
+        "q": "Seventy Barcelona Carrer de Còrsega 344–352, Barcelona",
+        "source": "https://www.seventybarcelona.com/en/",
+        "d": "位于扩展区与格拉西亚街区交界附近，可步行串联米拉之家一带。",
+        "highlights": "作者住过的现代风格酒店，文件描述房间偏小、黑白色调。",
+        "tip": "房间大小与景观取决于房型；订房时比较早餐、取消政策和税费。",
+        "duration": "建议连住 3–4 晚",
+        "importId": "mira-seventy",
+        "travelNotes": [
+          {
+            "ref": "EP1 01:30"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s24",
+        "city": 1,
+        "index": 23,
+        "name": "Seventy Barcelona 酒店",
+        "title": "Seventy Barcelona",
+        "lang": "en",
+        "lat": 41.398056,
+        "lon": 2.161575,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Seventy+Barcelona+Carrer+de+C%C3%B2rsega+344%E2%80%93352%2C+Barcelona+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Carrer de Còrsega 344, 08037, la Dreta de l'Eixample, Barcelona, Catalunya"
+      },
+      "photo": {
+        "artist": "Seventy Barcelona",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://www.seventybarcelona.com/en/",
+        "source": "https://www.seventybarcelona.com/en/",
+        "caption": "Seventy Barcelona 酒店 · 官网实景参考",
+        "path": "assets/travel-notes/seventy.jpg",
+        "key": "c02-s24"
+      }
+    },
+    {
+      "city": 1,
+      "index": 24,
+      "key": "c02-s25",
+      "place": {
+        "n": "CHILA 吃辣·湖南菜",
+        "en": "CHILA Barcelona",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Carrer de Mallorca 188, Barcelona",
+        "q": "CHILA Barcelona Carrer de Mallorca 188, Barcelona",
+        "source": "https://www.chilachila.com/en-gb/contacto",
+        "d": "文件中作为旅行途中换口味的一家湖南菜餐厅。",
+        "highlights": "香辣热菜；作者在冷天、疲劳时选择中餐。",
+        "tip": "这里标注官网所列 Mallorca 分店地址；辣度与菜品以实际菜单为准。",
+        "duration": "约 1 小时",
+        "importId": "mira-chila",
+        "travelNotes": [
+          {
+            "ref": "EP1 11:01"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s25",
+        "city": 1,
+        "index": 24,
+        "name": "CHILA 吃辣·湖南菜",
+        "title": "CHILA Barcelona",
+        "lang": "en",
+        "lat": 41.38952,
+        "lon": 2.15701,
+        "source": "https://www.chilachila.com/en-gb/contacto"
+      },
+      "photo": {
+        "artist": "CHILA",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://www.chilachila.com/en-gb/contacto",
+        "source": "https://www.chilachila.com/en-gb/contacto",
+        "caption": "CHILA 吃辣·湖南菜 · 品牌官网菜品配图，非特定分店实拍",
+        "path": "assets/travel-notes/chila.jpg",
+        "key": "c02-s25"
+      }
+    },
+    {
+      "city": 1,
+      "index": 25,
+      "key": "c02-s26",
+      "place": {
+        "n": "JIN 兰州拉面",
+        "en": "JIN Lanzhou Ramen",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Carrer d’Aribau 39, Barcelona",
+        "q": "JIN Lanzhou Ramen Carrer d’Aribau 39, Barcelona",
+        "source": "https://www.jinnoodles.com/en/",
+        "d": "兰州风味拉面店，文件作者对这餐评价较好。",
+        "highlights": "可按个人喜好询问面条粗细与辣度。",
+        "tip": "口味评价来自文件作者；营业与菜单出发前查看店家页面。",
+        "duration": "45–60 分钟",
+        "importId": "mira-jin",
+        "travelNotes": [
+          {
+            "ref": "EP2 04:15"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s26",
+        "city": 1,
+        "index": 25,
+        "name": "JIN 兰州拉面",
+        "title": "JIN Lanzhou Ramen",
+        "lang": "en",
+        "lat": 41.387622,
+        "lon": 2.160031,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=JIN+Lanzhou+Ramen+Carrer+d%E2%80%99Aribau+39%2C+Barcelona+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Calle de Aribau 39, 08011, l'Antiga Esquerra de l'Eixample, Barcelona, Cataluña"
+      },
+      "photo": {
+        "artist": "JIN Lanzhou Ramen / OpenTable",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://www.opentable.com/r/jin-lanzhou-ramen-barcelona",
+        "source": "https://www.opentable.com/r/jin-lanzhou-ramen-barcelona",
+        "caption": "JIN 兰州拉面 · 餐厅展示图片",
+        "path": "assets/travel-notes/jin.jpg",
+        "key": "c02-s26"
+      }
+    },
+    {
+      "city": 1,
+      "index": 26,
+      "key": "c02-s27",
+      "place": {
+        "n": "Granja Viader 百年奶食店",
+        "en": "Granja Viader",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Carrer d’en Xuclà 4–6, Barcelona",
+        "q": "Granja Viader Carrer d’en Xuclà 4–6, Barcelona",
+        "source": "https://granjaviader.cat/",
+        "d": "拉瓦尔区的老式奶食咖啡店，适合早餐或甜点休息。",
+        "highlights": "文件点单：churros、浓热巧克力、Crema Catalana；也提到 Cacaolat。",
+        "tip": "准确位置在 Raval，并非哥特区；可从兰布拉大道步行进入。",
+        "duration": "45–60 分钟",
+        "importId": "mira-viader",
+        "travelNotes": [
+          {
+            "ref": "EP3 01:36"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s27",
+        "city": 1,
+        "index": 26,
+        "name": "Granja Viader 百年奶食店",
+        "title": "Granja Viader",
+        "lang": "en",
+        "lat": 41.383038815755,
+        "lon": 2.170876042066,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Carrer+d%E2%80%99en+Xucl%C3%A0+4%E2%80%936%2C+Barcelona+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Carrer d'en Xuclà 4, 08001, el Raval, Barcelona, Catalunya"
+      },
+      "photo": {
+        "artist": "Granja Viader",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://granjaviader.cat/",
+        "source": "https://granjaviader.cat/",
+        "caption": "Granja Viader 百年奶食店 · 官网实景参考",
+        "path": "assets/travel-notes/viader.jpg",
+        "key": "c02-s27"
+      }
+    },
+    {
+      "city": 1,
+      "index": 27,
+      "key": "c02-s28",
+      "place": {
+        "n": "El Xampanyet 小酒馆",
+        "en": "El Xampanyet",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Carrer de Montcada 22, Barcelona",
+        "q": "El Xampanyet Carrer de Montcada 22, Barcelona",
+        "source": "https://www.barcelonaturisme.com/",
+        "d": "毕加索博物馆附近的小酒馆，文件作者将它列为旅途中最喜欢的一餐。",
+        "highlights": "伊比利亚猪肉和小食；热闹的吧台氛围。",
+        "tip": "作者当次排队入店、两人花费 €59；这是历史账单，当前接待方式与价格需另查。",
+        "duration": "1–1.5 小时",
+        "importId": "mira-xampanyet",
+        "travelNotes": [
+          {
+            "ref": "EP3 05:54"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c02-s28",
+        "city": 1,
+        "index": 27,
+        "name": "El Xampanyet 小酒馆",
+        "title": "El Xampanyet",
+        "lang": "en",
+        "lat": 41.3844662,
+        "lon": 2.1816678,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=El+Xampanyet+Carrer+de+Montcada+22%2C+Barcelona+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Carrer de Montcada 22, 08003, Sant Pere Santa Caterina i la Ribera, Barcelona, Catalunya"
+      },
+      "photo": {
+        "artist": "Herodotptlomeu",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Barcelona_-_El_Xampanyet.jpg",
+        "caption": "El Xampanyet 小酒馆 · 地点实景参考",
+        "path": "assets/travel-notes/xampanyet.jpg",
+        "key": "c02-s28"
+      }
+    },
+    {
+      "city": 4,
+      "index": 8,
+      "key": "c05-s09",
+      "place": {
+        "n": "格拉纳达大教堂",
+        "en": "Catedral de Granada",
+        "cat": "艺术与建筑",
+        "placeType": "attraction",
+        "address": "Calle Gran Vía de Colón 5, Granada",
+        "q": "Catedral de Granada Calle Gran Vía de Colón 5, Granada",
+        "source": "https://catedraldegranada.com/",
+        "d": "老城中心的大教堂，文艺复兴式空间与明亮的室内是参观重点。",
+        "highlights": "中殿、主祭坛与建筑细节。",
+        "tip": "可和旁边的皇家礼拜堂分开购票参观，礼拜活动可能影响开放。",
+        "duration": "1–1.5 小时",
+        "importId": "mira-granada-cathedral",
+        "travelNotes": [
+          {
+            "ref": "EP5 04:33"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c05-s09",
+        "city": 4,
+        "index": 8,
+        "name": "格拉纳达大教堂",
+        "title": "Catedral de Granada",
+        "lang": "en",
+        "lat": 37.176,
+        "lon": -3.599,
+        "source": "https://en.wikipedia.org/wiki/Granada_Cathedral"
+      },
+      "photo": {
+        "artist": "Ingo Mehling",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Granada_-_Cathedral_Front.jpg",
+        "caption": "格拉纳达大教堂 · 地点实景参考",
+        "path": "assets/travel-notes/granada-cathedral.jpg",
+        "key": "c05-s09"
+      }
+    },
+    {
+      "city": 4,
+      "index": 9,
+      "key": "c05-s10",
+      "place": {
+        "n": "格拉纳达皇家礼拜堂",
+        "en": "Capilla Real de Granada",
+        "cat": "历史与考古",
+        "placeType": "attraction",
+        "address": "Calle Oficios, Granada",
+        "q": "Capilla Real de Granada Calle Oficios, Granada",
+        "source": "https://capillarealgranada.com/",
+        "d": "大教堂旁的皇家礼拜堂，安葬天主教双王。",
+        "highlights": "王室墓葬与相关艺术收藏。",
+        "tip": "作者在圣诞当天遇到闭馆，不代表常规开放情况；节日期间尤其应提前查看。",
+        "duration": "45–60 分钟",
+        "importId": "mira-royal-chapel",
+        "travelNotes": [
+          {
+            "ref": "EP5 · 皇家礼拜堂"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c05-s10",
+        "city": 4,
+        "index": 9,
+        "name": "格拉纳达皇家礼拜堂",
+        "title": "Capilla Real de Granada",
+        "lang": "en",
+        "lat": 37.1762396,
+        "lon": -3.5986284,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Capilla+Real+de+Granada+Calle+Oficios%2C+Granada+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Calle Oficios 5, 18001, Centro-Sagrario, Granada, Andalucía"
+      },
+      "photo": {
+        "artist": "Heparina1985",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Royal_Chapel_of_Granada_(Spain).jpg",
+        "caption": "格拉纳达皇家礼拜堂 · 地点实景参考",
+        "path": "assets/travel-notes/royal-chapel.jpg",
+        "key": "c05-s10"
+      }
+    },
+    {
+      "city": 4,
+      "index": 10,
+      "key": "c05-s11",
+      "place": {
+        "n": "圣若望教堂",
+        "en": "Iglesia de San Juan de los Reyes",
+        "cat": "艺术与建筑",
+        "placeType": "attraction",
+        "address": "Calle San Juan de los Reyes 79, Granada",
+        "q": "Iglesia de San Juan de los Reyes Calle San Juan de los Reyes 79, Granada",
+        "source": "https://www.turgranada.es/",
+        "d": "阿尔拜辛街区的一处教堂，文件作者路过时遇到圣诞弥撒。",
+        "highlights": "建筑外观与街区步行。",
+        "tip": "附近庭院的 Belén 圣诞微缩场景展属于季节活动，文件未提供确定展场地址；不作为全年固定展览。",
+        "duration": "20–40 分钟",
+        "importId": "mira-san-juan",
+        "travelNotes": [
+          {
+            "ref": "EP5 05:38–06:06"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c05-s11",
+        "city": 4,
+        "index": 10,
+        "name": "圣若望教堂",
+        "title": "Iglesia de San Juan de los Reyes",
+        "lang": "en",
+        "lat": 37.17992213,
+        "lon": -3.59184549,
+        "source": "https://es.wikipedia.org/wiki/Iglesia_de_San_Juan_de_los_Reyes"
+      },
+      "photo": {
+        "artist": "SaraGuerri",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Iglesia_de_San_Juan_de_los_Reyes.JPG",
+        "caption": "圣若望教堂 · 地点实景参考",
+        "path": "assets/travel-notes/san-juan.jpg",
+        "key": "c05-s11"
+      }
+    },
+    {
+      "city": 4,
+      "index": 11,
+      "key": "c05-s12",
+      "place": {
+        "n": "阿拉伯街·新卡尔德雷里亚街",
+        "en": "Calle Calderería Nueva",
+        "cat": "地方特色",
+        "placeType": "attraction",
+        "address": "Calle Calderería Nueva, Granada",
+        "q": "Calle Calderería Nueva Calle Calderería Nueva, Granada",
+        "source": "https://www.turgranada.es/",
+        "d": "连接老城与阿尔拜辛的小街，沿途有茶馆与纪念品店。",
+        "highlights": "灯饰、陶瓷、地毯与街巷氛围。",
+        "tip": "可比较价格后再买纪念品；文件提及的附近中餐馆没有店名，未确定地址。",
+        "duration": "30–60 分钟",
+        "importId": "mira-caldereria",
+        "travelNotes": [
+          {
+            "ref": "EP5 · 阿拉伯街"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c05-s12",
+        "city": 4,
+        "index": 11,
+        "name": "阿拉伯街·新卡尔德雷里亚街",
+        "title": "Calle Calderería Nueva",
+        "lang": "en",
+        "lat": 37.1779,
+        "lon": -3.5968,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Calle+Calderer%C3%ADa+Nueva+Calle+Calderer%C3%ADa+Nueva%2C+Granada+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Calle de la Calderería Nueva 14, 18010, Albaycín, Granada, Andalucía"
+      },
+      "photo": {
+        "artist": "Palickap",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Granada,_Calle_Calderer%C3%ADa_Nueva_(1).jpg",
+        "caption": "阿拉伯街·新卡尔德雷里亚街 · 地点实景参考",
+        "path": "assets/travel-notes/caldereria.jpg",
+        "key": "c05-s12"
+      }
+    },
+    {
+      "city": 4,
+      "index": 12,
+      "key": "c05-s13",
+      "place": {
+        "n": "圣米格尔高地观景台",
+        "en": "Mirador de San Miguel Alto",
+        "cat": "自然风景",
+        "placeType": "attraction",
+        "address": "Ermita de San Miguel Alto, Granada",
+        "q": "Mirador de San Miguel Alto Ermita de San Miguel Alto, Granada",
+        "source": "https://www.turgranada.es/",
+        "d": "位于阿尔拜辛更高处的观景点，可看阿尔罕布拉宫与城市全景。",
+        "highlights": "山坡全景与日落。",
+        "tip": "作者从圣尼古拉斯继续上坡约 20 分钟；实际时间取决于路线与体力，回程留意照明。",
+        "duration": "1–1.5 小时",
+        "importId": "mira-san-miguel",
+        "travelNotes": [
+          {
+            "ref": "EP5 11:29"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c05-s13",
+        "city": 4,
+        "index": 12,
+        "name": "圣米格尔高地观景台",
+        "title": "Mirador de San Miguel Alto",
+        "lang": "en",
+        "lat": 37.1848927,
+        "lon": -3.5876592,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Mirador+de+San+Miguel+Alto+Ermita+de+San+Miguel+Alto%2C+Granada+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Calle de Patio de la Alberca 36, 18010, Albaycín, Granada, Andalucía"
+      },
+      "photo": {
+        "artist": "Giorgiomonteforti",
+        "license": "Public domain",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:San_Miguel_Alto_GM.JPG",
+        "source": "https://commons.wikimedia.org/wiki/File:San_Miguel_Alto_GM.JPG",
+        "caption": "圣米格尔高地观景台 · 地点实景参考",
+        "path": "assets/travel-notes/san-miguel.jpg",
+        "key": "c05-s13"
+      }
+    },
+    {
+      "city": 4,
+      "index": 13,
+      "key": "c05-s14",
+      "place": {
+        "n": "La Comino 洞穴弗拉明戈",
+        "en": "Cueva Flamenca La Comino",
+        "cat": "特色活动",
+        "placeType": "attraction",
+        "address": "Carrera del Darro 7, Granada",
+        "q": "Cueva Flamenca La Comino Carrera del Darro 7, Granada",
+        "source": "https://cuevaflamencalacomino.com/es/",
+        "d": "在修复后的洞穴水窖空间近距离欣赏弗拉明戈。官网地址在阿尔拜辛的达罗河步道。",
+        "highlights": "歌者、吉他与舞者近距离演出；文件作者印象是空间小、感染力强。",
+        "tip": "提前选择场次；这里不是文件泛指的萨克罗蒙特洞穴区，定位按官网 Carrera del Darro 7。",
+        "duration": "约 1 小时",
+        "importId": "mira-comino",
+        "travelNotes": [
+          {
+            "ref": "EP4 10:37"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c05-s14",
+        "city": 4,
+        "index": 13,
+        "name": "La Comino 洞穴弗拉明戈",
+        "title": "Cueva Flamenca La Comino",
+        "lang": "en",
+        "lat": 37.177671318491,
+        "lon": -3.594628713836,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Cueva+Flamenca+La+Comino+Carrera+del+Darro+7%2C+Granada+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Carrera del Darro 7, 18010, Granada, Andalucía"
+      },
+      "photo": {
+        "artist": "Cueva Flamenca La Comino",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://cuevaflamencalacomino.com/es/",
+        "source": "https://cuevaflamencalacomino.com/es/",
+        "caption": "La Comino 洞穴弗拉明戈 · 官网实景参考",
+        "path": "assets/travel-notes/comino.jpg",
+        "key": "c05-s14"
+      }
+    },
+    {
+      "city": 4,
+      "index": 14,
+      "key": "c05-s15",
+      "place": {
+        "n": "Meliá Granada 酒店",
+        "en": "Meliá Granada",
+        "cat": "酒店",
+        "placeType": "hotel",
+        "address": "Calle Ángel Ganivet 7, Granada",
+        "q": "Meliá Granada Calle Ángel Ganivet 7, Granada",
+        "source": "https://www.melia.com/en/hotels/spain/granada/melia-granada",
+        "d": "位于市中心的酒店，可作为老城步行与上山游览的住宿起点。",
+        "highlights": "文件作者描述入住房间小而温馨，早餐选择较多。",
+        "tip": "入住感受取决于房型与时期；前往阿尔罕布拉的公交站与线路请以当天交通信息为准。",
+        "duration": "建议连住 2–3 晚",
+        "importId": "mira-melia",
+        "travelNotes": [
+          {
+            "ref": "EP4 00:30 / EP5 00:38"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c05-s15",
+        "city": 4,
+        "index": 14,
+        "name": "Meliá Granada 酒店",
+        "title": "Meliá Granada",
+        "lang": "en",
+        "lat": 37.173092,
+        "lon": -3.598448,
+        "source": "https://www.melia.com/en/hotels/spain/granada/melia-granada"
+      },
+      "photo": {
+        "artist": "Meliá Hotels International",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://www.melia.com/en/hotels/spain/granada/melia-granada",
+        "source": "https://www.melia.com/en/hotels/spain/granada/melia-granada",
+        "caption": "Meliá Granada 酒店 · 酒店官网公共空间实景，非指定房型",
+        "path": "assets/travel-notes/melia.jpg",
+        "key": "c05-s15"
+      }
+    },
+    {
+      "city": 4,
+      "index": 15,
+      "key": "c05-s16",
+      "place": {
+        "n": "El Pescaíto de Carmela 海鲜餐厅",
+        "en": "El Pescaíto de Carmela",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Calle Marqués de Gerona 12, Granada",
+        "q": "El Pescaíto de Carmela Calle Marqués de Gerona 12, Granada",
+        "source": "https://restaurantescarmela.com/el-pescaito/",
+        "d": "大教堂旁的鱼鲜与米饭餐厅，可在老城参观前后用餐。",
+        "highlights": "文件点单：鳕鱼、虾、墨鱼可乐饼及海鲜饭。",
+        "tip": "作者当次等待米饭约 30 分钟、花费 €60 多；均为当次经历，预订及现价以店家为准。",
+        "duration": "1–1.5 小时",
+        "importId": "mira-pescaito",
+        "travelNotes": [
+          {
+            "ref": "EP5 07:31"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c05-s16",
+        "city": 4,
+        "index": 15,
+        "name": "El Pescaíto de Carmela 海鲜餐厅",
+        "title": "El Pescaíto de Carmela",
+        "lang": "en",
+        "lat": 37.175778,
+        "lon": -3.6008431,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=El+Pesca%C3%ADto+de+Carmela+Calle+Marqu%C3%A9s+de+Gerona+12%2C+Granada+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Calle Marqués de Gerona 12, 18001, Centro-Sagrario, Granada, Andalucía"
+      },
+      "photo": {
+        "artist": "Gluto · El Pescaíto de Carmela",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://www.glutoapp.com/it/locale/16802/el-pesca-to-de-carmela",
+        "source": "https://www.glutoapp.com/it/locale/16802/el-pesca-to-de-carmela",
+        "caption": "El Pescaíto de Carmela 海鲜餐厅 · 门店实景参考",
+        "path": "assets/travel-notes/pescaito.jpg",
+        "key": "c05-s16"
+      }
+    },
+    {
+      "city": 4,
+      "index": 16,
+      "key": "c05-s17",
+      "place": {
+        "n": "CoCo 都可奶茶",
+        "en": "CoCo Fresh Tea & Juice Granada",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Calle Ángel Ganivet 3, Granada",
+        "q": "CoCo Fresh Tea & Juice Granada Calle Ángel Ganivet 3, Granada",
+        "source": "https://coco-tea.es/",
+        "d": "文件作者在格拉纳达旅行中提到的奶茶补给点。",
+        "highlights": "茶饮、奶茶与可选配料。",
+        "tip": "地图收录与文件酒店位置吻合的 Ángel Ganivet 店；品牌在城内还有其他门店。甜度与冷热选项以当日菜单为准。",
+        "duration": "15–30 分钟",
+        "importId": "mira-coco",
+        "travelNotes": [
+          {
+            "ref": "EP5 · 奶茶"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c05-s17",
+        "city": 4,
+        "index": 16,
+        "name": "CoCo 都可奶茶",
+        "title": "CoCo Fresh Tea & Juice Granada",
+        "lang": "en",
+        "lat": 37.173377185675,
+        "lon": -3.598952350951,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Calle+%C3%81ngel+Ganivet+3%2C+Granada+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Calle Angel Ganivet 3, 18009, Granada, Andalucía"
+      },
+      "photo": {
+        "artist": "CoCo Fresh Tea & Juice",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://coco-tea.es/",
+        "source": "https://coco-tea.es/",
+        "caption": "CoCo 都可奶茶 · 品牌官网饮品配图，非该分店实拍",
+        "path": "assets/travel-notes/coco.jpg",
+        "key": "c05-s17"
+      }
+    },
+    {
+      "city": 5,
+      "index": 7,
+      "key": "c06-s08",
+      "place": {
+        "n": "鲜花巷",
+        "en": "Calleja de las Flores",
+        "cat": "地方特色",
+        "placeType": "attraction",
+        "address": "Calleja de las Flores, Córdoba",
+        "q": "Calleja de las Flores Calleja de las Flores, Córdoba",
+        "source": "https://www.turismodecordoba.org/",
+        "d": "白墙、花盆与大教堂钟楼取景构成的老城小巷。",
+        "highlights": "巷口视线与庭院氛围。",
+        "tip": "文件提到附近早餐店但没有店名；热巧克力、土豆蛋饼与火腿可作早餐点单参考。庭院节属于季节活动。",
+        "duration": "20–40 分钟",
+        "importId": "mira-flores",
+        "travelNotes": [
+          {
+            "ref": "EP6 13:12–13:43"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c06-s08",
+        "city": 5,
+        "index": 7,
+        "name": "鲜花巷",
+        "title": "Calleja de las Flores",
+        "lang": "en",
+        "lat": 37.8803812,
+        "lon": -4.7794621,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Calleja+de+las+Flores+Calleja+de+las+Flores%2C+C%C3%B3rdoba+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Calleja de las Flores 2, 14003, Catedral, Córdoba, Andalucía"
+      },
+      "photo": {
+        "artist": "Ajay Suresh from New York, NY, USA",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Cordoba-28_(48026695918).jpg",
+        "caption": "鲜花巷 · 地点实景参考",
+        "path": "assets/travel-notes/flores.jpg",
+        "key": "c06-s08"
+      }
+    },
+    {
+      "city": 5,
+      "index": 8,
+      "key": "c06-s09",
+      "place": {
+        "n": "Eurostars Palace 酒店",
+        "en": "Eurostars Palace",
+        "cat": "酒店",
+        "placeType": "hotel",
+        "address": "Paseo de la Victoria s/n, Córdoba",
+        "q": "Eurostars Palace Paseo de la Victoria s/n, Córdoba",
+        "source": "https://www.eurostarshotels.com/eurostars-palace.html",
+        "d": "位于老城西侧边缘的酒店，适合步行探索犹太区和清真寺大教堂。",
+        "highlights": "作者入住体验偏商务风格，并提到浴室干湿分离。",
+        "tip": "具体浴室配置、停车、早餐及房价按房型和日期核对。",
+        "duration": "建议 1–2 晚",
+        "importId": "mira-eurostars",
+        "travelNotes": [
+          {
+            "ref": "EP6 01:46"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c06-s09",
+        "city": 5,
+        "index": 8,
+        "name": "Eurostars Palace 酒店",
+        "title": "Eurostars Palace",
+        "lang": "en",
+        "lat": 37.8812307,
+        "lon": -4.7857717,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Eurostars+Palace+Paseo+de+la+Victoria+s%2Fn%2C+C%C3%B3rdoba+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Paseo de la Victoria, 14004, Huerta del Rey de Vallellano, Córdoba, Andalucía"
+      },
+      "photo": {
+        "artist": "Américo Toledano",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Hotel_Eurostars_Palace_-_C%C3%B3rdoba_001.jpg",
+        "caption": "Eurostars Palace 酒店 · 地点实景参考",
+        "path": "assets/travel-notes/eurostars.jpg",
+        "key": "c06-s09"
+      }
+    },
+    {
+      "city": 5,
+      "index": 9,
+      "key": "c06-s10",
+      "place": {
+        "n": "Bodegas Mezquita · Corregidor",
+        "en": "Bodegas Mezquita Corregidor",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Calle Corregidor Luis de la Cerda 45, Córdoba",
+        "q": "Bodegas Mezquita Corregidor Calle Corregidor Luis de la Cerda 45, Córdoba",
+        "source": "https://www.bodegasmezquita.com/corregidor/",
+        "d": "清真寺大教堂南侧、靠近罗马桥的安达卢西亚餐厅分店。",
+        "highlights": "文件点单：金枪鱼、橙子鳕鱼沙拉、炖牛尾和甜点。",
+        "tip": "文件只说“罗马桥旁边那家”，这里按位置匹配 Corregidor 店，未确认视频分店。作者当次网上订位后入店，账单 €50 多仅作历史记录。",
+        "duration": "1–1.5 小时",
+        "importId": "mira-mezquita",
+        "travelNotes": [
+          {
+            "ref": "EP6 11:09 · 分店推测"
+          }
+        ],
+        "priority": "来源匹配待确认"
+      },
+      "coordinate": {
+        "key": "c06-s10",
+        "city": 5,
+        "index": 9,
+        "name": "Bodegas Mezquita · Corregidor",
+        "title": "Bodegas Mezquita Corregidor",
+        "lang": "en",
+        "lat": 37.87959,
+        "lon": -4.77683,
+        "source": "https://www.bodegasmezquita.com/corregidor/"
+      },
+      "photo": {
+        "artist": "Bodegas Mezquita",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://www.bodegasmezquita.com/corregidor/",
+        "source": "https://www.bodegasmezquita.com/corregidor/",
+        "caption": "Bodegas Mezquita · Corregidor · 官网实景参考",
+        "path": "assets/travel-notes/mezquita.jpg",
+        "key": "c06-s10"
+      }
+    },
+    {
+      "city": 3,
+      "index": 9,
+      "key": "c04-s10",
+      "place": {
+        "n": "皇家马埃斯特兰萨斗牛场",
+        "en": "Plaza de Toros de la Real Maestranza",
+        "cat": "历史与考古",
+        "placeType": "attraction",
+        "address": "Paseo de Cristóbal Colón 12, Sevilla",
+        "q": "Plaza de Toros de la Real Maestranza Paseo de Cristóbal Colón 12, Sevilla",
+        "source": "https://realmaestranza.com/",
+        "d": "河岸旁的历史斗牛场，可参观场馆与相关展陈。",
+        "highlights": "场地、拱廊与博物馆。",
+        "tip": "参观时间受赛事和活动安排影响，按官网选择游览票。",
+        "duration": "约 1 小时",
+        "importId": "mira-maestranza",
+        "travelNotes": [
+          {
+            "ref": "EP7 12:33"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c04-s10",
+        "city": 3,
+        "index": 9,
+        "name": "皇家马埃斯特兰萨斗牛场",
+        "title": "Plaza de Toros de la Real Maestranza",
+        "lang": "en",
+        "lat": 37.38595851,
+        "lon": -5.99840664,
+        "source": "https://es.wikipedia.org/wiki/Plaza_de_toros_de_Sevilla"
+      },
+      "photo": {
+        "artist": "Vincenzo venditti",
+        "license": "CC BY-SA 3.0 es",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/es/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Plaza_de_Toros_de_la_Maestranza.jpg",
+        "caption": "皇家马埃斯特兰萨斗牛场 · 地点实景参考",
+        "path": "assets/travel-notes/maestranza.jpg",
+        "key": "c04-s10"
+      }
+    },
+    {
+      "city": 3,
+      "index": 10,
+      "key": "c04-s11",
+      "place": {
+        "n": "瓜达尔基维尔河岸步道",
+        "en": "Paseo del Río Guadalquivir",
+        "cat": "自然风景",
+        "placeType": "attraction",
+        "address": "Muelle de la Sal, Sevilla",
+        "q": "Paseo del Río Guadalquivir Muelle de la Sal, Sevilla",
+        "source": "https://visitasevilla.es/",
+        "d": "沿瓜达尔基维尔河散步，看桥梁、河岸建筑与城市水景。",
+        "highlights": "河岸步道，可串联斗牛场和黄金塔。",
+        "tip": "地图标在 Muelle de la Sal 的步行段，代表河岸散步起点，并非整条河的位置。",
+        "duration": "30–60 分钟",
+        "importId": "mira-river",
+        "travelNotes": [
+          {
+            "ref": "EP7 13:26"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c04-s11",
+        "city": 3,
+        "index": 10,
+        "name": "瓜达尔基维尔河岸步道",
+        "title": "Paseo del Río Guadalquivir",
+        "lang": "en",
+        "lat": 37.38644167,
+        "lon": -6.00122778,
+        "source": "https://es.wikipedia.org/wiki/Muelle_de_la_Sal"
+      },
+      "photo": {
+        "artist": "CarlosVdeHabsburgo",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Muelle_de_la_Sal_(Sevilla).jpg",
+        "caption": "瓜达尔基维尔河岸步道 · 地点实景参考",
+        "path": "assets/travel-notes/river.jpg",
+        "key": "c04-s11"
+      }
+    },
+    {
+      "city": 3,
+      "index": 11,
+      "key": "c04-s12",
+      "place": {
+        "n": "维多利亚号复制船与航海展馆",
+        "en": "Nao Victoria 500 / Espacio Primera Vuelta al Mundo",
+        "cat": "历史与考古",
+        "placeType": "attraction",
+        "address": "Paseo Marqués de Contadero, Sevilla",
+        "q": "Nao Victoria 500 / Espacio Primera Vuelta al Mundo Paseo Marqués de Contadero, Sevilla",
+        "source": "https://www.fundacionnaovictoria.org/",
+        "d": "文件河岸段提到的维多利亚号复制船，可结合环球航行主题展览了解航海历史。",
+        "highlights": "复制船与环球航行展陈。",
+        "tip": "船舶停靠和参观开放可能随活动调整；前往前查看基金会当前安排。",
+        "duration": "约 1 小时",
+        "importId": "mira-victoria",
+        "travelNotes": [
+          {
+            "ref": "EP7 13:26"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c04-s12",
+        "city": 3,
+        "index": 11,
+        "name": "维多利亚号复制船与航海展馆",
+        "title": "Nao Victoria 500 / Espacio Primera Vuelta al Mundo",
+        "lang": "en",
+        "lat": 37.384331,
+        "lon": -5.998451,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Nao+Victoria+500+%2F+Espacio+Primera+Vuelta+al+Mundo+Paseo+Marqu%C3%A9s+de+Contadero%2C+Sevilla+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Paseo Alcalde Marqués de Contadero, 41001, Arenal, Sevilla, Andalucía"
+      },
+      "photo": {
+        "artist": "CarlosVdeHabsburgo",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Nao_Victoria_500_(Sevilla).jpg",
+        "caption": "维多利亚号复制船与航海展馆 · 地点实景参考",
+        "path": "assets/travel-notes/victoria.jpg",
+        "key": "c04-s12"
+      }
+    },
+    {
+      "city": 3,
+      "index": 12,
+      "key": "c04-s13",
+      "place": {
+        "n": "黄金塔",
+        "en": "Torre del Oro",
+        "cat": "历史与考古",
+        "placeType": "attraction",
+        "address": "Paseo de Cristóbal Colón s/n, Sevilla",
+        "q": "Torre del Oro Paseo de Cristóbal Colón s/n, Sevilla",
+        "source": "https://armada.defensa.gob.es/",
+        "d": "河畔的中世纪防御塔，内设海事主题展陈。",
+        "highlights": "塔楼、河景与航海历史。",
+        "tip": "作者现场排队购票；当前参观规则与开放日期以管理方为准。",
+        "duration": "30–60 分钟",
+        "importId": "mira-oro",
+        "travelNotes": [
+          {
+            "ref": "EP7 15:16"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c04-s13",
+        "city": 3,
+        "index": 12,
+        "name": "黄金塔",
+        "title": "Torre del Oro",
+        "lang": "en",
+        "lat": 37.38244167,
+        "lon": -5.99646667,
+        "source": "https://en.wikipedia.org/wiki/Torre_del_Oro"
+      },
+      "photo": {
+        "artist": "Jebulon",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Torre_del_Oro_flag_Seville_Spain.jpg",
+        "caption": "黄金塔 · 地点实景参考",
+        "path": "assets/travel-notes/oro.jpg",
+        "key": "c04-s13"
+      }
+    },
+    {
+      "city": 3,
+      "index": 13,
+      "key": "c04-s14",
+      "place": {
+        "n": "弗拉明戈舞蹈博物馆",
+        "en": "Museo del Baile Flamenco",
+        "cat": "特色活动",
+        "placeType": "attraction",
+        "address": "Calle Manuel Rojas Marcos 3, Sevilla",
+        "q": "Museo del Baile Flamenco Calle Manuel Rojas Marcos 3, Sevilla",
+        "source": "https://museodelbaileflamenco.com/",
+        "d": "白天先了解弗拉明戈的表达与舞蹈背景，晚上再看现场表演，适合第一次接触、希望看得更懂的人。官网有博物馆加演出的组合选择，参观和演出的入场安排需分别留意。",
+        "highlights": "先看舞蹈文化展览，再按场次看演出。",
+        "tip": "官网按日期售票；博物馆参观与演出时段不是同一件事。 已合并原有的博物馆演出条目；展览与演出票种分别核对，遵守现场摄影规则。",
+        "duration": "组合建议留 2–2.5 小时，按实际场次调整",
+        "importId": "mira-flamenco-museum",
+        "travelNotes": [
+          {
+            "ref": "EP7 16:11"
+          }
+        ],
+        "combo": "如果格拉纳达已经订洞穴演出，这里可只看博物馆，把另一个晚上留给宅邸、河边和晚餐。"
+      },
+      "coordinate": {
+        "key": "c04-s14",
+        "city": 3,
+        "index": 13,
+        "name": "弗拉明戈舞蹈博物馆",
+        "title": "Museo del Baile Flamenco",
+        "lang": "en",
+        "lat": 37.388951227716,
+        "lon": -5.991238796148,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Museo+del+Baile+Flamenco+Calle+Manuel+Rojas+Marcos+3%2C+Sevilla+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Calle Manuel Rojas Marcos 3, 41004, Sevilla, Andalucía"
+      },
+      "photo": {
+        "artist": "Museo del Baile Flamenco",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://museodelbaileflamenco.com/",
+        "source": "https://museodelbaileflamenco.com/",
+        "caption": "弗拉明戈舞蹈博物馆 · 官网实景参考",
+        "path": "assets/travel-notes/flamenco-museum.jpg",
+        "key": "c04-s14"
+      }
+    },
+    {
+      "city": 3,
+      "index": 14,
+      "key": "c04-s15",
+      "place": {
+        "n": "塞维利亚市政厅",
+        "en": "Ayuntamiento de Sevilla",
+        "cat": "艺术与建筑",
+        "placeType": "attraction",
+        "address": "Plaza Nueva, Sevilla",
+        "q": "Ayuntamiento de Sevilla Plaza Nueva, Sevilla",
+        "source": "https://www.sevilla.org/",
+        "d": "新广场旁的市政厅，可在老城散步中欣赏建筑外观。",
+        "highlights": "立面与广场。",
+        "tip": "文件里的夜间投影属于圣诞季活动，不是全年固定演出；当年安排由市政发布。",
+        "duration": "15–30 分钟",
+        "importId": "mira-cityhall",
+        "travelNotes": [
+          {
+            "ref": "EP7 · 圣诞投影"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c04-s15",
+        "city": 3,
+        "index": 14,
+        "name": "塞维利亚市政厅",
+        "title": "Ayuntamiento de Sevilla",
+        "lang": "en",
+        "lat": 37.3887,
+        "lon": -5.9945,
+        "source": "https://en.wikipedia.org/wiki/Seville_City_Hall"
+      },
+      "photo": {
+        "artist": "Gzzz",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Casa_consistorial_de_Sevilla_2019.jpg",
+        "caption": "塞维利亚市政厅 · 地点实景参考",
+        "path": "assets/travel-notes/cityhall.jpg",
+        "key": "c04-s15"
+      }
+    },
+    {
+      "city": 3,
+      "index": 15,
+      "key": "c04-s16",
+      "place": {
+        "n": "玛丽亚·路易莎公园",
+        "en": "Parque de María Luisa",
+        "cat": "自然风景",
+        "placeType": "attraction",
+        "address": "Parque de María Luisa, Sevilla",
+        "q": "Parque de María Luisa Parque de María Luisa, Sevilla",
+        "source": "https://visitasevilla.es/",
+        "d": "与西班牙广场相邻的城市公园，适合游览间隙休息。",
+        "highlights": "林荫步道、花园与广场。",
+        "tip": "可以和西班牙广场、老烟厂安排成一段步行；炎热时留意补水和休息。",
+        "duration": "45–90 分钟",
+        "importId": "mira-maria-luisa",
+        "travelNotes": [
+          {
+            "ref": "EP8 · 西班牙广场步行"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c04-s16",
+        "city": 3,
+        "index": 15,
+        "name": "玛丽亚·路易莎公园",
+        "title": "Parque de María Luisa",
+        "lang": "en",
+        "lat": 37.374821,
+        "lon": -5.988573,
+        "source": "https://en.wikipedia.org/wiki/Parque_de_Mar%C3%ADa_Luisa"
+      },
+      "photo": {
+        "artist": "Gzzz",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Parque_de_Mar%C3%ADa_Luisa_(2).jpg",
+        "caption": "玛丽亚·路易莎公园 · 地点实景参考",
+        "path": "assets/travel-notes/maria-luisa.jpg",
+        "key": "c04-s16"
+      }
+    },
+    {
+      "city": 3,
+      "index": 16,
+      "key": "c04-s17",
+      "place": {
+        "n": "塞维利亚大学·皇家烟厂",
+        "en": "Real Fábrica de Tabacos / Universidad de Sevilla",
+        "cat": "历史与考古",
+        "placeType": "attraction",
+        "address": "Calle San Fernando 4, Sevilla",
+        "q": "Real Fábrica de Tabacos / Universidad de Sevilla Calle San Fernando 4, Sevilla",
+        "source": "https://www.us.es/",
+        "d": "大学使用的皇家烟厂历史建筑，位于老城和西班牙广场之间。",
+        "highlights": "烟厂建筑外观与允许进入的公共区域。",
+        "tip": "这是有教学与办公用途的校园，进楼与庭院参观服从现场规定。",
+        "duration": "30–60 分钟",
+        "importId": "mira-university",
+        "travelNotes": [
+          {
+            "ref": "EP8 · 大学"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c04-s17",
+        "city": 3,
+        "index": 16,
+        "name": "塞维利亚大学·皇家烟厂",
+        "title": "Real Fábrica de Tabacos / Universidad de Sevilla",
+        "lang": "en",
+        "lat": 37.3813,
+        "lon": -5.99047,
+        "source": "https://en.wikipedia.org/wiki/Royal_Tobacco_Factory"
+      },
+      "photo": {
+        "artist": "Anual",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Universidad_de_Sevilla_(rectorado)_001.jpg",
+        "caption": "塞维利亚大学·皇家烟厂 · 地点实景参考",
+        "path": "assets/travel-notes/university.jpg",
+        "key": "c04-s17"
+      }
+    },
+    {
+      "city": 3,
+      "index": 17,
+      "key": "c04-s18",
+      "place": {
+        "n": "都市阳伞",
+        "en": "Setas de Sevilla / Metropol Parasol",
+        "cat": "艺术与建筑",
+        "placeType": "attraction",
+        "address": "Plaza de la Encarnación, Sevilla",
+        "q": "Setas de Sevilla / Metropol Parasol Plaza de la Encarnación, Sevilla",
+        "source": "https://setasdesevilla.com/",
+        "d": "恩卡纳西翁广场上的大型木结构观景建筑，俗称“蘑菇”。",
+        "highlights": "高处步道、城市屋顶与日落。",
+        "tip": "作者专门等待 golden hour；根据当日日落时间选择入场，票种及再次入场规则需另查。",
+        "duration": "1–2 小时",
+        "importId": "mira-setas",
+        "travelNotes": [
+          {
+            "ref": "EP8 10:33"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c04-s18",
+        "city": 3,
+        "index": 17,
+        "name": "都市阳伞",
+        "title": "Setas de Sevilla / Metropol Parasol",
+        "lang": "en",
+        "lat": 37.39325278,
+        "lon": -5.99188056,
+        "source": "https://en.wikipedia.org/wiki/Metropol_Parasol"
+      },
+      "photo": {
+        "artist": "Anual",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Metropolparasolnov2011001.jpg",
+        "caption": "都市阳伞 · 地点实景参考",
+        "path": "assets/travel-notes/setas.jpg",
+        "key": "c04-s18"
+      }
+    },
+    {
+      "city": 3,
+      "index": 18,
+      "key": "c04-s19",
+      "place": {
+        "n": "Only YOU Hotel Sevilla 酒店",
+        "en": "Only YOU Hotel Sevilla",
+        "cat": "酒店",
+        "placeType": "hotel",
+        "address": "Avenida de Kansas City 7, Sevilla",
+        "q": "Only YOU Hotel Sevilla Avenida de Kansas City 7, Sevilla",
+        "source": "https://www.onlyyouhotels.com/en/hotels/only-you-hotel-sevilla/",
+        "d": "位于 Santa Justa 火车站对面，适合有城际火车转场的住宿安排。",
+        "highlights": "作者入住庭院朝向房间，描述色调温暖。",
+        "tip": "到历史中心需另外安排交通或步行时间；房间朝向与环境体验以具体房型为准。",
+        "duration": "建议连住 2–3 晚",
+        "importId": "mira-onlyyou",
+        "travelNotes": [
+          {
+            "ref": "EP7 01:02"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c04-s19",
+        "city": 3,
+        "index": 18,
+        "name": "Only YOU Hotel Sevilla 酒店",
+        "title": "Only YOU Hotel Sevilla",
+        "lang": "en",
+        "lat": 37.391353355437,
+        "lon": -5.973718942131,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Only+YOU+Hotel+Sevilla+Avenida+de+Kansas+City+7%2C+Sevilla+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Avenida Kansas City 7, 41007, Sevilla, Andalucía"
+      },
+      "photo": {
+        "artist": "Only YOU Hotels",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://www.onlyyouhotels.com/en/hotels/only-you-hotel-sevilla/",
+        "source": "https://www.onlyyouhotels.com/en/hotels/only-you-hotel-sevilla/",
+        "caption": "Only YOU Hotel Sevilla 酒店 · 酒店官网大堂实景，非指定房型",
+        "path": "assets/travel-notes/onlyyou.jpg",
+        "key": "c04-s19"
+      }
+    },
+    {
+      "city": 3,
+      "index": 19,
+      "key": "c04-s20",
+      "place": {
+        "n": "La Sacristía 塔帕斯",
+        "en": "La Sacristía de Sevilla",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Calle Mateos Gago 18, Sevilla",
+        "q": "La Sacristía de Sevilla Calle Mateos Gago 18, Sevilla",
+        "source": "https://barlasacristia.com/",
+        "d": "圣十字区、大教堂附近的传统小食餐厅。",
+        "highlights": "文件点单：炖牛尾、甜椒与蒜香大虾。",
+        "tip": "文件当次账单 €38；这是历史消费记录，当前份量、菜单与价格以店家为准。",
+        "duration": "约 1 小时",
+        "importId": "mira-sacristia",
+        "travelNotes": [
+          {
+            "ref": "EP7 11:55"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c04-s20",
+        "city": 3,
+        "index": 19,
+        "name": "La Sacristía 塔帕斯",
+        "title": "La Sacristía de Sevilla",
+        "lang": "en",
+        "lat": 37.386085,
+        "lon": -5.990641,
+        "source": "https://barlasacristia.com/"
+      },
+      "photo": {
+        "artist": "La Sacristía",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://barlasacristia.com/",
+        "source": "https://barlasacristia.com/",
+        "caption": "La Sacristía 塔帕斯 · 官网实景参考",
+        "path": "assets/travel-notes/sacristia.jpg",
+        "key": "c04-s20"
+      }
+    },
+    {
+      "city": 3,
+      "index": 20,
+      "key": "c04-s21",
+      "place": {
+        "n": "Postiguillo 塔帕斯",
+        "en": "Bar Postiguillo",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Calle Dos de Mayo 2, Sevilla",
+        "q": "Bar Postiguillo Calle Dos de Mayo 2, Sevilla",
+        "source": "https://www.barpostiguillo.com/",
+        "d": "大教堂与旧船厂一带、带斗牛主题装饰的小食餐厅。",
+        "highlights": "文件点单：炸小虾薄饼和油封鳕鱼。",
+        "tip": "作者当次账单 €27，仅为历史记录；可以少量多样点单，具体份量需询问。",
+        "duration": "约 1 小时",
+        "importId": "mira-postiguillo",
+        "travelNotes": [
+          {
+            "ref": "EP8 07:00"
+          }
+        ]
+      },
+      "coordinate": {
+        "key": "c04-s21",
+        "city": 3,
+        "index": 20,
+        "name": "Postiguillo 塔帕斯",
+        "title": "Bar Postiguillo",
+        "lang": "en",
+        "lat": 37.3852247,
+        "lon": -5.9953986,
+        "source": "https://www.barpostiguillo.com/"
+      },
+      "photo": {
+        "artist": "Bar Postiguillo",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://www.barpostiguillo.com/",
+        "source": "https://www.barpostiguillo.com/",
+        "caption": "Postiguillo 塔帕斯 · 官网实景参考",
+        "path": "assets/travel-notes/postiguillo.jpg",
+        "key": "c04-s21"
+      }
+    },
+    {
+      "city": 3,
+      "index": 21,
+      "key": "c04-s22",
+      "place": {
+        "n": "Ming 明中餐厅 · Santas Patronas",
+        "en": "Ming Santas Patronas",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Calle Santas Patronas 5, Sevilla",
+        "q": "Ming Santas Patronas Calle Santas Patronas 5, Sevilla",
+        "source": "https://restauranteming.com/",
+        "d": "文件提到 Ming 品牌，但未给出分店。这里收录官网列出的实体门店，供按行程选择。",
+        "highlights": "文件点单：麻婆豆腐、干锅花菜等；作者当次账单 €51。",
+        "tip": "两家分店都是真实地址，但不能确认作者去的是哪家；菜单与费用需分别核对。",
+        "duration": "约 1 小时",
+        "importId": "mira-ming-patronas",
+        "travelNotes": [
+          {
+            "ref": "EP8 · 分店未注明"
+          }
+        ],
+        "priority": "来源匹配待确认"
+      },
+      "coordinate": {
+        "key": "c04-s22",
+        "city": 3,
+        "index": 21,
+        "name": "Ming 明中餐厅 · Santas Patronas",
+        "title": "Ming Santas Patronas",
+        "lang": "en",
+        "lat": 37.388810411742,
+        "lon": -5.999230018817,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Ming+Santas+Patronas+Calle+Santas+Patronas+5%2C+Sevilla+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Calle Santas Patronas 5, 41001, Sevilla, Andalucía"
+      },
+      "photo": {
+        "artist": "Restaurante Ming",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://restauranteming.com/",
+        "source": "https://restauranteming.com/",
+        "caption": "Ming 明中餐厅 · Santas Patronas · 品牌官网配图，未区分两家分店",
+        "path": "assets/travel-notes/ming-patronas.jpg",
+        "key": "c04-s22"
+      }
+    },
+    {
+      "city": 3,
+      "index": 22,
+      "key": "c04-s23",
+      "place": {
+        "n": "Ming 明中餐厅 · Encarnación",
+        "en": "Ming Encarnación",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Calle José Luis Luque 2, Sevilla",
+        "q": "Ming Encarnación Calle José Luis Luque 2, Sevilla",
+        "source": "https://restauranteming.com/",
+        "d": "文件提到 Ming 品牌，但未给出分店。这里收录官网列出的实体门店，供按行程选择。",
+        "highlights": "文件点单：麻婆豆腐、干锅花菜等；作者当次账单 €51。",
+        "tip": "两家分店都是真实地址，但不能确认作者去的是哪家；菜单与费用需分别核对。",
+        "duration": "约 1 小时",
+        "importId": "mira-ming-encarnacion",
+        "travelNotes": [
+          {
+            "ref": "EP8 · 分店未注明"
+          }
+        ],
+        "priority": "来源匹配待确认"
+      },
+      "coordinate": {
+        "key": "c04-s23",
+        "city": 3,
+        "index": 22,
+        "name": "Ming 明中餐厅 · Encarnación",
+        "title": "Ming Encarnación",
+        "lang": "en",
+        "lat": 37.392167573512,
+        "lon": -5.991449684832,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=Ming+Encarnaci%C3%B3n+Calle+Jos%C3%A9+Luis+Luque+2%2C+Sevilla+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Calle Jose Luis Luque 2, 41003, Sevilla, Andalucía"
+      },
+      "photo": {
+        "artist": "Restaurante Ming",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://restauranteming.com/",
+        "source": "https://restauranteming.com/",
+        "caption": "Ming 明中餐厅 · Encarnación · 品牌官网配图，未区分两家分店",
+        "path": "assets/travel-notes/ming-encarnacion.jpg",
+        "key": "c04-s23"
+      }
+    },
+    {
+      "city": 3,
+      "index": 23,
+      "key": "c04-s24",
+      "place": {
+        "n": "麦当劳 · Delicias",
+        "en": "McDonald’s Sevilla Delicias",
+        "cat": "餐厅",
+        "placeType": "restaurant",
+        "address": "Paseo de las Delicias 5, Sevilla",
+        "q": "McDonald’s Sevilla Delicias Paseo de las Delicias 5, Sevilla",
+        "source": "https://mcdonalds.es/",
+        "d": "黄金塔南侧的快餐休息点。按文件“黄金塔附近”线索匹配 Delicias 门店，尚未核实视频店面。",
+        "highlights": "作者在等待黄金塔时到店休息，并提到水果。",
+        "tip": "不能保证现在仍供应同款水果；营业和菜单以门店当日为准。",
+        "duration": "20–40 分钟",
+        "importId": "mira-mcdonalds",
+        "travelNotes": [
+          {
+            "ref": "EP7 · 黄金塔附近（分店推测）"
+          }
+        ],
+        "priority": "来源匹配待确认"
+      },
+      "coordinate": {
+        "key": "c04-s24",
+        "city": 3,
+        "index": 23,
+        "name": "麦当劳 · Delicias",
+        "title": "McDonald’s Sevilla Delicias",
+        "lang": "en",
+        "lat": 37.3817272,
+        "lon": -5.9951877,
+        "source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=McDonald%E2%80%99s+Sevilla+Delicias+Paseo+de+las+Delicias+5%2C+Sevilla+Spain&f=pjson&maxLocations=1",
+        "addressMatch": "Paseo de las Delicias 5, 41001, Santa Cruz, Sevilla, Andalucía"
+      },
+      "photo": {
+        "artist": "Pub Monster Neil / Tripadvisor",
+        "license": "版权归原权利人；未声明开放许可",
+        "licenseUrl": "https://www.tripadvisor.fr/Restaurant_Review-g187443-d28147974-Reviews-Mcdonald_s_paseo_De_Las_Delicias-Seville_Province_of_Seville_Andalucia.html",
+        "source": "https://www.tripadvisor.fr/Restaurant_Review-g187443-d28147974-Reviews-Mcdonald_s_paseo_De_Las_Delicias-Seville_Province_of_Seville_Andalucia.html",
+        "caption": "麦当劳 · Delicias · Delicias 门店旅客实拍",
+        "path": "assets/travel-notes/mcdonalds.jpg",
+        "key": "c04-s24"
+      }
+    }
+  ],
+  "merges": [
+    {
+      "city": 1,
+      "index": 0,
+      "name": "圣家堂",
+      "ref": "EP1 07:25",
+      "note": "作者预约冬季约 15:00 入场欣赏彩窗，并在旁边公园观看外观；她本人停留 4–5 小时。可把建造博物馆纳入参观，但地下礼拜堂、高迪墓区域的开放应另行核对。建议避免把两个需要预约的大景点都挤在抵达当天。"
+    },
+    {
+      "city": 1,
+      "index": 1,
+      "name": "古埃尔公园",
+      "ref": "EP2 09:24",
+      "note": "作者参观约 2–3 小时，重点看马赛克长椅、城市全景、蜥蜴喷泉与入口建筑。她选择从较高处进入后下行；实际入口请按票面与当日开放核对，不直接照搬“后门”说法。公园内高迪故居已另设地点。附近午餐小酒馆没有店名，仅保留为待补线索。"
+    },
+    {
+      "city": 1,
+      "index": 2,
+      "name": "巴特罗之家",
+      "ref": "EP1 03:18",
+      "note": "作者当次购买 Gold 票，参观私人住宅区与沉浸式展厅，停留约 2–3 小时。票档名称与包含区域可能调整，按当前官网比较；热门早场也应提前预订。附近连锁餐厅的海鲜饭、墨鱼汁饭只记录了菜品，未提供店名。"
+    },
+    {
+      "city": 1,
+      "index": 3,
+      "name": "哥特区",
+      "ref": "EP3 04:11–05:06",
+      "note": "补充步行组合：主教桥、亲吻墙、皇家广场，再向古埃尔宫延伸。主教桥是后来建造的历史主义建筑，不是中世纪原桥；这些具体地点已分别标注。"
+    },
+    {
+      "city": 1,
+      "index": 7,
+      "name": "巴塞罗那毕加索博物馆",
+      "ref": "EP3 · 下次想去",
+      "note": "文件作者把毕加索博物馆列在未去成的愿望清单中，不属于本次实际入馆体验。旁边 El Xampanyet 小酒馆已补入餐厅筛选。"
+    },
+    {
+      "city": 1,
+      "index": 9,
+      "name": "加泰罗尼亚音乐宫",
+      "ref": "EP3 07:54",
+      "note": "作者特别喜欢彩色天窗、彩绘玻璃与马赛克，并提到馆内咖啡厅可休息。导览参观和音乐会分别选时段，咖啡厅开放以现场为准。"
+    },
+    {
+      "city": 1,
+      "index": 10,
+      "name": "圣十字圣保罗医院现代主义建筑群",
+      "ref": "EP2 13:05",
+      "note": "作者去的是圣诞季夜间灯光活动，没有进入全部建筑内部。白天建筑参观与季节夜游应分开安排；可与圣家堂串联，不把圣诞灯光视为全年项目。"
+    },
+    {
+      "city": 4,
+      "index": 0,
+      "name": "阿尔罕布拉宫",
+      "ref": "EP4 00:50–09:52",
+      "note": "作者为了纳斯瑞德宫余票调整过行程，预留了大半天。园内合并补充：摩尔时期浴场遗址的星形采光孔、外方内圆的卡洛斯五世宫、纳斯瑞德宫的桃金娘庭院与狮子庭院、阿尔卡萨瓦堡垒。参观顺序应围绕纳宫预约时段安排，并携带购票所用有效身份证件。各验票区进出次数按官方票规执行，不采用笔记中“其他区域可无限次进出”的说法。"
+    },
+    {
+      "city": 4,
+      "index": 1,
+      "name": "赫内拉利费宫",
+      "ref": "EP4 04:11",
+      "note": "文件也称这里为夏宫，重点是水渠、流水、喷泉和花园。若纳斯瑞德宫约在下午，可先游这里，但要留足走到纳宫及验票的时间。入口旁午餐店未注明店名；出发前自行核对园区及周边餐饮，不据笔记断言园内完全没有餐厅。"
+    },
+    {
+      "city": 4,
+      "index": 2,
+      "name": "阿尔拜辛区",
+      "ref": "EP5 09:12–10:52",
+      "note": "作者沿白色房屋与石板坡道慢行，途中遇到街头弗拉明戈。街头表演不是固定场次或固定地点；阿拉伯街、圣若望教堂及两处观景台已补齐到地图。"
+    },
+    {
+      "city": 4,
+      "index": 3,
+      "name": "圣尼古拉斯观景台",
+      "ref": "EP5 11:10–11:29",
+      "note": "作者觉得这里人较多，之后继续上坡到圣米格尔高地看日落。可把两处观景台作为同一路线，但上坡体力和日落后的回程照明需要考虑。"
+    },
+    {
+      "city": 5,
+      "index": 0,
+      "name": "科尔多瓦清真寺大教堂",
+      "ref": "EP6 03:52",
+      "note": "补充观看红白拱券、16 世纪教堂空间与橘子庭院。钟楼属于需要单独核对场次的参观项目；作者两天都没订到，不宜到现场才决定。她看到的 Belén 是圣诞季展陈，不是全年固定项目。"
+    },
+    {
+      "city": 5,
+      "index": 1,
+      "name": "罗马桥",
+      "ref": "EP6 08:15",
+      "note": "作者特意在傍晚再来一次，看夕阳中的老城与河景。可把白天老城参观和傍晚回到桥边分开安排，避免强行压缩用餐时间。"
+    },
+    {
+      "city": 5,
+      "index": 3,
+      "name": "基督教君主城堡",
+      "ref": "EP6 09:34",
+      "note": "文件也称双王城堡。补充看点是花园长水池、喷泉、修剪整齐的树木和哥伦布觐见双王的雕像，可在花园留出慢走时间。"
+    },
+    {
+      "city": 3,
+      "index": 0,
+      "name": "塞维利亚王宫",
+      "ref": "EP7 06:39",
+      "note": "合并补充园内看点：少女庭院、被俗称为“地下浴池”的 Doña María de Padilla 蓄水池、王宫花园，以及俯瞰花园的城墙长廊。皇家上层套房与常规路线的票种分别核对；王宫和大教堂各自占用较长参观时间，想轻松游可分两天。"
+    },
+    {
+      "city": 3,
+      "index": 1,
+      "name": "塞维利亚大教堂与吉拉达塔",
+      "ref": "EP8 07:42",
+      "note": "补充内部观看清单：哥伦布之墓、牟利罗的《圣安东尼奥的幻象》、戈雅描绘守护圣人的画作，以及吉拉达塔与橘子庭院。具体作品展出和可进入区域以现场安排为准，晚上也可回来欣赏外观。"
+    },
+    {
+      "city": 3,
+      "index": 2,
+      "name": "西班牙广场",
+      "ref": "EP8 01:06",
+      "note": "作者在雨天后选择晴天重访，并推荐看彩绘瓷砖座椅与乘船。笔记记录过一船最多 4 人、€6／35 分钟、现金付款，这是当次经历，不能视为当前价格或规则。可接玛丽亚·路易莎公园和大学皇家烟厂步行。"
+    }
+  ],
+  "unlocated": [
+    {
+      "city": 1,
+      "cat": "餐厅",
+      "name": "巴特罗之家附近的连锁西班牙餐厅",
+      "ref": "EP1 05:20",
+      "note": "店名与地址未提供。菜品记录：海鲜饭、墨鱼汁饭。"
+    },
+    {
+      "city": 1,
+      "cat": "餐厅",
+      "name": "古埃尔公园附近的小酒馆",
+      "ref": "EP2 12:28",
+      "note": "店名与地址未提供。菜品记录：萨拉米披萨、薯条，作者评价一般。"
+    },
+    {
+      "city": 1,
+      "cat": "景点",
+      "name": "巴塞罗那缆车",
+      "ref": "EP3 · 下次想去",
+      "note": "文件没有注明线路，无法在港口缆车与蒙锥克缆车之间确定。"
+    },
+    {
+      "city": 4,
+      "cat": "餐厅",
+      "name": "夏宫入口旁的午餐餐厅",
+      "ref": "EP4",
+      "note": "只有入口附近这一线索，未提供店名，暂不设餐厅标点。"
+    },
+    {
+      "city": 4,
+      "cat": "餐厅",
+      "name": "阿拉伯街附近的中餐馆",
+      "ref": "EP5 14:00",
+      "note": "店名未提供，记录有辣子鸡。线索保留在阿拉伯街介绍中。"
+    },
+    {
+      "city": 5,
+      "cat": "餐厅",
+      "name": "鲜花巷附近的早餐店",
+      "ref": "EP6 13:43",
+      "note": "店名未提供。热巧克力、土豆蛋饼与伊比利亚火腿的点单参考已并入鲜花巷。"
+    },
+    {
+      "city": 3,
+      "cat": "餐厅",
+      "name": "El Pasillo",
+      "ref": "EP7 17:35",
+      "note": "未查到能与文件对应的塞维利亚门店，暂不替换成名字相近的 El Pasaje。保留火腿、青椒、猪脸颊肉和当次 €27 账单线索。"
+    }
+  ],
+  "activityLinks": {
+    "seville-flamenco": {
+      "city": 3,
+      "index": 13,
+      "key": "c04-s14"
+    }
+  }
+}

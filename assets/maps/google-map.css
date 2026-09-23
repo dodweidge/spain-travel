@@ -67,3 +67,6 @@
  #googleMapSearch input{min-width:140px}
  .gmap-marker-name{max-width:150px}
 }
+
+.google-live-legend .legend-restaurant::before{background:#a74463}
+.google-live-legend .legend-hotel::before{background:#5964a8}
