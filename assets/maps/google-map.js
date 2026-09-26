@@ -5,7 +5,7 @@
   if (!config?.apiKey) return;
   const state = {
     sdk: null, map: null, markers: new Map(), city: null,
-    generation: 0, error: false, preserveNextOpen: false, activeKey: null,
+    generation: 0, error: false, errorReason: null, preserveNextOpen: false, activeKey: null,
     searchGeneration: 0, placesLibrary: null, searchElement: null,
     searchMarkers: new Map(), searchInfo: null, searchTimer: null,
     labels: new Map(), projection: null, layoutFrame: null, resizeObserver: null,
@@ -92,14 +92,25 @@
     $('cityMapFit').disabled = onlineMapMode === 'interactive';
   }
 
-  function fail() {
+  function fail(reason = state.errorReason) {
     state.error = true;
+    state.errorReason = reason;
     resetSearch();
-    if (isVisible()) message('互动地图暂时无法加载，请稍后重新加载，或在 Google 地图中打开。', true);
+    const hints = {
+      'local-file': '当前通过文件直接打开，可能无法完成谷歌地图的网站验证。请双击项目里的“启动本地网页.cmd”，再通过本地网址打开。',
+      'authorization': '谷歌地图授权未通过。请核对密钥的网站允许列表、Maps JavaScript API、结算和配额；本地使用需允许当前网址：' + window.location.origin + '/*。',
+      'network': '无法连接谷歌地图。请先确认浏览器能访问 Google 地图，再重新加载。',
+      'timeout': '谷歌地图加载超时。请确认浏览器能访问 Google 地图，再重新加载。'
+    };
+    if (isVisible()) message(hints[reason] || '互动地图暂时无法加载，请稍后重新加载，或在 Google 地图中打开。', true);
+    $('googleLiveLocalPreview').hidden = reason !== 'local-file';
   }
 
   // Load the map once per page; Places UI Kit is loaded only when a search is submitted.
   function loadSdk() {
+    if (window.location.protocol === 'file:') {
+      return Promise.reject(Object.assign(new Error('Local files cannot reliably send a website referrer'), {code: 'local-file'}));
+    }
     if (state.sdk) return state.sdk;
     state.sdk = new Promise((resolve, reject) => {
       let settled = false;
@@ -109,11 +120,11 @@
         clearTimeout(timer);
         if (error) reject(error); else resolve(window.google.maps);
       };
-      const timer = setTimeout(() => finish(new Error('Maps load timed out')), 20000);
+      const timer = setTimeout(() => finish(Object.assign(new Error('Maps load timed out'), {code: 'timeout'})), 20000);
       const previousAuthFailure = window.gm_authFailure;
       window.gm_authFailure = () => {
-        fail();
-        finish(new Error('Maps authentication or quota unavailable'));
+        fail('authorization');
+        finish(Object.assign(new Error('Maps authentication or quota unavailable'), {code: 'authorization'}));
         if (typeof previousAuthFailure === 'function') previousAuthFailure();
       };
       window.__spainGoogleMapReady = () => {
@@ -129,7 +140,7 @@
         loading: 'async', callback: '__spainGoogleMapReady',
         language: config.language || 'zh-CN', region: config.region || 'ES'
       });
-      script.onerror = () => finish(new Error('Maps network unavailable'));
+      script.onerror = () => finish(Object.assign(new Error('Maps network unavailable'), {code: 'network'}));
       document.head.append(script);
     });
     return state.sdk;
@@ -506,8 +517,8 @@
       state.city = city;
       select(cityMapSelected);
       return true;
-    } catch {
-      if (generation === state.generation && isVisible()) fail();
+    } catch (error) {
+      if (generation === state.generation && isVisible()) fail(error.code);
     }
   }
 
@@ -547,7 +558,7 @@
       applyFilters();
     });
     document.querySelector('.city-online-bar').insertAdjacentHTML('beforeend', '<div class="google-live-tools" id="googleLiveTools" hidden><strong id="googleLiveCurrent"></strong><button type="button" id="googleLiveLocate" disabled>定位所选地点</button><a id="googleLiveExternal" target="_blank" rel="noopener noreferrer">在 Google 中打开 ↗</a></div>');
-    $('cityGooglePane').insertAdjacentHTML('beforebegin', '<section class="google-live-pane" id="googleLivePane" aria-label="谷歌互动城市地图" hidden><div class="google-live-stage"><div id="googleLiveCanvas" role="region" aria-label="谷歌地图与收录地点" tabindex="0"></div><section class="google-live-results" id="googleLiveResults" aria-label="地点搜索结果" hidden><div class="google-search-results-head"><strong>搜索结果</strong><button type="button" id="googleLiveResultsClose" aria-label="关闭搜索结果">关闭 ×</button></div><p id="googleLiveSearchStatus" role="status"></p><div class="google-live-local-results" id="googleLiveLocalResults"></div><div id="googleLiveRemoteResults"></div><a id="googleLiveSearchExternal" target="_blank" rel="noopener noreferrer" hidden>在 Google 地图中搜索 ↗</a></section><div class="google-live-message" id="googleLiveMessage" role="status"><p id="googleLiveMessageText">正在加载谷歌地图…</p><div id="googleLiveRecovery" hidden><button type="button" id="googleLiveReload">重新加载页面</button><a id="googleLiveOpenExternal" target="_blank" rel="noopener noreferrer">在 Google 地图中打开 ↗</a></div></div></div><div class="google-live-legend" aria-label="地图标记图例"><span class="legend-classic">经典景点</span><span class="legend-culture">博物馆／文化收藏</span><span class="legend-restaurant">餐厅</span><span class="legend-hotel">酒店</span><span class="legend-warning">开放待复核</span><span class="legend-selected">当前选中</span><span class="legend-search">搜索结果</span><small>错开标记用细线连接，线端小圆点是实际位置。</small></div></section>');
+    $('cityGooglePane').insertAdjacentHTML('beforebegin', '<section class="google-live-pane" id="googleLivePane" aria-label="谷歌互动城市地图" hidden><div class="google-live-stage"><div id="googleLiveCanvas" role="region" aria-label="谷歌地图与收录地点" tabindex="0"></div><section class="google-live-results" id="googleLiveResults" aria-label="地点搜索结果" hidden><div class="google-search-results-head"><strong>搜索结果</strong><button type="button" id="googleLiveResultsClose" aria-label="关闭搜索结果">关闭 ×</button></div><p id="googleLiveSearchStatus" role="status"></p><div class="google-live-local-results" id="googleLiveLocalResults"></div><div id="googleLiveRemoteResults"></div><a id="googleLiveSearchExternal" target="_blank" rel="noopener noreferrer" hidden>在 Google 地图中搜索 ↗</a></section><div class="google-live-message" id="googleLiveMessage" role="status"><p id="googleLiveMessageText">正在加载谷歌地图…</p><div id="googleLiveRecovery" hidden><button type="button" id="googleLiveReload">重新加载页面</button><a id="googleLiveLocalPreview" href="http://127.0.0.1:8765/" target="_blank" rel="noopener noreferrer" hidden>启动后打开本地网页 ↗</a><a id="googleLiveOpenExternal" target="_blank" rel="noopener noreferrer">在 Google 地图中打开 ↗</a></div></div></div><div class="google-live-legend" aria-label="地图标记图例"><span class="legend-classic">经典景点</span><span class="legend-culture">博物馆／文化收藏</span><span class="legend-restaurant">餐厅</span><span class="legend-hotel">酒店</span><span class="legend-warning">开放待复核</span><span class="legend-selected">当前选中</span><span class="legend-search">搜索结果</span><small>错开标记用细线连接，线端小圆点是实际位置。</small></div></section>');
     $('googleLiveLocate').onclick = () => focus();
     $('cityMapList').addEventListener('click', event => {
       const button = event.target.closest('button[data-map-spot]');

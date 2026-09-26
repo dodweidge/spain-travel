@@ -1,0 +1,25 @@
+.image-viewer-trigger{cursor:zoom-in}
+.image-viewer-trigger:focus-visible{outline:3px solid #b97843;outline-offset:3px}
+html:has(#imageViewer[open]){overflow:hidden}
+#imageViewer{box-sizing:border-box;width:fit-content;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);margin:auto;padding:52px 14px 14px;border:1px solid #65716b;border-radius:12px;background:#17221e;color:#fff;overflow:auto;box-shadow:0 20px 90px #0008}
+#imageViewer::backdrop{background:#101a18d9}
+#imageViewer .image-viewer-close{position:absolute;right:12px;top:9px;min-height:36px;margin:0;padding:7px 14px;border:1px solid #63756c;border-radius:7px;background:#30463c;color:#fff;font-family:inherit;font-size:14px;line-height:1.4;cursor:pointer}
+#imageViewer figure{display:block;width:auto;margin:0;padding:0;border:0;background:none}
+#imageViewer figure img{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100dvh - 160px);margin:auto;border:0;border-radius:0;object-fit:contain;cursor:default}
+#imageViewer figcaption{max-width:100%;margin:10px 0 0;padding:0;border:0;background:none;color:#e0e8e2;font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+#imageViewer button:focus-visible{outline:3px solid #e3bd82;outline-offset:2px}
+/* Shared by single-image previews and existing hotel / attraction albums. */
+#imageViewer{width:min(1200px,calc(100vw - 24px))}
+#imageViewer .image-zoom-viewport,#photoDialog .image-zoom-viewport{position:relative;width:100%;height:min(65dvh,740px);overflow:hidden;background:#102c2d;touch-action:none;user-select:none;border-radius:8px}
+#photoDialog .image-zoom-viewport{height:min(60dvh,680px)}
+#imageViewer .image-zoom-viewport img,#photoDialog .image-zoom-viewport #largePhoto{position:absolute;left:50%;top:50%;display:block;max-width:none;max-height:none;margin:0;padding:0;border:0;transform-origin:center;object-fit:contain;touch-action:none;cursor:default}
+#imageViewer .can-pan img,#photoDialog .can-pan #largePhoto{cursor:grab}
+#imageViewer .is-panning img,#photoDialog .is-panning #largePhoto{cursor:grabbing}
+.image-zoom-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin:10px 0 0;min-width:0;user-select:none}
+.image-zoom-controls button{flex:none;min-height:34px;padding:5px 10px;border:1px solid #9daea3;border-radius:6px;background:#f1f4ee;color:#244339;font:inherit;font-size:13px;cursor:pointer}
+.image-zoom-controls button:disabled{opacity:.4;cursor:default}
+.image-zoom-controls input[type=range]{flex:1;width:80px;min-width:50px;max-width:260px;margin:0;padding:0;accent-color:#a87846;cursor:pointer}
+.image-zoom-controls output{flex:none;width:48px;font:13px/1.5 monospace;text-align:center}
+.image-zoom-controls :focus-visible{outline:3px solid #b97843;outline-offset:2px}
+@media(max-width:700px){#photoDialog .image-zoom-viewport{height:48dvh}.image-zoom-controls{gap:6px}.image-zoom-controls button{padding:5px 8px}}
+

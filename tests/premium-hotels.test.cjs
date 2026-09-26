@@ -1,0 +1,13 @@
+const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert/strict');
+const {root,read,loadData}=require('./project-data.cjs');
+const html=read('index.html'),ctx=loadData(['travel-notes','travel-screenshots','edition-hotels','only-you-hotels','hotel-prices','hotel-enrichment']);
+const before=JSON.parse(vm.runInContext('JSON.stringify(cities)',ctx));
+const src=fs.readFileSync(path.join(root,'assets/data/premium-hotels.js'),'utf8');vm.runInContext(src,ctx);
+const d=vm.runInContext('({cities,cityCoordinates,photos,photoGalleries,premiumHotelBundle,hotelPriceBundle})',ctx),targets=[7,8,9,10,11,12,14,17,20];
+assert.equal(d.premiumHotelBundle.hotels.length,27);assert.equal(d.cities.length,23);
+for(const c of d.cities){assert.deepEqual(JSON.parse(JSON.stringify(c.spots.slice(0,before[c.id].spots.length))),before[c.id].spots);assert.ok(c.spots.some(s=>s.placeType==='hotel'));if(targets.includes(c.id))assert.equal(c.spots.filter(s=>s.placeType==='hotel').length,3);}
+const all=d.cities.flatMap(c=>c.spots.filter(s=>s.placeType==='hotel'));assert.equal(all.length,72);assert.equal(new Set(all.map(s=>s.importId)).size,all.length);assert.equal(new Set(d.cityCoordinates.map(p=>p.key)).size,d.cityCoordinates.length);
+for(const h of d.premiumHotelBundle.hotels){const c=d.cities[h.city],i=c.spots.findIndex(s=>s.importId===h.id),key='c'+String(h.city+1).padStart(2,'0')+'-s'+String(i+1).padStart(2,'0');assert.ok(d.cityCoordinates.some(p=>p.key===key&&Math.abs(p.lat-h.lat)<0.00001));assert.ok(d.photos.some(p=>p.key===key));assert.ok(d.photoGalleries[key].length);for(const p of d.photoGalleries[key])assert.ok(fs.existsSync(path.join(root,p.path)),p.path);const r=d.hotelPriceBundle.hotels[h.id];assert.ok(r.rooms.length>=2);for(const q of r.rooms)assert.ok(q.low>0&&q.high>q.low);const markup=vm.runInContext(`renderHotelPrice(cities[${h.city}].spots[${i}])`,ctx);assert.ok(markup.includes('人工预算'));assert.ok(markup.includes('非实时可订报价'));assert.ok(!/NaN|undefined|暂无可订报价/.test(markup));assert.ok(fs.readFileSync(path.join(root,'图片来源与授权.html'),'utf8').includes('id="'+key+'"'));}
+const state=vm.runInContext('JSON.stringify([cities,cityCoordinates,photos,photoGalleries])',ctx);vm.runInContext(src.slice(src.indexOf('(() => {')),ctx);assert.equal(vm.runInContext('JSON.stringify([cities,cityCoordinates,photos,photoGalleries])',ctx),state);
+assert.ok(html.indexOf('premium-hotels.js')>html.indexOf('hotel-enrichment.js'));assert.ok(html.indexOf('premium-hotels.js')<html.indexOf('assets/maps/google-map.js'));
+console.log('PASS: 27 new hotels in 9 cities; 72 total; all 23 cities covered; existing data preserved, photos/map/estimates verified; registration idempotent.');

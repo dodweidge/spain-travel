@@ -70,3 +70,5 @@
 
 .google-live-legend .legend-restaurant::before{background:#a74463}
 .google-live-legend .legend-hotel::before{background:#5964a8}
+
+#googleLiveLocalPreview[hidden]{display:none!important}
